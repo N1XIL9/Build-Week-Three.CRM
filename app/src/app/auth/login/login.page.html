@@ -1,1 +1,61 @@
-<p>login works!</p>
+<section class="text-center container-fluid" cz-shortcut-listen="true" id="log">
+  <h1>CRM</h1>
+  <main class="form-signin m-auto">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <h2 class="h3 mb-3 fw-normal text-white">Entra</h2>
+      <div>
+        <!-- <p>
+          <ngb-alert type="custom" ngIf="advice" [dismissible]="true"
+            ><strong>Attenzione!</strong><br />
+            {{error}}</ngb-alert
+          >
+          <ngb-alert [type]="alertType" ngIf="welcome" [dismissible]="true"
+            ><strong>Login effettuato con successo</strong><br />
+            Bentornato nella nostra community...</ngb-alert
+          >
+        </p> -->
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          name="email"
+          required
+          ngModel
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          name="password"
+          required
+          ngModel
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label class="text-white mt-3">
+          <input type="checkbox" value="remember-me" />
+          Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-success" type="submit">Entra</button>
+      <p class="text-white mt-3">oppure</p>
+      <!-- <button
+        class="w-100 btn btn-lg btn-primary"
+        type="submit"
+        [routerLink]="['/signup']"
+      >
+        Registrati
+      </button> -->
+    </form>
+  </main>
+</section>
