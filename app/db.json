@@ -7,10 +7,30 @@
       "email": "olivier@mail.com",
       "password": "bestPassw0rd",
       "age": 32,
-      "roles": [ "ROLE_ADMIN", "ROLE_USER" ]
+      "roles": [
+        "ROLE_ADMIN",
+        "ROLE_USER"
+      ]
+    },
+    {
+      "email": "danydifilippo@gmail.com",
+      "password": "$2a$10$oc8uNdBjB1gTZpO/qdfPS.L2jS5ra34WHHIPASpgANDXyubxd6OL6",
+      "name": "DANIELA",
+      "lastname": "DI FILIPPO",
+      "age": 39,
+      "role": "ROLE_ADMIN",
+      "id": 2
+    },
+    {
+      "email": "example@example.it",
+      "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
+      "firstname": "Luigi",
+      "lastname": "Crisci",
+      "age": 34,
+      "role": "ROLE_USER",
+      "id": 3
     }
   ],
-
   "client": [
     {
       "ragioneSociale": "Bruno-Romano SPA - TEST",
@@ -24,18 +44,17 @@
       "telefonoContatto": "380.260.3225",
       "emailContatto": "armando.martinelli@hotmail.com",
       "indirizzoSede": {
-          "via": "Contrada Gastone 4, Piano 4",
-          "civico": "698",
-          "cap": "38615",
-          "comune": {
-              "nome": "LASTRA A SIGNA",
-              "provincia": "FI"
-          }
+        "via": "Contrada Gastone 4, Piano 4",
+        "civico": "698",
+        "cap": "38615",
+        "comune": {
+          "nome": "LASTRA A SIGNA",
+          "provincia": "FI"
+        }
       },
       "dataInserimento": "2019-06-01T08:11:01.911+00:00"
     }
   ],
-
   "invoices": [
     {
       "id": 1,
@@ -44,7 +63,9 @@
       "anno": 2020,
       "importo": 2289.24,
       "stato": "NON PAGATA",
-      "cliente": {"id": 1 },
+      "cliente": {
+        "id": 1
+      },
       "dataInserimento": "2019-06-01T08:11:01.911+00:00",
       "dataUltimaModifica": "2021-03-24T21:32:06.375+00:00"
     }
