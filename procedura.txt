@@ -1,0 +1,174 @@
+1. Create app Angular : ng new "nome"
+
+2. Aggiungere framework es. ng bootstrap, ng add @ng-bootstrap/ng-bootstrap
+
+3. Nel file "angular.json" importare i percorsi "node_modules/bootstrap/dist/css/bootstrap.min.css" in "styles" 
+e "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" in "scripts
+
+4. Creare un modulo "Auth" dove inserire pagine correlate tra di loro es. login e register ed un componente service;
+
+5. Definire le rotte in routing.module.ts es.
+    
+    const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: 'login',
+    component: LoginPage,
+  },
+  
+  {
+    path: '**',
+    redirectTo: 'login',
+  }];
+  NB : il (path '**') SEMPRE PER ULTIMO
+
+6. Solitamente abbiamo gia un db ma se lo vogliamo creare uno nostro 
+creaiamo un db.json e un routes.json per assegnare i codici di accesso alle risorse
+
+NB: devono essere creati fuori dalla cartella dell'applciazione , nel progetto generale dove si trov l'index.html
+
+es. db.json  
+
+ "users": [
+    {
+      "id": 1,
+      "firstname": "Olivier",
+      "lastname": "Monge",
+      "email": "olivier@mail.com",
+      "password": "bestPassw0rd",
+      "age": 32,
+      "roles": [
+        "ROLE_ADMIN",
+        "ROLE_USER"
+      ]
+    }
+
+
+es di routes.json
+
+{
+  "users": 660,
+  "client":660,
+  "invoices":660
+}
+
+7. Nel file "environments.ts" dobbiamo assegnare una variabile ed inserire l'url con lo / finale 
+
+es.
+export const environment = {
+  production: false,
+  urlAPI: 'http://localhost:3000/',
+};
+
+8. Installare il server per controllare la porta assegnata 'http://localhost:3000/'
+NB: questa procedura va effettuata in un nuovo terminale 
+
+Comando: npm install -D json-server json-server-auth
+
+9. Per farlo partire
+Comando : json-server db.json -m ./node_modules/json-server-auth
+
+10. Creare una classe "Users.ts" in "Auth" che vada a richiamare le risorse utili per il login o altro 
+
+es. 
+export class Users {
+    firstname?: string
+    lastname?: string
+    email?: string
+    password?: string
+    age?: number
+    roles?: string
+}
+
+
+11. Iniettare negli "imports" presente nel file auth.module.ts 
+i componenti "HttpClientModule" ,"FormsModule", "ngbModule"
+
+12. Nel service.ts dobbiamo creare i metodi da utilizzare per lavorare sui dati presenti nel db.json 
+e inniettare nel costruttore : 
+
+constructor(private http:HttpClient) {}
+
+ signup(obj:Users){
+    return this.http.post(environment.urlAPI+'signup',obj)
+  }
+
+  login(obj:Users){
+    return this.http.post(environment.urlAPI+'login',obj)
+  }
+
+
+13. Creare un form o template in html per le pagine create di login e signup ed importare ngForm
+es.
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+
+    NB: ngForm deve essere inserito nel DIV principale
+
+ed inserire in ogni campo di input "ngModel" ed il "name" -- name="email"
+
+es. 
+<div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          name="email"
+          required
+          ngModel
+        />
+        <label for="floatingInput">Email address</label>
+</div> 
+
+
+14. Nel ts di login e signup dobbiamo definire i metodi 
+nelle funzioni dei bottoni ed iniettare il service nel costruttore
+
+- login.page.ts -
+
+constructor(private authservice:ServiceService, private router:Router) {}
+
+  ngOnInit(): void {}
+
+  onSubmit(form: NgForm) {
+    this.authservice.login(form.value).subscribe(
+      data => {
+        console.log(data);
+        localStorage.setItem('userLogin', JSON.stringify(data))
+          this.router.navigate(['/navbar'])
+      }
+
+}
+
+
+- signup.page.ts -
+
+export class SignupPage implements OnInit {
+
+  constructor(private authService:ServiceService, private router:Router) { }
+
+  ngOnInit(): void {
+  }
+
+  onSubmit(form:NgForm){
+    this.authService.signup(form.value).subscribe(
+      data=>{
+      console.log(data);
+      this.router.navigate(['/login'])
+      })
+  }
+
+}
+
+
+15. In questo caso abbiamo deciso di creare una navbar 
+dove colleghiamo le tab/bottoni (utenti,clienti. fatture)
+
+
+
+
