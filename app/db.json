@@ -29,6 +29,15 @@
       "age": 34,
       "role": "ROLE_USER",
       "id": 3
+    },
+    {
+      "email": "nicolalerra@gmail.com",
+      "password": "$2a$10$mSNHhE0.ACrKxPTKJ7hZs.quEDzPnt/MGQ4oZa6foy5zR.y7C6EPq",
+      "firstname": "Nicola ",
+      "lastname": "Lerra",
+      "age": 31,
+      "role": "ROLE_ADMIN",
+      "id": 4
     }
   ],
   "client": [

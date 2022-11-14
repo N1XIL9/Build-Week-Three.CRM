@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UtentiComponent } from './navbar/utenti/utenti.component';
 import { ClientiComponent } from './navbar/clienti/clienti.component';
 import { FattureComponent } from './navbar/fatture/fatture.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, UtentiComponent, ClientiComponent, FattureComponent],
@@ -21,6 +22,7 @@ import { FattureComponent } from './navbar/fatture/fatture.component';
     AuthModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
