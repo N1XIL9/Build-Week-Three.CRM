@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './auth/login/login.page';
 import { SignupPage } from './auth/signup/signup.page';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   {
@@ -18,9 +19,13 @@ const routes: Routes = [
     component: SignupPage,
   },
   {
+    path: 'navbar',
+    component:NavbarComponent
+  },
+  {
     path: '**',
     redirectTo: 'login',
-  },
+  }
 ];
 
 @NgModule({

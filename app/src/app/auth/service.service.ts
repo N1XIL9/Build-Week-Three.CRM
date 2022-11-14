@@ -12,4 +12,8 @@ export class ServiceService {
   signup(obj:Users){
     return this.http.post(environment.urlAPI+'signup',obj)
   }
+
+  login(obj:Users){
+    return this.http.post(environment.urlAPI+'login',obj)
+  }
 }

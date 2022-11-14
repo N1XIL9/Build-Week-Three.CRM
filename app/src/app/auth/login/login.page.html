@@ -4,16 +4,11 @@
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <h2 class="h3 mb-3 fw-normal text-white">Entra</h2>
       <div>
-        <!-- <p>
-          <ngb-alert type="custom" ngIf="advice" [dismissible]="true"
-            ><strong>Attenzione!</strong><br />
-            {{error}}</ngb-alert
-          >
-          <ngb-alert [type]="alertType" ngIf="welcome" [dismissible]="true"
-            ><strong>Login effettuato con successo</strong><br />
-            Bentornato nella nostra community...</ngb-alert
-          >
-        </p> -->
+        <p>
+          <ngb-alert [dismissible]="true" *ngIf="showAlert" (closed)="close()">
+            <strong>Attenzione!</strong> {{error}}
+          </ngb-alert>
+        </p>
       </div>
 
       <div class="form-floating mb-3">
@@ -48,14 +43,14 @@
         </label>
       </div>
       <button class="w-100 btn btn-lg btn-success" type="submit">Entra</button>
-      <p class="text-white mt-3">oppure</p>
-      <!-- <button
+      <p class="mt-3">oppure</p>
+      <button
         class="w-100 btn btn-lg btn-primary"
         type="submit"
         [routerLink]="['/signup']"
       >
         Registrati
-      </button> -->
+      </button>
     </form>
   </main>
 </section>
