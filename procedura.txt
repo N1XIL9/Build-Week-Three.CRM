@@ -169,6 +169,29 @@ export class SignupPage implements OnInit {
 15. In questo caso abbiamo deciso di creare una navbar 
 dove colleghiamo le tab/bottoni (utenti,clienti. fatture)
 
+16. Per collegare un componente padre con componenti figli bisogna inserire children al path PadreComponent
+  su app-routing:
+
+  {
+    path: 'navbar',
+    component:NavbarComponent,
+    children:[
+      {
+        path:'clienti',
+        component:ClientiComponent
+      },
+      {
+        path:'fatture',
+        component:FattureComponent
+      },
+ 
+ e poi iniettare il rroute:ActivatedRoute, private router:Router nel costruttore del PadreComponent
+ ed inserire solo per il primo una funzione (click):
+
+ utenti(){
+  this.router.navigate(['utenti'],{relativeTo:this.route})
+}
+ NB: nell'Html inserire [routerLink]="['clienti']" per le altre pagine
 
 
 

@@ -13,15 +13,6 @@
       ]
     },
     {
-      "email": "danydifilippo@gmail.com",
-      "password": "$2a$10$oc8uNdBjB1gTZpO/qdfPS.L2jS5ra34WHHIPASpgANDXyubxd6OL6",
-      "name": "DANIELA",
-      "lastname": "DI FILIPPO",
-      "age": 39,
-      "role": "ROLE_ADMIN",
-      "id": 2
-    },
-    {
       "email": "example@example.it",
       "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
       "firstname": "Luigi",
@@ -38,6 +29,15 @@
       "age": 31,
       "role": "ROLE_ADMIN",
       "id": 4
+    },
+    {
+      "email": "danydifilippo@gmail.com",
+      "password": "$2a$10$8gQNMcXjrbFLFN4HKCUdCeU2H4RZbaDKcFtgdUL40qK4Pb3ngXqA6",
+      "firstname": "DANIELA",
+      "lastname": "DI FILIPPO",
+      "age": 39,
+      "role": "ROLE_ADMIN",
+      "id": 5
     }
   ],
   "client": [

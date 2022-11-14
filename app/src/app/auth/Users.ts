@@ -4,5 +4,5 @@ export class Users {
     email?: string
     password?: string
     age?: number
-    roles?: string
+    roles: string = "ROLE_USER"
 }

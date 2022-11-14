@@ -9,6 +9,9 @@ import { ServiceService } from '../service.service';
 })
 export class SignupPage implements OnInit {
 
+  error=undefined
+  showAlert=false
+
   constructor(private authService:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
@@ -19,7 +22,15 @@ export class SignupPage implements OnInit {
       data=>{
       console.log(data);
       this.router.navigate(['/login'])
+    },
+    err => {
+      console.log(err);
+      this.error = err.error;
+      this.showAlert = !this.showAlert
       })
+  }
+  close(){
+    this.showAlert = !this.showAlert
   }
 
 }

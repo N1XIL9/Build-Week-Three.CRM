@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './auth/login/login.page';
 import { SignupPage } from './auth/signup/signup.page';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ClientiComponent } from './navbar/clienti/clienti.component';
+import { FattureComponent } from './navbar/fatture/fatture.component';
+import { UtentiComponent } from './navbar/utenti/utenti.component';
 
 const routes: Routes = [
   {
@@ -20,7 +23,21 @@ const routes: Routes = [
   },
   {
     path: 'navbar',
-    component:NavbarComponent
+    component:NavbarComponent,
+    children:[
+      {
+        path:'clienti',
+        component:ClientiComponent
+      },
+      {
+        path:'fatture',
+        component:FattureComponent
+      },
+      {
+        path:'utenti',
+        component:UtentiComponent
+      },
+    ]
   },
   {
     path: '**',
@@ -30,6 +47,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

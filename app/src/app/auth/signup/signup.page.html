@@ -7,7 +7,13 @@
       <h2 class="h3 mb-3 fw-normal text-white">
         Inserisci i dati e registrati
       </h2>
-
+      <div>
+        <p>
+          <ngb-alert [dismissible]="true" *ngIf="showAlert" (closed)="close()">
+            <strong>Attenzione!</strong> {{error}}
+          </ngb-alert>
+        </p>
+      </div>
       <div class="form-floating mb-3">
         <input
           type="text"
@@ -68,19 +74,6 @@
         />
         <label for="floatingage">Età</label>
       </div>
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        name="role"
-        id="floatingrole"
-        ngModel
-        required
-      >
-        <option value="" disabled selected>Ruolo</option>
-        <option value="ROLE_ADMIN">Amministratore</option>
-        <option value="ROLE_USER">Impiegato</option>
-      </select>
-      <div class="checkbox mb-3"></div>
       <button
         class="w-100 btn btn-lg btn-primary"
         type="submit"

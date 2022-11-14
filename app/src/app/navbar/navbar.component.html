@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid d-flex justify-content-around">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand">
       <img
         src="../../assets/logo.png"
         alt="Logo"
-        width="110"
+        width="140"
         class="d-inline-block align-text-top"
       />
     </a>
@@ -23,20 +23,21 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" id="utentiLink" (click)="utenti()">Utenti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" [routerLink]="['clienti']">Clienti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link" [routerLink]="['fatture']">Fatture</a>
           </li>
         </ul>
-        <button>Utente</button>
+        <button class="mx-3 rounded-circle" id="user">
+          {{ user.user.firstname | slice: 0:1 }}
+          {{ user.user.lastname | slice: 0:1 }}
+        </button>
       </div>
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>
