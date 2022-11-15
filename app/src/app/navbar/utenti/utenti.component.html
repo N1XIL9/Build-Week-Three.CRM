@@ -1,1 +1,22 @@
-<p>utenti works!</p>
+<div class="container">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOME</th>
+                <th scope="col">COGNOME</th>
+                <th scope="col">DETTAGLI UTENTE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th name="id" ngModel #id>{{user.id}}</th>
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <button mat-button [routerLink]="[user.id]" (click)="openDialog()"><i
+                        class="bi bi-info-circle"></i></button>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

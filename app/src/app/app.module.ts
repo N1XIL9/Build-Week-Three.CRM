@@ -12,9 +12,19 @@ import { UtentiComponent } from './navbar/utenti/utenti.component';
 import { ClientiComponent } from './navbar/clienti/clienti.component';
 import { FattureComponent } from './navbar/fatture/fatture.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, UtentiComponent, ClientiComponent, FattureComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    UtentiComponent,
+    ClientiComponent,
+    FattureComponent,
+    DettagliUtenteComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatCardModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

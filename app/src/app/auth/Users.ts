@@ -1,8 +1,9 @@
 export class Users {
-    firstname?: string
-    lastname?: string
-    email?: string
-    password?: string
-    age?: number
-    roles: string = "ROLE_USER"
+  id?: number;
+  firstname?: string;
+  lastname?: string;
+  email?: string;
+  password?: string;
+  age?: number;
+  roles: string = 'ROLE_USER';
 }
