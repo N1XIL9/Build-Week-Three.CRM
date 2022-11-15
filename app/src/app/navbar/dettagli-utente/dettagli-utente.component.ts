@@ -9,27 +9,19 @@ import { Users } from 'src/app/auth/Users';
   styleUrls: ['./dettagli-utente.component.scss'],
 })
 export class DettagliUtenteComponent implements OnInit {
-  user?: Users;
+  user: Users | undefined;
 
   constructor(
     private authService: ServiceService,
     private activateRouter: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.activateRouter.params.subscribe((params) => {
+      const id = +params['id'];
+      this.authService
+        .getUserDetails(id)
+        .subscribe((data) => (this.user = data));
+      console.log(this.user);
+    });
   }
-
-  // ngOnInit(): void {
-  //   this.activateRouter.params.subscribe((params) => {
-  //     const id = +params['id'];
-  //     this.authService.getUserDetails(id).subscribe((data) => {
-  //       this.user = data;
-
-  //       console.log(id);
-  //     });
-  //     // this.authService.getUserDetails().subscribe((data) => {
-  //     //   this.users = data;
-  //     //   console.log(this.users);
-  //     // });
-  //   });
 }

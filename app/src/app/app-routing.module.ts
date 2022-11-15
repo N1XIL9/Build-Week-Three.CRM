@@ -8,6 +8,7 @@ import { FattureComponent } from './navbar/fatture/fatture.component';
 import { UtentiComponent } from './navbar/utenti/utenti.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
+import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
 
 const routes: Routes = [
   {
@@ -25,29 +26,35 @@ const routes: Routes = [
   },
   {
     path: 'navbar',
-    component:NavbarComponent,
-    children:[
+    component: NavbarComponent,
+    children: [
       {
-        path:'clienti',
-        component:ClientiComponent,
-        canActivate:[AuthGuard]
+        path: 'clienti',
+        component: ClientiComponent,
+        canActivate: [AuthGuard],
       },
       {
-        path:'fatture',
-        component:FattureComponent,
-        canActivate:[AuthGuard]
+        path: 'fatture',
+        component: FattureComponent,
+        canActivate: [AuthGuard],
       },
       {
-        path:':utenti',
-        component:UtentiComponent,
-        canActivate:[AuthGuard, AdminGuard]
-      }
-    ]
+        path: ':utenti',
+        component: UtentiComponent,
+        canActivate: [AuthGuard, AdminGuard],
+        children: [
+          {
+            path: ':id',
+            component: DettagliUtenteComponent,
+          },
+        ],
+      },
+    ],
   },
   {
     path: '**',
     redirectTo: 'login',
-  }
+  },
 ];
 
 @NgModule({
