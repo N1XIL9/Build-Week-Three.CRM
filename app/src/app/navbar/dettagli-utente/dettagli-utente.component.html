@@ -1,40 +1,74 @@
-<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <div class="mb-3">
-        <label for="id" class="form-label">ID</label>
-        <input type="text" class="form-control" id="id" ngModel name="id" ng-readonly="bool" value="{{user?.id}}">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="mb-3">
+    <label for="id" class="form-label">ID</label>
+    <input
+      type="text"
+      class="form-control"
+      id="id"
+      ngModel
+      name="id"
+      ng-readonly="bool"
+      value="{{ user?.id }}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="firstname" class="form-label">Nome</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstname"
+      value="{{ user?.firstname }} "
+      ngModel
+      name="firstname"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="lastname" class="form-label">Cognome</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastname"
+      value="{{ user?.lastname }} "
+      ngModel
+      name="lastname"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      value="{{ user?.email }}"
+      ngModel
+      name="email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      value="{{ user?.email }}"
+      ngModel
+      name="email"
+    />
+  </div>
 
-    </div>
-    <div class="mb-3">
-        <label for="firstname" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="firstname" value="{{user?.firstname}} " ngModel name="firstname">
-    </div>
-    <div class="mb-3">
-        <label for="lastname" class="form-label">Cognome</label>
-        <input type="text" class="form-control" id="lastname" value="{{user?.lastname}} " ngModel name="lastname">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
-    </div>
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 <div class="conatiner">
-    <mat-card class="example-card">
-        <mat-card-title>{{user?.firstname}} {{user?.lastname}}</mat-card-title>
-        <mat-card-content>
-            <p> Id: {{user?.id}}</p>
-            <p>{{user?.email}}</p>
-            <p> Età: {{user?.age}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button (click)="onSubmit()">SHARE</button>
-        </mat-card-actions>
-    </mat-card>
+  <mat-card class="example-card">
+    <mat-card-title>{{ user?.firstname }} {{ user?.lastname }}</mat-card-title>
+    <mat-card-content>
+      <p>Id: {{ user?.id }}</p>
+      <p>{{ user?.email }}</p>
+      <p>Età: {{ user?.age }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

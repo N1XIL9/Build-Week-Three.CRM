@@ -1,1 +1,42 @@
-<p>clienti works!</p>
+<section class="container-fluid">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Ditta</th>
+        <th scope="col">P.IVA</th>
+        <th scope="col">Contatto</th>
+        <th scope="col">Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of">
+        <th>{{ cl.id }}</th>
+        <td>{{ cl.ragioneSociale }} {{ cl. }}</td>
+        <td>{{ country.area | number }}</td>
+        <td>{{ country.population | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [collectionSize]="collectionSize"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="refreshClients()"
+    >
+    </ngb-pagination>
+
+    <select
+      class="form-select"
+      style="width: auto"
+      [(ngModel)]="pageSize"
+      (ngModelChange)="refreshClients()"
+    >
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+</section>

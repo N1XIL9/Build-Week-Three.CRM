@@ -33,6 +33,7 @@
     "@angular/cli": "~14.2.7",
     "@angular/compiler-cli": "^14.2.0",
     "@angular/localize": "^14.2.0",
+    "@schematics/angular": "^14.2.9",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.3.0",
     "json-server": "^0.17.1",
