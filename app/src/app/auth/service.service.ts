@@ -7,6 +7,11 @@ import { Users } from './Users';
   providedIn: 'root',
 })
 export class ServiceService {
+
+  isLoggedIn=false
+  isAdmin=false
+  // (false di isAdmin non si apre la pagina)
+
   constructor(private http:HttpClient) {}
 
   signup(obj:Users){
@@ -15,5 +20,13 @@ export class ServiceService {
 
   login(obj:Users){
     return this.http.post(environment.urlAPI+'login',obj)
+  }
+
+  isAuthenticated(){
+    return this.isLoggedIn
+  }
+
+  isRoleAdmin(){
+    return this.isAdmin
   }
 }

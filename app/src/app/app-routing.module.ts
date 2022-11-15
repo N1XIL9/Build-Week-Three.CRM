@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ClientiComponent } from './navbar/clienti/clienti.component';
 import { FattureComponent } from './navbar/fatture/fatture.component';
 import { UtentiComponent } from './navbar/utenti/utenti.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AdminGuard } from './auth/admin.guard';
 
 const routes: Routes = [
   {
@@ -27,16 +29,19 @@ const routes: Routes = [
     children:[
       {
         path:'clienti',
-        component:ClientiComponent
+        component:ClientiComponent,
+        canActivate:[AuthGuard]
       },
       {
         path:'fatture',
-        component:FattureComponent
+        component:FattureComponent,
+        canActivate:[AuthGuard]
       },
       {
-        path:'utenti',
-        component:UtentiComponent
-      },
+        path:':utenti',
+        component:UtentiComponent,
+        canActivate:[AuthGuard, AdminGuard]
+      }
     ]
   },
   {

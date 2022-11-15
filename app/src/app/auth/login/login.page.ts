@@ -20,8 +20,9 @@ export class LoginPage implements OnInit {
     this.authservice.login(form.value).subscribe(
       data => {
         console.log(data);
-        localStorage.setItem('userLogin', JSON.stringify(data))
-          this.router.navigate(['/navbar'])
+        localStorage.setItem('userLogin', JSON.stringify(data));
+          this.authservice.isLoggedIn = true;
+          this.router.navigate(['/navbar']);
       },
       err => {
         console.log(err);

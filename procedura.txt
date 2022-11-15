@@ -193,5 +193,72 @@ dove colleghiamo le tab/bottoni (utenti,clienti. fatture)
 }
  NB: nell'Html inserire [routerLink]="['clienti']" per le altre pagine
 
+----------- LA GUARD ----------
 
+1. In authService inserire una variabile booleana che verrà cambiata al momento del login:
+  ex:   isLoggedIn=false
+  inserire sempre in authService una funzione che andremo a richiamare nell'AuthGuard
+  ex:     isAuthenticated(){
+          return this.isLoggedIn
+          }
+
+2. Creare una guard con ng g guard auth/auth --skip-tests
+    Scegliere CanActivate
+
+3. Inserire in guard il costruttore:
+  constructor(private authService:ServiceService){}
+
+4. Cancellare 'return true' in CanActivate ed inserire:
+    return this.authService.isAuthenticated();
+    così che le pagine saranno attive solo quando 'isLoggedIn' sarà true
+
+5. Inserire sulla pagina di Login.ts, alla funzione di Login 'onSubmit' il cambiamento booleano di isLoggedIn:
+    dopo : localStorage.setItem('userLogin', JSON.stringify(data));
+    inserire: this.authservice.isLoggedIn = true;
+
+6. Nella pagina generale dell'app-routing inserire l'AuthGuard al componente che si vuole nascondere:
+    ex: {
+        path:'clienti',
+        component:ClientiComponent,
+        canActivate:[AuthGuard]
+      },
+7. Ora se si cerca di entrare sulla pagina clienti senza il login non sarà più possibile
+
+
+----------- LA GUARD A SECONDA DEL RUOLO ----------
+
+1. Inserire una variabile per Admin nell'authService + il relativo metodo in basso:
+    
+    isRoleAdmin=false
+    
+    isAdmin(){
+    return this.isRoleAdmin
+  }
+
+2. In Utenti alla funzione che cambia un utente da user ad Admin inserire il booleano come true,
+    come fatto per isLoggedIn in LoginPage:
+    this.authservice.isRoleAdmin = true;
+  
+3. Implementare CanActivateChild in Auth.Guard:
+    export class AuthGuard implements CanActivate, CanActivateChild  {
+
+4. Inserire l'hook di CanActivateChild:
+    Appena si scrive canActivateChild viene riportato in automatico il tutto inserire solo il return in basso:
+  
+  canActivateChild(
+    childRoute: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+
+    return this.authService.isAdmin();
+  }
+
+5. Nella pagina generale dell'app-routing inserire il canActivateChild al componente Padre del componante che si vuole nascondere:
+    ex:  {
+    path: 'navbar',
+    component:NavbarComponent,
+    canActivateChild:[AuthGuard],
+    children:[
+      {
+
+6. L'unico problema è che verranno nascosti tutti i figli
 
