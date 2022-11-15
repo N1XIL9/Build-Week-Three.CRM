@@ -2,9 +2,9 @@
   "users": [
     {
       "id": 1,
-      "firstname": "Olivier",
-      "lastname": "Monge",
-      "email": "olivier@mail.com",
+      "firstname": "",
+      "lastname": " Topolino",
+      "email": "example@ggogol.it",
       "password": "bestPassw0rd",
       "age": 32,
       "roles": [
@@ -13,10 +13,10 @@
       ]
     },
     {
-      "email": "example@example.it",
+      "email": "",
       "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
-      "firstname": "Luigi",
-      "lastname": "Crisci",
+      "firstname": "",
+      "lastname": "",
       "age": 34,
       "role": "ROLE_USER",
       "id": 3

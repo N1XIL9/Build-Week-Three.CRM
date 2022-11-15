@@ -1,19 +1,40 @@
-<h2 mat-dialog-title>Install Angular</h2>
-<mat-dialog-content class="mat-typography">
+<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="mb-3">
+        <label for="id" class="form-label">ID</label>
+        <input type="text" class="form-control" id="id" ngModel name="id" ng-readonly="bool" value="{{user?.id}}">
+
+    </div>
+    <div class="mb-3">
+        <label for="firstname" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="firstname" value="{{user?.firstname}} " ngModel name="firstname">
+    </div>
+    <div class="mb-3">
+        <label for="lastname" class="form-label">Cognome</label>
+        <input type="text" class="form-control" id="lastname" value="{{user?.lastname}} " ngModel name="lastname">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+<div class="conatiner">
     <mat-card class="example-card">
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <mat-card-title>{{user?.firstname}} {{user?.lastname}}</mat-card-title>
         <mat-card-content>
-            <!-- <p>This card indeterminates progress bar.</p>
-            <p>{{}}</p> -->
+            <p> Id: {{user?.id}}</p>
+            <p>{{user?.email}}</p>
+            <p> Età: {{user?.age}}</p>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <button mat-button (click)="onSubmit()">SHARE</button>
         </mat-card-actions>
     </mat-card>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-</mat-dialog-actions>
+</div>

@@ -29,6 +29,10 @@ export class ServiceService {
     return this.isAdmin;
   }
 
+  changeRole(id: number, data: Partial<Users>) {
+    return this.http.patch<any>(environment.urlAPI + 'users/' + id, data);
+  }
+
   getUsers() {
     return this.http.get<Users[]>(environment.urlAPI + 'users');
   }
