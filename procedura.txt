@@ -260,5 +260,6 @@ dove colleghiamo le tab/bottoni (utenti,clienti. fatture)
     children:[
       {
 
-6. L'unico problema è che verranno nascosti tutti i figli
+6. L'unico problema è che verranno nascosti tutti i figli se ci sono più di un figlio... la soluzione sarebbe inserire una nuova Guard con la funzione
+  relativa al ruolo ed inserire nel routing la guard alla pagina ex: canActivate:[AuthGuard, AdminGuard]
 
