@@ -15,6 +15,10 @@ export class ClientService {
   }
 
   getClient(){
-    return this.http.get(environment.urlAPI+'client')
+    return this.http.get<Client[]>(environment.urlAPI+'client')
+  }
+
+  getClientDetails(id:number){
+    return this.http.get<Client>(environment.urlAPI+'client'+id)
   }
 }

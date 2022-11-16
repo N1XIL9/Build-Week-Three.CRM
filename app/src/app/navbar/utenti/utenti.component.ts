@@ -17,7 +17,6 @@ export class UtentiComponent implements OnInit {
   constructor(
     private authService: ServiceService,
     public dialog: MatDialog,
-    private activateRouter: ActivatedRoute
   ) {}
 
   ngOnInit(): void {

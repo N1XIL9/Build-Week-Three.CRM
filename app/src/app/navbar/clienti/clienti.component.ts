@@ -10,7 +10,7 @@ import { ClientService } from './client.service';
 })
 export class ClientiComponent implements OnInit {
 
-  clienti?:Client;
+  clienti: Client[] = [];
   page = 1;
 	pageSize = 4;
   collectionSize?:number
@@ -20,8 +20,8 @@ export class ClientiComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientService.getClient().subscribe((data)=>{
-      this.clienti=data;
-      console.log(this.clienti);
+      this.clienti = data
+      console.log(this.data);
     })
   }
 

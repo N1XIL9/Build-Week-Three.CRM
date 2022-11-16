@@ -7,19 +7,44 @@
         <th scope="col">P.IVA</th>
         <th scope="col">Contatto</th>
         <th scope="col">Telefono</th>
+        <th scope="col">Dettagli</th>
+        <th scope="col">Modifica</th>
+        <th scope="col">Elimina</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of">
+      <tr *ngFor="let cl of clienti">
         <th>{{ cl.id }}</th>
-        <td>{{ cl.ragioneSociale }} {{ cl. }}</td>
-        <td>{{ country.area | number }}</td>
-        <td>{{ country.population | number }}</td>
+        <td>{{ cl.ragioneSociale }} {{ cl.tipoCliente }}</td>
+        <td>{{ cl.partitaIva }}</td>
+        <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
+        <td>
+          {{ cl.indirizzoSede?.comune?.nome }} ({{
+            cl.indirizzoSede?.comune?.provincia
+          }})
+        </td>
+        <td>
+          <button
+            mat-button
+            type="submit"
+            [routerLink]="[cl.id]"
+            routerLinkActive="router-link-active"
+            (click)="infoCl()"
+          >
+            <i class="bi bi-info-circle"></i>
+          </button>
+        </td>
+        <td>
+          <button (click)="editCl()"><i class="bi bi-pencil-fill"></i></button>
+        </td>
+        <td>
+          <button (click)="deleteCl()"><i class="bi bi-trash-fill"></i></button>
+        </td>
       </tr>
     </tbody>
   </table>
 
-  <div class="d-flex justify-content-between p-2">
+  <!-- <div class="d-flex justify-content-between p-2">
     <ngb-pagination
       [collectionSize]="collectionSize"
       [(page)]="page"
@@ -39,4 +64,5 @@
       <option [ngValue]="6">6 items per page</option>
     </select>
   </div>
+</section> -->
 </section>
