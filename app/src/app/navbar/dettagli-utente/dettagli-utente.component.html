@@ -53,6 +53,13 @@
                     <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
                 </div>
 
+                <select class="form-select" aria-label="Default select example" name="role" id="floatingrole" ngModel
+                    required>
+                    <option value="" disabled selected>Ruolo</option>
+                    <option value="ROLE_ADMIN">Amministratore</option>
+                    <option value="ROLE_USER">Impiegato</option>
+                </select>
+
 
 
             </mat-card-content>

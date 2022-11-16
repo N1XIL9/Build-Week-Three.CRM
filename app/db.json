@@ -13,10 +13,10 @@
       ]
     },
     {
-      "email": "",
+      "email": "gn@pippo.it",
       "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
-      "firstname": "",
-      "lastname": "",
+      "firstname": "Gianni",
+      "lastname": "Neri",
       "age": 34,
       "role": "ROLE_USER",
       "id": 3
