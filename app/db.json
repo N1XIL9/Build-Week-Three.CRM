@@ -2,9 +2,9 @@
   "users": [
     {
       "id": 1,
-      "firstname": "",
-      "lastname": " Topolino",
-      "email": "example@ggogol.it",
+      "firstname": "Pippo",
+      "lastname": "First",
+      "email": "pippoF@d.it",
       "password": "bestPassw0rd",
       "age": 32,
       "roles": [

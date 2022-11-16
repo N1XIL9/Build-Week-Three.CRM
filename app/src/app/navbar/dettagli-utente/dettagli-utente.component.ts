@@ -12,6 +12,8 @@ import { Users } from 'src/app/auth/Users';
 export class DettagliUtenteComponent implements OnInit {
   user: any;
   dipendente!: any;
+  bool = false;
+
   constructor(
     private authService: ServiceService,
     private activateRouter: ActivatedRoute
@@ -31,9 +33,12 @@ export class DettagliUtenteComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(this.user);
+    this.authService.changeRole(this.user.id, form.value).subscribe((data) => {
+      console.log(data);
+    });
+  }
 
-    // this.authService.changeRole(this.user.id, form.value).subscribe((data) => {
-    //   console.log(data);
-    // });
+  changeProp() {
+    this.bool = !this.bool;
   }
 }
