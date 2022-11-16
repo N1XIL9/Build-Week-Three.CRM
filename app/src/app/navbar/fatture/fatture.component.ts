@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Fatture } from './fatture';
 import { FattureService } from './fatture.service';
 
@@ -10,6 +11,7 @@ import { FattureService } from './fatture.service';
 export class FattureComponent implements OnInit {
 
   fatture: Fatture[] = []
+  fattura?: Fatture
 
   constructor(private fattureService: FattureService) { }
 
@@ -17,6 +19,10 @@ export class FattureComponent implements OnInit {
     this.fattureService.getInvoice().subscribe(data => [this.fatture = data])
   }
 
+  onSubmit(form: NgForm){
+    this.fattureService.addInvoice(form.value)
+    console.log(form.value)
+  }
 
 
 }
