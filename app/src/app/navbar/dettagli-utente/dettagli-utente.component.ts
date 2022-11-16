@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ServiceService } from 'src/app/auth/service.service';
@@ -11,16 +11,10 @@ import { Users } from 'src/app/auth/Users';
 })
 export class DettagliUtenteComponent implements OnInit {
   user: any;
-  dipendente!: any;
   bool = false;
-  placeholder!: string;
+  // userArr: any[] = [];
 
-  // boolName = false;
-  // boolLastname = false;
-  // boolEmail = false;
-  // boolRole = false;
-  // boolAge = false;
-  // boolPwd = false;
+  // @ViewChild('f') f = NgForm;
 
   constructor(
     private authService: ServiceService,
@@ -32,19 +26,42 @@ export class DettagliUtenteComponent implements OnInit {
 
       this.authService.getUserDetails(id).subscribe((data) => {
         this.user = data;
-        this.dipendente = this.user;
-        console.log(this.user);
-        console.log(data);
       });
     });
   }
 
-  readPlaceholder(form: NgForm) {
-    this.user = {};
-  }
-
   onSubmit(form: NgForm) {
-    console.log(this.user);
+    // form.value.firstname === ''
+    //   ? this.userArr.push(this.user.firstname)
+    //   : this.userArr.push(form.value.firstname);
+    // form.value.lastname === ''
+    //   ? this.userArr.push(this.user.lastname)
+    //   : this.userArr.push(form.value.lastname);
+    // form.value.age === ''
+    //   ? this.userArr.push(this.user.age)
+    //   : this.userArr.push(form.value.age);
+    // form.value.role === ''
+    //   ? this.userArr.push(this.user.role)
+    //   : this.userArr.push(form.value.role);
+    // form.value.email === ''
+    //   ? this.userArr.push(this.user.email)
+    //   : this.userArr.push(form.value.email);
+    // console.log(this.userArr);
+    // console.log(this.user.firstname);
+    // this.userDetail = Object.assign({}, this.userArr);
+    // this.authService
+    //   .changeRole(this.user.id, obj)
+    //   .subscribe((data) => {
+    //     console.log(data);
+    //   });
+
+    form.setValue({
+      name: this.user.name,
+      lastname: this.user.lastname,
+      age: this.user.age,
+      role: this.user.role,
+      email: this.user.email,
+    });
 
     this.authService.changeRole(this.user.id, form.value).subscribe((data) => {
       console.log(data);

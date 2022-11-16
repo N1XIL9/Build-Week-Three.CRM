@@ -45,33 +45,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">{{ user.id }}</th>
+                        <th scope="row"></th>
                         <td>
                             <div class="mb-3">
-                                <label for="firstname" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="firstname" value="{{user.firstname}}"
-                                    placeholder="{{user.firstname}}" ngModel name="firstname">
+                                <input type="text" class="form-control" id="firstname" ngModel name="firstname">
                             </div>
                         </td>
                         <td>
                             <div class="mb-3">
-                                <label for="lastname" class="form-label">Cognome</label>
-                                <input type="text" class="form-control" id="lastname" value="{{user.lastname}} "
-                                    placeholder="{{user.lastname}}" ngModel name="lastname">
+                                <input type="text" class="form-control" id="lastname" ngModel name="lastname">
                             </div>
                         </td>
                         <td>
                             <div class="mb-3">
-                                <label for="age" class="form-label">Age</label>
-                                <input type="age" class="form-control" id="age" value="{{user.age}}"
-                                    placeholder="{{user.age}}" ngModel name="age">
+                                <input type="age" class="form-control" id="age" ngModel name="age">
                             </div>
                         </td>
                         <td>
                             <select class="form-select" aria-label="Default select example" name="role"
                                 id="floatingrole" ngModel>
                                 <optgroup>
-                                    <option value="{{user.role}}" disabled selected> {{user.role}} </option>
+                                    <option disabled selected> </option>
                                     <option value="ROLE_ADMIN">Amministratore</option>
                                     <option value="ROLE_USER">Impiegato</option>
                                 </optgroup>
@@ -79,13 +73,12 @@
                         </td>
                         <td>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" value="{{user.email}}"
-                                    placeholder="{{user.email}}" ngModel name="email">
+                                <input type="email" class="form-control" id="email" ngModel name="email">
                             </div>
                         </td>
-                        <td><button type="submit"><i class="bi bi-vector-pen"></i></button></td>
-
+                        <td>
+                            <button type="submit"><i class="bi bi-vector-pen"></i></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
