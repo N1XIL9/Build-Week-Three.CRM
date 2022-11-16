@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Users } from 'src/app/auth/Users';
 import { ServiceService } from 'src/app/auth/service.service';
@@ -10,30 +10,49 @@ import { ServiceService } from 'src/app/auth/service.service';
   styleUrls: ['./dettagli-utente.component.scss'],
 })
 export class DettagliUtenteComponent implements OnInit {
-  user: any;
-  dipendente!: any;
+  user!: any;
+  bool = false;
+  userForm!: FormGroup;
+
   constructor(
     private authService: ServiceService,
-    private activateRouter: ActivatedRoute
+    private activateRouter: ActivatedRoute,
+    private formBuilder: FormBuilder
   ) {}
   ngOnInit(): void {
     this.activateRouter.params.subscribe((params) => {
       const id = +params['id'];
-
       this.authService.getUserDetails(id).subscribe((data) => {
         this.user = data;
-        this.dipendente = this.user;
-        console.log(this.user);
-        console.log(data);
       });
+    });
+
+    this.userForm = this.formBuilder.group({
+      firstname: '',
+      lastname: '',
+      age: '',
+      roles: '',
+      email: '',
     });
   }
 
-  onSubmit(form: NgForm) {
-    console.log(this.user);
-
-    // this.authService.changeRole(this.user.id, form.value).subscribe((data) => {
-    //   console.log(data);
-    // });
+  onSubmit() {
+    this.authService
+      .changeRole(this.user.id, this.userForm.value)
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
+
+  changeProp() {
+    this.bool = !this.bool;
+    this.userForm.get('firstname')?.setValue(this.user.firstname);
+    this.userForm.get('lastname')?.setValue(this.user.lastname);
+    this.userForm.get('age')?.setValue(this.user.age);
+    this.userForm.get('roles')?.setValue(this.user.roles);
+    this.userForm.get('email')?.setValue(this.user.email);
+    console.log(this.userForm.value);
+  }
+
+  deleteUser() {}
 }

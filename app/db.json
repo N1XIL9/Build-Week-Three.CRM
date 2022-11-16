@@ -3,32 +3,31 @@
     {
       "id": 1,
       "firstname": "",
-      "lastname": " Topolino",
-      "email": "example@ggogol.it",
+      "lastname": "",
+      "email": "",
       "password": "bestPassw0rd",
-      "age": 32,
-      "roles": [
-        "ROLE_ADMIN",
-        "ROLE_USER"
-      ]
+      "age": "",
+      "roles": ["ROLE_ADMIN", "ROLE_USER"],
+      "role": ""
     },
     {
-      "email": "",
+      "email": "t@t",
       "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
       "firstname": "",
       "lastname": "",
-      "age": 34,
-      "role": "ROLE_USER",
+      "age": "25",
+      "role": "",
       "id": 3
     },
     {
-      "email": "nicolalerra@gmail.com",
+      "email": "",
       "password": "$2a$10$mSNHhE0.ACrKxPTKJ7hZs.quEDzPnt/MGQ4oZa6foy5zR.y7C6EPq",
-      "firstname": "Nicola ",
-      "lastname": "Lerra",
-      "age": 31,
-      "role": "ROLE_ADMIN",
-      "id": 4
+      "firstname": "Luca",
+      "lastname": "Rossi",
+      "age": "28",
+      "role": "",
+      "id": 4,
+      "roles": "ROLE_ADMIN"
     },
     {
       "email": "danydifilippo@gmail.com",
