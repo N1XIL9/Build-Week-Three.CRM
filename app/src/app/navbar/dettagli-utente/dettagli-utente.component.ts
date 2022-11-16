@@ -51,6 +51,7 @@ export class DettagliUtenteComponent implements OnInit {
     this.userForm.get('age')?.setValue(this.user.age);
     this.userForm.get('roles')?.setValue(this.user.roles);
     this.userForm.get('email')?.setValue(this.user.email);
+
     console.log(this.userForm.value);
   }
 

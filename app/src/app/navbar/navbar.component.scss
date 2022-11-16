@@ -1,18 +1,27 @@
 nav {
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05);
   // 5px 5px 15px rgba(0, 0, 0, 0.5);
   font-size: 18px;
 
   a {
-    color: grey;
+    color: lightgray;
   }
 }
 #user {
-  padding: inherit;
-  padding: 0.8em;
+  padding: 1rem;
+  margin-top: 10px;
   border: none;
+  height: fit-content;
 
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+
+  -moz-box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
     2px 2px 6px rgba(0, 0, 0, 0.8);
   color: #fbb400;
   background: #131419;
@@ -30,4 +39,30 @@ nav {
 
   -moz-drop-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
     2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-nav {
+  align-items: center;
+  padding: 10px;
+}
+
+.container-fluid {
+  justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#navbarNav {
+  justify-content: flex-end;
+}
+
+.navbar-toggler-icon {
+  color: #f72a60 !important;
+}
+.navbar-toggler-icon:hover {
+  border: #f72a60;
+}
+
+.bi-list {
+  font-size: 1.9rem;
 }
