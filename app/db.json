@@ -7,7 +7,10 @@
       "email": "",
       "password": "bestPassw0rd",
       "age": "",
-      "roles": ["ROLE_ADMIN", "ROLE_USER"],
+      "roles": [
+        "ROLE_ADMIN",
+        "ROLE_USER"
+      ],
       "role": ""
     },
     {
@@ -36,7 +39,8 @@
       "lastname": "DI FILIPPO",
       "age": 39,
       "role": "ROLE_ADMIN",
-      "id": 5
+      "id": 5,
+      "roles": "ROLE_ADMIN"
     },
     {
       "email": "nicolalerra@hotmail.it",

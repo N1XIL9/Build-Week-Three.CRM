@@ -1,3 +1,19 @@
-.example-card {
-  max-width: 400px;
+tr {
+  color: grey;
+}
+
+.container {
+  margin-top: 60px;
+}
+
+table {
+  border-bottom: grey;
+}
+
+#b2 {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: #fbb400;
+  background: #131419;
+  border: none;
 }
