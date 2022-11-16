@@ -7,7 +7,10 @@
       "email": "",
       "password": "bestPassw0rd",
       "age": "",
-      "roles": ["ROLE_ADMIN", "ROLE_USER"],
+      "roles": [
+        "ROLE_ADMIN",
+        "ROLE_USER"
+      ],
       "role": ""
     },
     {
@@ -45,6 +48,14 @@
       "lastname": "Lerra",
       "age": 31,
       "id": 6
+    },
+    {
+      "email": "luigicr95@gmail.com",
+      "password": "$2a$10$lwEDTJDOP0JEqwVPNQs22OYD00lqfvPVopfCJAkzuHAPGKPtFYDH2",
+      "firstname": "Luigi",
+      "lastname": "Crisci",
+      "age": 27,
+      "id": 7
     }
   ],
   "client": [

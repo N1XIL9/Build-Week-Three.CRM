@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Fatture } from './fatture';
+import { FattureService } from './fatture.service';
 
 @Component({
   selector: 'app-fatture',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FattureComponent implements OnInit {
 
-  constructor() { }
+  fatture: Fatture[] = []
+
+  constructor(private fattureService: FattureService) { }
 
   ngOnInit(): void {
+    this.fattureService.getInvoice().subscribe(data => [this.fatture = data])
   }
+
+
 
 }
