@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
 import { MatCardModule } from '@angular/material/card';
+import { ClientsModule } from './navbar/clienti/clients/clients.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { MatCardModule } from '@angular/material/card';
     BrowserAnimationsModule,
     MatDialogModule,
     MatCardModule,
+    MatCardModule,
+    ClientsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

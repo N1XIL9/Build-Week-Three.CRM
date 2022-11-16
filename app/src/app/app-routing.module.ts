@@ -9,6 +9,7 @@ import { UtentiComponent } from './navbar/utenti/utenti.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
 import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
+import { ClientDetailsComponent } from './navbar/clienti/client-details/client-details.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupPage,
+  },
+  {
+    path: 'client-details',
+    component: ClientDetailsComponent,
   },
   {
     path: 'navbar',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/auth/service.service';
 import { Client } from './client';
 import { ClientService } from './client.service';
@@ -16,13 +17,17 @@ export class ClientiComponent implements OnInit {
   collectionSize?:number
   data= new Date()
 
-  constructor(private clientService:ClientService) { }
+  constructor(private clientService:ClientService, private router:Router) { }
 
   ngOnInit(): void {
     this.clientService.getClient().subscribe((data)=>{
       this.clienti = data
       console.log(this.data);
     })
+  }
+
+  infoCl(){
+    this.router.navigate=['client-details']
   }
 
 }
