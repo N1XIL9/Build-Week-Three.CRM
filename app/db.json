@@ -2,15 +2,16 @@
   "users": [
     {
       "id": 1,
-      "firstname": "Pippo",
-      "lastname": "First",
-      "email": "pippoF@d.it",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
       "password": "bestPassw0rd",
-      "age": 32,
+      "age": "",
       "roles": [
         "ROLE_ADMIN",
         "ROLE_USER"
-      ]
+      ],
+      "role": ""
     },
     {
       "email": "gn@pippo.it",
@@ -38,6 +39,15 @@
       "age": 39,
       "role": "ROLE_ADMIN",
       "id": 5
+    },
+    {
+      "email": "example@example.it",
+      "password": "$2a$10$lKpptu/Fa8Ye0nXX0kdW0.nkJCNqWS0hcNOKXSp7nChuxaBuQuP5y",
+      "firstname": "Lamberto",
+      "lastname": "Martini",
+      "age": 25,
+      "id": 6,
+      "role": "ROLE_USER"
     }
   ],
   "client": [

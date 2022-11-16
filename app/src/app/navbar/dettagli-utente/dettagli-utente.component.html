@@ -1,72 +1,94 @@
-<!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <div class="mb-3">
-        <label for="id" class="form-label">ID</label>
-        <input type="text" class="form-control" id="id" ngModel name="id" ng-readonly="bool" value="{{user?.id}}">
-
-    </div>
-    <div class="mb-3">
-        <label for="firstname" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="firstname" value="{{user?.firstname}} " ngModel name="firstname">
-    </div>
-    <div class="mb-3">
-        <label for="lastname" class="form-label">Cognome</label>
-        <input type="text" class="form-control" id="lastname" value="{{user?.lastname}} " ngModel name="lastname">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
-    </div>
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
 <div class="container">
-    <mat-card class="example-card">
+    <div #table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">COGNOME</th>
+                    <th scope="col">ETA'</th>
+                    <th scope="col">RUOLO</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">MODIFICA</th>
+                    <th scope="col">ELIMINA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ user.id }}</th>
+                    <td>
+                        {{user.firstname}}
+                    </td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.role}}</td>
+                    <td>{{user.email }}</td>
+                    <td><button (click)="changeProp()"><i class="bi bi-vector-pen"></i></button></td>
+                    <td><button (click)="deleteUser()"><i class="bi bi-trash3-fill"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div #formMod *ngIf="bool">
         <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-            <mat-card-title>{{user?.firstname}} </mat-card-title>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">COGNOME</th>
+                        <th scope="col">ETA'</th>
+                        <th scope="col">RUOLO</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">CONFERMA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ user.id }}</th>
+                        <td>
+                            <div class="mb-3">
+                                <label for="firstname" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="firstname" value="{{user.firstname}}"
+                                    placeholder="{{user.firstname}}" ngModel name="firstname">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-label">Cognome</label>
+                                <input type="text" class="form-control" id="lastname" value="{{user.lastname}} "
+                                    placeholder="{{user.lastname}}" ngModel name="lastname">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Age</label>
+                                <input type="age" class="form-control" id="age" value="{{user.age}}"
+                                    placeholder="{{user.age}}" ngModel name="age">
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" aria-label="Default select example" name="role"
+                                id="floatingrole" ngModel>
+                                <optgroup>
+                                    <option value="{{user.role}}" disabled selected> {{user.role}} </option>
+                                    <option value="ROLE_ADMIN">Amministratore</option>
+                                    <option value="ROLE_USER">Impiegato</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" value="{{user.email}}"
+                                    placeholder="{{user.email}}" ngModel name="email">
+                            </div>
+                        </td>
+                        <td><button type="submit"><i class="bi bi-vector-pen"></i></button></td>
 
-            <div class="mb-3" *ngIf="bool">
-                <label for="firstname" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="firstname" value="{{user?.firstname}} " ngModel
-                    name="firstname">
-            </div>
-            <mat-card-title>{{user?.lastname}}</mat-card-title>
-
-            <div class="mb-3" *ngIf="bool">
-                <label for="lastname" class="form-label">Cognome</label>
-                <input type="text" class="form-control" id="lastname" value="{{user?.lastname}} " ngModel
-                    name="lastname">
-            </div>
-            <mat-card-content>
-                <p> Id: {{user?.id}}</p>
-
-                <p> Età: {{user?.age}}</p>
-
-                <p>{{user?.email}}</p>
-
-                <div class="mb-3" *ngIf="bool">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" value="{{user?.email}}" ngModel name="email">
-                </div>
-
-                <select class="form-select" aria-label="Default select example" name="role" id="floatingrole" ngModel
-                    required>
-                    <option value="" disabled selected>Ruolo</option>
-                    <option value="ROLE_ADMIN">Amministratore</option>
-                    <option value="ROLE_USER">Impiegato</option>
-                </select>
-
-
-
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button (click)="changeProp()">Modifica</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </mat-card-actions>
+                    </tr>
+                </tbody>
+            </table>
         </form>
-    </mat-card>
+    </div>
 </div>

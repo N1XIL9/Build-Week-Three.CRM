@@ -13,6 +13,14 @@ export class DettagliUtenteComponent implements OnInit {
   user: any;
   dipendente!: any;
   bool = false;
+  placeholder!: string;
+
+  // boolName = false;
+  // boolLastname = false;
+  // boolEmail = false;
+  // boolRole = false;
+  // boolAge = false;
+  // boolPwd = false;
 
   constructor(
     private authService: ServiceService,
@@ -31,8 +39,13 @@ export class DettagliUtenteComponent implements OnInit {
     });
   }
 
+  readPlaceholder(form: NgForm) {
+    this.user = {};
+  }
+
   onSubmit(form: NgForm) {
     console.log(this.user);
+
     this.authService.changeRole(this.user.id, form.value).subscribe((data) => {
       console.log(data);
     });
@@ -41,4 +54,25 @@ export class DettagliUtenteComponent implements OnInit {
   changeProp() {
     this.bool = !this.bool;
   }
+
+  deleteUser() {}
+
+  // changePropPwd() {
+  //   this.boolPwd = !this.boolPwd;
+  // }
+  // changePropRole() {
+  //   this.boolRole = !this.boolRole;
+  // }
+  // changePropEmail() {
+  //   this.boolEmail = !this.boolEmail;
+  // }
+  // changePropAge() {
+  //   this.boolAge = !this.boolAge;
+  // }
+  // changePropLastname() {
+  //   this.boolLastname = !this.boolLastname;
+  // }
+  // changePropName() {
+  //   this.boolName = !this.boolName;
+  // }
 }
