@@ -9,7 +9,6 @@ import { Users } from './Users';
 export class ServiceService {
   isLoggedIn = false;
   isAdmin = true;
-  // (false di isAdmin non si apre la pagina)
 
   constructor(private http: HttpClient) {}
 
