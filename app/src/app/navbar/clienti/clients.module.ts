@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCard, MatCardContent, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { ClientiComponent } from './clienti.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,6 +12,7 @@ import { ClientiComponent } from './clienti.component';
   imports: [
     CommonModule,
     MatCardModule,
+    RouterModule
   ]
 })
 export class ClientsModule { }

@@ -16,6 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
 import { MatCardModule } from '@angular/material/card';
 import { ClientsModule } from './navbar/clienti/clients/clients.module';
+import { UtentiModule } from './navbar/utenti/utenti/utenti.module';
+import { NavbarModule } from './navbar/navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ClientsModule } from './navbar/clienti/clients/clients.module';
     MatDialogModule,
     MatCardModule,
     MatCardModule,
-    ClientsModule
+    ClientsModule,
+    UtentiModule,
+    NavbarModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

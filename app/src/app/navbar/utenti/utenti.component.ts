@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from 'src/app/auth/service.service';
 import { Users } from 'src/app/auth/Users';
-import { DettagliUtenteComponent } from '../dettagli-utente/dettagli-utente.component';
 
 @Component({
   selector: 'app-utenti',
@@ -17,6 +16,7 @@ export class UtentiComponent implements OnInit {
   constructor(
     private authService: ServiceService,
     public dialog: MatDialog,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
