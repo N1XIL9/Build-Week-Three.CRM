@@ -1,21 +1,18 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './auth/login/login.page';
 import { SignupPage } from './auth/signup/signup.page';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ClientiComponent } from './navbar/clienti/clienti.component';
 import { FattureComponent } from './navbar/fatture/fatture.component';
 import { UtentiComponent } from './navbar/utenti/utenti.component';
+import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
+import { ClientDetailsPage } from './navbar/clienti/client-details/client-details.page';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
-import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'login',
-  },
+
   {
     path: 'login',
     component: LoginPage,
@@ -32,6 +29,12 @@ const routes: Routes = [
         path: 'clienti',
         component: ClientiComponent,
         canActivate: [AuthGuard],
+        children: [
+          {
+            path: ':id',
+            component: ClientDetailsPage
+          }
+        ]
       },
       {
         path: 'fatture',
@@ -49,7 +52,13 @@ const routes: Routes = [
           },
         ],
       },
+
     ],
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
   },
   {
     path: '**',
@@ -58,8 +67,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-
-  exports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ],
 })
 export class AppRoutingModule {}

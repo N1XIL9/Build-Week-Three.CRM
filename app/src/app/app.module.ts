@@ -1,8 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
 import { MatCardModule } from '@angular/material/card';
+import { ClientDetailsPage } from './navbar/clienti/client-details/client-details.page';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
     ClientiComponent,
     FattureComponent,
     DettagliUtenteComponent,
+    ClientDetailsPage
   ],
   imports: [
     BrowserModule,
