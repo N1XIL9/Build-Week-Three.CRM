@@ -25,16 +25,16 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form> -->
 <div class="conatiner">
-    <mat-card class="example-card">
-        <mat-card-title>{{user?.firstname}} {{user?.lastname}}</mat-card-title>
-        <mat-card-content>
-            <p> Id: {{user?.id}}</p>
-            <p>{{user?.email}}</p>
-            <p> Età: {{user?.age}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button (click)="onSubmit()">SHARE</button>
-        </mat-card-actions>
-    </mat-card>
+  <mat-card class="example-card">
+    <mat-card-title>{{ user?.firstname }} {{ user?.lastname }}</mat-card-title>
+    <mat-card-content>
+      <p>Id: {{ user?.id }}</p>
+      <p>{{ user?.email }}</p>
+      <p>Età: {{ user?.age }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
