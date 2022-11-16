@@ -195,9 +195,11 @@ dove colleghiamo le tab/bottoni (utenti,clienti. fatture)
 
 ----------- LA GUARD ----------
 
-1. In authService inserire una variabile booleana che verrà cambiata al momento del login:
+1. In authService (ServiceService) inserire una variabile booleana che verrà cambiata al momento del login:
   ex:   isLoggedIn=false
+  
   inserire sempre in authService una funzione che andremo a richiamare nell'AuthGuard
+
   ex:     isAuthenticated(){
           return this.isLoggedIn
           }

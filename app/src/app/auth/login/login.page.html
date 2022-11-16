@@ -1,58 +1,69 @@
-<section class="text-center container-fluid" cz-shortcut-listen="true" id="log">
-  <h1>
-    <img src="../../../assets/logo.png" alt="logo" />
-  </h1>
-  <main class="form-signin m-auto">
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-      <h2 class="h3 mb-3 fw-normal text-white">Entra</h2>
-      <div>
-        <p>
-          <ngb-alert [dismissible]="true" *ngIf="showAlert" (closed)="close()">
-            <strong>Attenzione!</strong> {{error}}
-          </ngb-alert>
-        </p>
-      </div>
+<div class="cont-flex">
+  <section
+    class="text-center container-fluid"
+    cz-shortcut-listen="true"
+    id="log"
+  >
+    <h1>
+      <img class="loGo" src="../../../assets/logo.png" alt="logo" />
+    </h1>
+    <main class="form-signin m-auto">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <h2 class="h3 mb-3 fw-normal text-white"></h2>
+        <div>
+          <p>
+            <ngb-alert
+              [dismissible]="true"
+              *ngIf="showAlert"
+              (closed)="close()"
+            >
+              <strong>Attenzione!</strong> {{error}}
+            </ngb-alert>
+          </p>
+        </div>
 
-      <div class="form-floating mb-3">
-        <input
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@example.com"
-          name="email"
-          required
-          ngModel
-        />
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-          name="password"
-          required
-          ngModel
-        />
-        <label for="floatingPassword">Password</label>
-      </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            name="email"
+            required
+            ngModel
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            name="password"
+            required
+            ngModel
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
 
-      <div class="checkbox mb-3">
-        <label class="mt-3">
-          <input type="checkbox" value="remember-me" />
-          Remember me
-        </label>
-      </div>
-      <button class="w-100 btn btn-lg btn-success" type="submit">Entra</button>
-      <p class="mt-3">oppure</p>
-      <button
-        class="w-100 btn btn-lg btn-primary"
-        type="submit"
-        [routerLink]="['/signup']"
-      >
-        Registrati
-      </button>
-    </form>
-  </main>
-</section>
+        <div class="checkbox mb-3">
+          <label class="mt-3">
+            <input type="checkbox" value="remember-me" />
+            Ricordami
+          </label>
+        </div>
+        <button id="b1" class="w-100 btn btn-lg" type="submit">Accedi</button>
+        <p class="mt-3"></p>
+        <button
+          id="b2"
+          class="w-100 btn btn-lg"
+          type="submit"
+          [routerLink]="['/signup']"
+        >
+          Registrati
+        </button>
+      </form>
+    </main>
+  </section>
+</div>

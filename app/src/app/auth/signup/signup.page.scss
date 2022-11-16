@@ -1,7 +1,99 @@
+.cont-flex {
+  display: flex;
+  height: 100%;
+}
+
 #signup {
   margin: auto;
-  max-width: 800px;
   padding: 20px;
-  margin-block-start: 10vh;
-  height: auto;
+  max-width: 350px;
+  background: #131419;
+  text-align: center;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+#log {
+  margin: auto;
+  padding: 20px;
+  max-width: 350px;
+  background: #131419;
+  text-align: center;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.loGo {
+  width: 250px;
+}
+
+.checkbox {
+  float: left;
+  color: white;
+}
+
+form {
+  margin-top: 20px;
+  // box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+  //   2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+input {
+  background: #131419;
+
+  outline: none;
+  border-radius: 40px;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+input:hover {
+  background: #131419;
+  color: #006c9c;
+
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+label {
+  color: grey;
+}
+
+#floatingInput,
+#floatingPassword,
+#floatingName,
+#floatingLastName,
+#floatingage {
+  background: #131419;
+  color: #006c9c;
+}
+
+#b2 {
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  color: #fbb400;
+  border: none;
 }

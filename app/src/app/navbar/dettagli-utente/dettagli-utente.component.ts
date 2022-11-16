@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { ServiceService } from 'src/app/auth/service.service';
 import { Users } from 'src/app/auth/Users';
+import { ServiceService } from 'src/app/auth/service.service';
 
 @Component({
   selector: 'app-dettagli-utente',
