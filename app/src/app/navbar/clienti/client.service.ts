@@ -11,7 +11,7 @@ export class ClientService {
   constructor(private http:HttpClient) {}
 
   addClient(obj:Client){
-    return this.http.post(environment.urlAPI+'clienti',obj)
+    return this.http.post(environment.urlAPI+'client',obj)
   }
 
   getClient(){

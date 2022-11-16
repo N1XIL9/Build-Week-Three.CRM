@@ -1,0 +1,66 @@
+<section class="container-fluid text-white">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Ditta</th>
+        <th scope="col">P.IVA</th>
+        <th scope="col">Contatto</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Dettagli</th>
+        <th scope="col">Modifica</th>
+        <th scope="col">Elimina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cl of clienti">
+        <th>{{ cl.id }}</th>
+        <td>{{ cl.ragioneSociale }} {{ cl.tipoCliente }}</td>
+        <td>{{ cl.partitaIva }}</td>
+        <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
+        <td>
+          {{ cl.indirizzoSede?.comune?.nome }} ({{
+          cl.indirizzoSede?.comune?.provincia }})
+        </td>
+        <td>
+          <button
+            mat-button
+            type="submit"
+            [routerLink]="[cl.id]"
+            routerLinkActive="router-link-active"
+            routerLink="client-details"
+          >
+            <i class="bi bi-info-circle"></i>
+          </button>
+        </td>
+        <!-- <td>
+      <button (click)="editCl()"><i class="bi bi-pencil-fill"></i></button>
+    </td>
+    <td>
+      <button (click)="deleteCl()"><i class="bi bi-trash-fill"></i></button>
+    </td> -->
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- <div class="d-flex justify-content-between p-2">
+<ngb-pagination
+  [collectionSize]="collectionSize"
+  [(page)]="page"
+  [pageSize]="pageSize"
+  (pageChange)="refreshClients()"
+>
+</ngb-pagination>
+
+<select>
+  class="form-select"
+  style="width: auto"
+  [(ngModel)]="pageSize"
+  (ngModelChange)="refreshClients()"
+>
+
+  <option [ngValue]="5">5 items per page</option>
+  <option [ngValue]="10">6 items per page</option>
+</select>
+</div> -->

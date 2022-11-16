@@ -1,271 +1,204 @@
-<main class="form-signin m-auto">
-  <form>
-    <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <h2 class="h3 mb-3 fw-normal text-white">Crea anagrafica cliente</h2>
-    <div>
-      <p>
-        <ngb-alert [dismissible]="true" *ngIf="showAlert" (closed)="close()">
-          <strong>Attenzione!</strong> {{ error }} -->
-    <!-- </ngb-alert>
-      </p>
-    </div> -->
-
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="ragioneSociale"
-        placeholder="Asso Group"
-        name="ragioneSociale"
-        required
-        ngModel
-      />
-      <label for="ragioneSociale">Ragione Sociale</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="tipoCliente"
-        placeholder="Srl"
-        name="tipoCliente"
-        required
-        ngModel
-      />
-      <label for="tipoCliente">Tipo Cliente</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="partitaIva"
-        placeholder="0123456789"
-        name="partitaIva"
-        required
-        ngModel
-      />
-      <label for="partitaIva">Partita IVA</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="name@example.com"
-        name="email"
-        required
-        ngModel
-      />
-      <label for="email">Email</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="pec"
-        placeholder="pec"
-        name="pec"
-        required
-        ngModel
-      />
-      <label for="pec">Password</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="telefono"
-        placeholder="Telefono"
-        name="telefono"
-        required
-        ngModel
-      />
-      <label for="telefono">Telefono Azienda</label>
-    </div>
-    <hr />
-    <h3>Contatto:</h3>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="nomeContatto"
-        placeholder="Nome"
-        name="nomeContatto"
-        required
-        ngModel
-      />
-      <label for="nomeContatto">Nome</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="cognomeContatto"
-        placeholder="Cognome"
-        name="cognomeContatto"
-        required
-        ngModel
-      />
-      <label for="cognomeContatto">Cognome</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="telefonoContatto"
-        placeholder="Telefono"
-        name="telefonoContatto"
-        required
-        ngModel
-      />
-      <label for="telefonoContatto">Telefono</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input
-        type="email"
-        class="form-control"
-        id="emailContatto"
-        placeholder="name@example.com"
-        name="emailContatto"
-        required
-        ngModel
-      />
-      <label for="emailContatto">Email</label>
-    </div>
-    <hr />
-    <h3>Indirizzo sede:</h3>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="via"
-        placeholder="via"
-        name="indirizzoSede/via"
-        required
-        ngModel
-      />
-      <label for="via">via</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="civico"
-        placeholder="N° Civico"
-        name="indirizzoSede/civico"
-        required
-        ngModel
-      />
-      <label for="civico">N° Civico</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="cap"
-        placeholder="cap"
-        name="indirizzoSede/cap"
-        required
-        ngModel
-      />
-      <label for="cap">cap</label>
-    </div>
-    <h3>Comune:</h3>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="comuneNome"
-        placeholder="Città"
-        name="indirizzoSede/comune/nome"
-        required
-        ngModel
-      />
-      <label for="comuneNome">Città</label>
-    </div>
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control"
-        id="provincia"
-        placeholder="Provincia"
-        name="indirizzoSede/comune/provincia"
-        required
-        ngModel
-      />
-      <label for="provincia">Provincia</label>
-    </div>
-  </form>
-
-  <button type="submit">Aggiungi cliente</button>
-
-  <section class="container-fluid">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Ditta</th>
-          <th scope="col">P.IVA</th>
-          <th scope="col">Contatto</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">Dettagli</th>
-          <th scope="col">Modifica</th>
-          <th scope="col">Elimina</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cl of clienti">
-          <th>{{ cl.id }}</th>
-          <td>{{ cl.ragioneSociale }} {{ cl.tipoCliente }}</td>
-          <td>{{ cl.partitaIva }}</td>
-          <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
-          <td>
-            {{ cl.indirizzoSede?.comune?.nome }} ({{
-              cl.indirizzoSede?.comune?.provincia
-            }})
-          </td>
-          <td>
-            <button
-              mat-button
-              type="submit"
-              [routerLink]="[cl.id]"
-              routerLinkActive="router-link-active"
-              routerLink="client-details"
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel id="toggle-1" title="Aggiungi Anagrafica Cliente">
+    <ng-template ngbPanelContent>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <h2 class="h3 mb-3 fw-normal text-white">Crea anagrafica cliente</h2>
+        <div>
+          <p>
+            <ngb-alert
+              [dismissible]="true"
+              *ngIf="showAlert"
+              (closed)="close()"
             >
-              <i class="bi bi-info-circle"></i>
-            </button>
-          </td>
-          <!-- <td>
-          <button (click)="editCl()"><i class="bi bi-pencil-fill"></i></button>
-        </td>
-        <td>
-          <button (click)="deleteCl()"><i class="bi bi-trash-fill"></i></button>
-        </td> -->
-        </tr>
-      </tbody>
-    </table>
+              <strong>Attenzione!</strong> {{ error }}
+            </ngb-alert>
+          </p>
+        </div>
 
-    <!-- <div class="d-flex justify-content-between p-2">
-    <ngb-pagination
-      [collectionSize]="collectionSize"
-      [(page)]="page"
-      [pageSize]="pageSize"
-      (pageChange)="refreshClients()"
-    >
-    </ngb-pagination>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="ragioneSociale"
+            placeholder="Asso Group"
+            name="ragioneSociale"
+            ngModel
+          />
+          <label for="ragioneSociale">Ragione Sociale</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="tipoCliente"
+            placeholder="Srl"
+            name="tipoCliente"
+            ngModel
+          />
+          <label for="tipoCliente">Tipo Cliente</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="partitaIva"
+            placeholder="0123456789"
+            name="partitaIva"
+            ngModel
+          />
+          <label for="partitaIva">Partita IVA</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+            name="email"
+            ngModel
+          />
+          <label for="email">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="pec"
+            placeholder="pec"
+            name="pec"
+            ngModel
+          />
+          <label for="pec">Pec</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="telefono"
+            placeholder="Telefono"
+            name="telefono"
+            ngModel
+          />
+          <label for="telefono">Telefono Azienda</label>
+        </div>
 
-    <select
-      class="form-select"
-      style="width: auto"
-      [(ngModel)]="pageSize"
-      (ngModelChange)="refreshClients()"
-    >
-      <option [ngValue]="2">2 items per page</option>
-      <option [ngValue]="4">4 items per page</option>
-      <option [ngValue]="6">6 items per page</option>
-    </select>
-  </div>
-</section> -->
-  </section>
-  <router-outlet></router-outlet>
-</main>
+        <h3>Contatto:</h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="nomeContatto"
+            placeholder="Nome"
+            name="nomeContatto"
+            ngModel
+          />
+          <label for="nomeContatto">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="cognomeContatto"
+            placeholder="Cognome"
+            name="cognomeContatto"
+            ngModel
+          />
+          <label for="cognomeContatto">Cognome</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="telefonoContatto"
+            placeholder="Telefono"
+            name="telefonoContatto"
+            ngModel
+          />
+          <label for="telefonoContatto">Telefono</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="emailContatto"
+            placeholder="name@example.com"
+            name="emailContatto"
+            ngModel
+          />
+          <label for="emailContatto">Email</label>
+        </div>
+
+        <h3>Indirizzo sede:</h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="via"
+            placeholder="via"
+            name="indirizzoSede.via"
+            ngModel
+          />
+          <label for="via">via</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="civico"
+            placeholder="N° Civico"
+            name="indirizzoSede.civico"
+            ngModel
+          />
+          <label for="civico">N° Civico</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="cap"
+            placeholder="cap"
+            name="indirizzoSede.cap"
+            ngModel
+          />
+          <label for="cap">cap</label>
+        </div>
+        <h3>Comune:</h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="comuneNome"
+            placeholder="Città"
+            name="indirizzoSede.comune.nome"
+            ngModel
+          />
+          <label for="comuneNome">Città</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="provincia"
+            placeholder="Provincia"
+            name="indirizzoSede.comune.provincia"
+            ngModel
+          />
+          <label for="provincia">Provincia</label>
+        </div>
+        <div class="form-floating mb-3" [hidden]="noShow">
+          <input
+            type="text"
+            class="form-control"
+            id="dataInserimento"
+            placeholder="dataInserimento"
+            name="dataInserimento"
+            ngModel
+          />
+          <label for="dataInserimento"></label>
+        </div>
+        <button type="submit">Aggiungi</button>
+      </form>
+    </ng-template>
+
+    <router-outlet></router-outlet> </ngb-panel
+></ngb-accordion>

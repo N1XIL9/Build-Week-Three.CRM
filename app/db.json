@@ -49,6 +49,7 @@
   ],
   "client": [
     {
+      "id":1,
       "ragioneSociale": "Bruno-Romano SPA - TEST",
       "partitaIva": "14812266616",
       "tipoCliente": "SRL",
