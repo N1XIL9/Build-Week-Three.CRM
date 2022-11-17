@@ -8,34 +8,33 @@
           }}</mat-card-title
         >
         <mat-card-content>
-          <p>Id: {{ cliente?.id }}</p>
-          <p>P.IVA: {{ cliente?.partitaIva }}</p>
-          <p>Tel.: {{ cliente?.telefono }}</p>
-          <p>E-mail: {{ cliente?.email }}</p>
-          <p>pec: {{ cliente?.pec }}</p>
+          <p><span>Id:</span> {{ cliente?.id }}</p>
+          <p><span>P.IVA:</span> {{ cliente?.partitaIva }}</p>
+
+          <p><span>Tel. Aziendale:</span> {{ cliente?.telefono }}</p>
+          <p><span>E-mail Aziendale:</span> {{ cliente?.email }}</p>
+          <p><span>PEC:</span> {{ cliente?.pec }}</p>
           <p>
-            Sede Legale: {{ cliente?.indirizzoSede?.via }} n°
+            <span>Sede Legale:</span>
+            {{ cliente?.indirizzoSede?.via }} n°
             {{cliente?.indirizzoSede?.civico}} - {{ cliente?.indirizzoSede?.cap
             }} {{ cliente?.indirizzoSede?.comune?.nome }} ({{
             cliente?.indirizzoSede?.comune?.provincia}})
           </p>
-          <p><span>Id:</span> {{ cliente?.id }}</p>
-          <p><span>P.IVA:</span> {{ cliente?.partitaIva }}</p>
+          <hr />
           <p>
             <span>Contatto:</span>
             {{ cliente?.nomeContatto }} {{ cliente?.cognomeContatto }}
           </p>
-          <p><span>√ Tel.: </span> {{ cliente?.telefonoContatto }}</p>
-          <p><span>√ E-mail:</span> √ E-mail: {{ cliente?.emailContatto }}</p>
+          <p><span>Tel. Personale: </span> {{ cliente?.telefonoContatto }}</p>
+          <p><span>E-mail Personale:</span> {{ cliente?.emailContatto }}</p>
           <mat-card-actions>
-            <button
-              id="b2"
-              class="btn btn-outline-primary mb-2 me-2"
-              (click)="openVerticallyCentered(content)"
-            >
-              Modifica anagrafica Cliente
+            <button class="b1" (click)="openVerticallyCentered(content)">
+              <i class="bi bi-vector-pen"></i>
             </button>
-            <button id="b3" mat-button (click)="closeDetails()">Esci</button>
+            <button class="b2" mat-button (click)="closeDetails()">
+              <i class="bi bi-box-arrow-right"></i>
+            </button>
           </mat-card-actions>
           <hr />
           <p>
@@ -50,13 +49,15 @@
 
   <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title">Modal title</h4>
+      <h4 class="modal-title text-center">Scheda cliente</h4>
       <button
+        class="b3"
         type="button"
-        class="btn-close"
         aria-label="Close"
         (click)="modal.dismiss('Cross click')"
-      ></button>
+      >
+        <i class="bi bi-x-lg"></i>
+      </button>
     </div>
     <div class="modal-body">
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
@@ -129,7 +130,7 @@
           <label for="telefono">{{ cliente?.telefono }}</label>
         </div>
 
-        <h3>Contatto:</h3>
+        <h3>Contatto</h3>
         <div class="form-floating mb-3">
           <input
             type="text"
@@ -175,7 +176,7 @@
           <label for="emailContatto">{{ cliente?.emailContatto }}</label>
         </div>
 
-        <h3>Indirizzo sede:</h3>
+        <h3>Indirizzo sede</h3>
         <div class="form-floating mb-3">
           <input
             type="text"
@@ -209,7 +210,7 @@
           />
           <label for="cap">{{ cliente?.indirizzoSede?.cap }}</label>
         </div>
-        <h3>Comune:</h3>
+        <h3>Comune</h3>
         <div class="form-floating mb-3">
           <input
             type="text"
@@ -236,16 +237,11 @@
             >{{ cliente?.indirizzoSede?.comune?.provincia }}</label
           >
         </div>
-        <button type="submit">Salva</button>
       </form>
     </div>
     <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-light"
-        (click)="modal.close('Close click')"
-      >
-        Close
+      <button class="b4" type="submit">
+        <i class="bi bi-check-lg"></i>
       </button>
     </div>
   </ng-template>
