@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div #table>
     <table class="table table-striped">
       <thead>
@@ -104,15 +104,15 @@
       </table>
     </form>
   </div>
-</div>
+</div> -->
 
 <div class="page-content container">
   <div class="page-header text-blue-d2">
       <h1 class="page-title text-secondary-d1">
-          Invoice
+          Fattura
           <small class="page-info">
               <i class="fa fa-angle-double-right text-80"></i>
-              ID: #111-222
+              {{fattura.id}}
           </small>
       </h1>
 
@@ -137,7 +137,7 @@
                   <div class="col-12">
                       <div class="text-center text-150">
                           <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
-                          <span class="text-default-d3">Bootdey.com</span>
+                          <img src="../../../../assets/logo.png" alt="">
                       </div>
                   </div>
               </div>
@@ -149,16 +149,13 @@
                   <div class="col-sm-6">
                       <div>
                           <span class="text-sm text-grey-m2 align-middle">To:</span>
-                          <span class="text-600 text-110 text-blue align-middle">Alex Doe</span>
+                          <span class="text-600 text-110 text-blue align-middle">{{cliente?.ragioneSociale}}</span>
                       </div>
                       <div class="text-grey-m2">
                           <div class="my-1">
-                              Street, City
+                              {{cliente?.indirizzoSede?.via}}, {{cliente?.indirizzoSede?.comune?.nome}}
                           </div>
-                          <div class="my-1">
-                              State, Country
-                          </div>
-                          <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">111-111-111</b></div>
+                          <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">{{cliente?.telefono}}</b></div>
                       </div>
                   </div>
                   <!-- /.col -->
@@ -166,15 +163,10 @@
                   <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
                       <hr class="d-sm-none" />
                       <div class="text-grey-m2">
-                          <div class="mt-1 mb-2 text-secondary-m1 text-600 text-125">
-                              Invoice
-                          </div>
 
-                          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">ID:</span> #111-222</div>
+                          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Emanata il:</span> {{fattura.dataInserimento | date: "dd/MM/yyyy"}}</div>
 
-                          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Issue Date:</span> Oct 12, 2019</div>
-
-                          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">Unpaid</span></div>
+                          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">{{fattura.stato}}</span></div>
                       </div>
                   </div>
                   <!-- /.col -->
@@ -183,44 +175,23 @@
               <div class="mt-4">
                   <div class="row text-600 text-white bgc-default-tp1 py-25">
                       <div class="d-none d-sm-block col-1">#</div>
-                      <div class="col-9 col-sm-5">Description</div>
-                      <div class="d-none d-sm-block col-4 col-sm-2">Qty</div>
-                      <div class="d-none d-sm-block col-sm-2">Unit Price</div>
-                      <div class="col-2">Amount</div>
+                      <div class="col-9 col-sm-5">Descrizione</div>
+                      <div class="d-none d-sm-block col-4 col-sm-2">Quantità</div>
+                      <div class="d-none d-sm-block col-sm-2">Prezzo</div>
+                      <div class="col-2">Totale</div>
                   </div>
 
                   <div class="text-95 text-secondary-d3">
                       <div class="row mb-2 mb-sm-0 py-25">
-                          <div class="d-none d-sm-block col-1">1</div>
-                          <div class="col-9 col-sm-5">Domain registration</div>
-                          <div class="d-none d-sm-block col-2">2</div>
-                          <div class="d-none d-sm-block col-2 text-95">$10</div>
-                          <div class="col-2 text-secondary-d2">$20</div>
+                          <div class="d-none d-sm-block col-1">{{fattura.id}}</div>
+                          <div class="col-9 col-sm-5">Servizio</div>
+                          <div class="d-none d-sm-block col-2">Quantità</div>
+                          <div class="d-none d-sm-block col-2 text-95">{{fattura.importo | currency:"EUR": true}}</div>
+                          <div class="col-2 text-secondary-d2">{{fattura.importo | currency: "EUR": true}}</div>
                       </div>
-
-                      <div class="row mb-2 mb-sm-0 py-25 bgc-default-l4">
-                          <div class="d-none d-sm-block col-1">2</div>
-                          <div class="col-9 col-sm-5">Web hosting</div>
-                          <div class="d-none d-sm-block col-2">1</div>
-                          <div class="d-none d-sm-block col-2 text-95">$15</div>
-                          <div class="col-2 text-secondary-d2">$15</div>
-                      </div>
-
-                      <div class="row mb-2 mb-sm-0 py-25">
-                          <div class="d-none d-sm-block col-1">3</div>
-                          <div class="col-9 col-sm-5">Software development</div>
-                          <div class="d-none d-sm-block col-2">--</div>
-                          <div class="d-none d-sm-block col-2 text-95">$1,000</div>
-                          <div class="col-2 text-secondary-d2">$1,000</div>
-                      </div>
-
-                      <div class="row mb-2 mb-sm-0 py-25 bgc-default-l4">
-                          <div class="d-none d-sm-block col-1">4</div>
-                          <div class="col-9 col-sm-5">Consulting</div>
-                          <div class="d-none d-sm-block col-2">1 Year</div>
-                          <div class="d-none d-sm-block col-2 text-95">$500</div>
-                          <div class="col-2 text-secondary-d2">$500</div>
-                      </div>
-                  </div>
-
-                  <div class="row border-b-2 brc-default-l2"></div>
+                   </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

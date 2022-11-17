@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Client } from '../clienti/client';
 import { ClientService } from '../clienti/client.service';
 import { Fatture } from './fatture';
 import { FattureService } from './fatture.service';
@@ -18,12 +19,13 @@ export class FattureComponent implements OnInit {
   error = undefined
   showAlert = false
 
-  constructor(private fattureService: FattureService, private clienteService: ClientService) { }
+
+  constructor(private fattureService: FattureService, private clientService: ClientService) { }
 
   ngOnInit(): void {
-  this.fattureService.getInvoice().subscribe((data) =>
-    this.fatture = data)
-  }
+  this.fattureService.getInvoice().subscribe((data) =>{
+    this.fatture = data
+  })}
 
   onSubmit(form: NgForm){
     form.value.dataInserimento = this.dateIns

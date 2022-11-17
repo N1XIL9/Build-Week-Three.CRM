@@ -252,8 +252,8 @@
         <tr *ngFor="let fattura of fatture">
           <th>{{ fattura.id }}</th>
           <td>{{fattura.cliente?.id}}</td>
-          <td>{{ fattura.dataInserimento }}</td>
-          <td>{{ fattura.importo }}</td>
+          <td>{{ fattura.dataInserimento | date: "dd/MM/yyyy" }}</td>
+          <td>{{ fattura.importo | currency:"EUR": true }}</td>
           <td>{{fattura.stato}}</td>
           <td>
             <button mat-button type="submit" [routerLink]="[fattura.id]" routerLinkActive="router-link-active" ><i
