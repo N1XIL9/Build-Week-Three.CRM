@@ -10,6 +10,19 @@ nav {
     color: lightgray;
   }
 }
+
+.img {
+  background-color: #000000;
+  opacity: 0.8;
+
+  height: 50vh;
+  background-image: url("https://www.thetreegroup.co.uk/hubfs/crm-customer-relationship-management-business-internet-techology-concept-137888377.jpg");
+
+  box-shadow: inset -76px -3px 232px 75px #131419;
+  background-size: cover;
+  contain: content;
+  background-position: center;
+}
 #user {
   padding: 1rem;
   margin-top: 10px;
