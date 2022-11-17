@@ -7,7 +7,10 @@
       "email": "",
       "password": "bestPassw0rd",
       "age": "",
-      "roles": ["ROLE_ADMIN", "ROLE_USER"],
+      "roles": [
+        "ROLE_ADMIN",
+        "ROLE_USER"
+      ],
       "role": ""
     },
     {
@@ -49,7 +52,7 @@
   ],
   "client": [
     {
-      "id":1,
+      "id": 1,
       "ragioneSociale": "Bruno-Romano SPA - TEST",
       "partitaIva": "14812266616",
       "tipoCliente": "SRL",
@@ -70,6 +73,25 @@
         }
       },
       "dataInserimento": "2019-06-01T08:11:01.911+00:00"
+    },
+    {
+      "ragioneSociale": "Asso Group",
+      "tipoCliente": "Srl",
+      "partitaIva": "053447890762",
+      "email": "assogroupsrl@asso.it",
+      "pec": "assogroupsrl@asso.it",
+      "telefono": "3408353380",
+      "nomeContatto": "DANIELA",
+      "cognomeContatto": "DI FILIPPO",
+      "telefonoContatto": "3408353380",
+      "emailContatto": "danydifilippo@gmail.com",
+      "indirizzoSede.via": "VIA ROMA",
+      "indirizzoSede.civico": "56",
+      "indirizzoSede.cap": "80021",
+      "indirizzoSede.comune.nome": "ROMA",
+      "indirizzoSede.comune.provincia": "RM",
+      "dataInserimento": "2022-11-17T08:40:27.404Z",
+      "id": 2
     }
   ],
   "invoices": [

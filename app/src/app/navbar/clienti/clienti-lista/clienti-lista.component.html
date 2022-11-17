@@ -1,5 +1,5 @@
-<section class="container-fluid text-white">
-  <table class="table table-striped">
+<div class="container-fluid">
+  <table class="table table-striped text-white">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -20,7 +20,8 @@
         <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
         <td>
           {{ cl.indirizzoSede?.comune?.nome }} ({{
-          cl.indirizzoSede?.comune?.provincia }})
+            cl.indirizzoSede?.comune?.provincia
+          }})
         </td>
         <td>
           <button
@@ -42,7 +43,7 @@
       </tr>
     </tbody>
   </table>
-</section>
+</div>
 
 <!-- <div class="d-flex justify-content-between p-2">
 <ngb-pagination

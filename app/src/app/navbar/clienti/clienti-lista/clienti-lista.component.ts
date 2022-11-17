@@ -3,16 +3,16 @@ import { Client } from '../client';
 import { ClientService } from '../client.service';
 
 @Component({
-  templateUrl: './client-list.page.html',
-  styleUrls: ['./client-list.page.scss']
+  selector: 'app-clienti-lista',
+  templateUrl: './clienti-lista.component.html',
+  styleUrls: ['./clienti-lista.component.scss']
 })
-export class ClientListPage implements OnInit {
+export class ClientiListaComponent implements OnInit {
 
   clienti: Client[]=[]
   page = 1;
 	pageSize = 4;
   collectionSize?:number
-
 
   constructor(private clientService:ClientService) { }
 

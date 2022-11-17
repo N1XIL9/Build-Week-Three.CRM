@@ -21,7 +21,6 @@ export class ClientiComponent implements OnInit {
   constructor(private clientService:ClientService, private router:Router) { }
 
   ngOnInit(): void {
-
   }
 
   onSubmit(form:NgForm){
