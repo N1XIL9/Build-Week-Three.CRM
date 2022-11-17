@@ -15,7 +15,7 @@ import { ClientService } from '../client.service';
   styleUrls: ['./client-details.page.scss'],
 })
 export class ClientDetailsPage implements OnInit {
-  cliente?: Client;
+  cliente?: any;
   showCard? = true;
   closeResult?: string;
   userForm!: FormGroup;
@@ -79,6 +79,10 @@ export class ClientDetailsPage implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.userForm.value);
+    this.clientService
+      .patchClient(this.cliente?.id, this.userForm.value)
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 }

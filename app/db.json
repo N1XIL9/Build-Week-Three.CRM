@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "password": "bestPassw0rd",
-      "age": "",
-      "roles": ["ROLE_ADMIN", "ROLE_USER"],
-      "role": ""
-    },
-    {
       "email": "t@t",
       "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
       "firstname": "",
@@ -52,16 +42,16 @@
   "client": [
     {
       "id": 1,
-      "ragioneSociale": "Bruno-Romano SPA - TEST",
-      "partitaIva": "14812266616",
-      "tipoCliente": "SRL",
-      "email": "rosalino.caruso@gmail.com",
-      "pec": "antonio.damico@gmail.com",
-      "telefono": "+38 855 62 44 5685",
-      "nomeContatto": "Sarita",
-      "cognomeContatto": "Serr",
-      "telefonoContatto": "380.260.3225",
-      "emailContatto": "armando.martinelli@hotmail.com",
+      "ragioneSociale": "",
+      "partitaIva": "",
+      "tipoCliente": "",
+      "email": "",
+      "pec": "",
+      "telefono": "",
+      "nomeContatto": "Maria",
+      "cognomeContatto": "",
+      "telefonoContatto": "",
+      "emailContatto": "",
       "indirizzoSede": {
         "via": "Contrada Gastone 4, Piano 4",
         "civico": "698",
