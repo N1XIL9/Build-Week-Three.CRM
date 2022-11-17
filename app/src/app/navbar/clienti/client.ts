@@ -14,10 +14,8 @@ export class Client {
     via?:string
     civico?:string
     cap?:string
-    comune: {
-      nome?:string
-      provincia?:string
-    }
+    comuneNome?:string
+    comuneProvincia?:string
   }
   dataInserimento?:string
 }

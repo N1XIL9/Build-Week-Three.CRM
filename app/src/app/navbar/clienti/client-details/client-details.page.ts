@@ -34,9 +34,30 @@ export class ClientDetailsPage implements OnInit {
       this.clientService.getClientDetails(id).subscribe((data) => {
         this.cliente = data;
         console.log(this.cliente);
-        this.userForm = this.formBuilder.group(this.cliente);
-      });
+
+      })
     });
+    this.userForm = this.formBuilder.group({
+      id:this.cliente.id,
+      ragioneSociale:'',
+      partitaIva:'',
+      tipoCliente:'',
+      email:'',
+      pec:'',
+      telefono:'',
+      nomeContatto:'',
+      cognomeContatto:'',
+      telefonoContatto:'',
+      emailContatto:'',
+      indirizzoSede:'',
+      via:'',
+      civico:'',
+      cap:'',
+      comune: {
+      nome:'',
+      provincia:'',
+      }
+    })
   }
 
   closeDetails() {
