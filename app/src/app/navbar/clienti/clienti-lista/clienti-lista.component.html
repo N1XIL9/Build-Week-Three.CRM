@@ -20,19 +20,27 @@
         <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
         <!-- <td [hidden]="noShow">{{ cl.indirizzoSede?.comune }}</td> -->
         <td class="lbTel">
-          {{ cl.indirizzoSede?.comune?.nome }} ({{
-          cl.indirizzoSede?.comune?.provincia
+          {{ cl.indirizzoSede?.comuneNome }} ({{
+            cl.indirizzoSede?.comuneProvincia
           }})
         </td>
         <td>
-          <button id="b1" mat-button type="submit" [routerLink]="[cl.id]" routerLinkActive="router-link-active"
-            routerLink="client-details">
+          <button
+            id="b1"
+            mat-button
+            type="submit"
+            [routerLink]="[cl.id]"
+            routerLinkActive="router-link-active"
+            routerLink="client-details"
+          >
             <i class="bi bi-info-circle"></i>
           </button>
         </td>
 
         <td>
-          <button (click)="deleteCl(cl)"><i class="bi bi-trash-fill"></i></button>
+          <button (click)="deleteCl(cl)">
+            <i class="bi bi-trash-fill"></i>
+          </button>
         </td>
       </tr>
     </tbody>

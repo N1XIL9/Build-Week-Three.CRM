@@ -108,15 +108,15 @@
 
 <div class="page-content container">
   <div class="page-header text-blue-d2">
-      <h1 class="page-title text-secondary-d1">
-          Fattura
-          <small class="page-info">
-              <i class="fa fa-angle-double-right text-80"></i>
-              {{fattura.id}}
-          </small>
-      </h1>
+    <h1 class="page-title text-secondary-d1">
+      Fattura
+      <small class="page-info">
+        <i class="fa fa-angle-double-right text-80"></i>
+        {{ fattura.id }}
+      </small>
+    </h1>
 
-      <!-- <div class="page-tools">
+    <!-- <div class="page-tools">
           <div class="action-buttons">
               <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
                   <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
@@ -137,57 +137,80 @@
           <div class="col-12">
             <div class="text-center text-150">
               <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
-              <img src="../../../../assets/logo.png" alt="">
+              <img src="../../../../assets/logo.png" alt="" />
             </div>
           </div>
-    </div>
-              <!-- .row -->
-
-              <hr class="row brc-default-l1 mx-n1 mb-4" />
-
-    <div class="row">
-      <div class="col-sm-6">
-        <div>
-          <span class="text-sm text-grey-m2 align-middle">To:</span>
-          <span class="text-600 text-110 text-blue align-middle">{{cliente?.ragioneSociale}}</span>
         </div>
-        <div class="text-grey-m2">
-          <div class="my-1">
-            {{cliente?.indirizzoSede?.via}}, {{cliente?.indirizzoSede?.comune?.nome}}
+        <!-- .row -->
+
+        <hr class="row brc-default-l1 mx-n1 mb-4" />
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div>
+              <span class="text-sm text-grey-m2 align-middle">To:</span>
+              <span class="text-600 text-110 text-blue align-middle">{{
+                cliente?.ragioneSociale
+              }}</span>
+            </div>
+            <div class="text-grey-m2">
+              <div class="my-1">
+                {{ cliente?.indirizzoSede?.via }},
+                {{ cliente?.indirizzoSede?.comuneNome }}
+              </div>
+              <div class="my-1">
+                <i class="fa fa-phone fa-flip-horizontal text-secondary"></i>
+                <b class="text-600">{{ cliente?.telefono }}</b>
+              </div>
+            </div>
           </div>
-          <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">{{cliente?.telefono}}</b></div>
+          <!-- /.col -->
+
+          <div
+            class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end"
+          >
+            <hr class="d-sm-none" />
+            <div class="text-grey-m2">
+              <div class="my-2">
+                <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
+                <span class="text-600 text-90">Emanata il:</span>
+                {{ fattura.dataInserimento | date: "dd/MM/yyyy" }}
+              </div>
+
+              <div class="my-2">
+                <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
+                <span class="text-600 text-90">Status:</span>
+                <span class="badge badge-warning badge-pill px-25">{{
+                  fattura.stato
+                }}</span>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
         </div>
-      </div>
-                  <!-- /.col -->
 
-      <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
-      <hr class="d-sm-none" />
-        <div class="text-grey-m2">
+        <div class="mt-4">
+          <div class="row text-600 text-white bgc-default-tp1 py-25">
+            <div class="d-none d-sm-block col-1">#</div>
+            <div class="col-9 col-sm-5">Descrizione</div>
+            <div class="d-none d-sm-block col-4 col-sm-2">Quantità</div>
+            <div class="d-none d-sm-block col-sm-2">Prezzo</div>
+            <div class="col-2">Totale</div>
+          </div>
 
-          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Emanata il:</span> {{fattura.dataInserimento | date: "dd/MM/yyyy"}}</div>
-
-          <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">{{fattura.stato}}</span></div>
-        </div>
-      </div>
-                  <!-- /.col -->
-    </div>
-
-    <div class="mt-4">
-      <div class="row text-600 text-white bgc-default-tp1 py-25">
-        <div class="d-none d-sm-block col-1">#</div>
-        <div class="col-9 col-sm-5">Descrizione</div>
-        <div class="d-none d-sm-block col-4 col-sm-2">Quantità</div>
-        <div class="d-none d-sm-block col-sm-2">Prezzo</div>
-        <div class="col-2">Totale</div>
-      </div>
-
-      <div class="text-95 text-secondary-d3">
-        <div class="row mb-2 mb-sm-0 py-25">
-          <div class="d-none d-sm-block col-1">{{fattura.id}}</div>
-          <div class="col-9 col-sm-5">Servizio</div>
-          <div class="d-none d-sm-block col-2">Quantità</div>
-          <div class="d-none d-sm-block col-2 text-95">{{fattura.importo | currency:"EUR": true}}</div>
-          <div class="col-2 text-secondary-d2">{{fattura.importo | currency: "EUR": true}}</div>
+          <div class="text-95 text-secondary-d3">
+            <div class="row mb-2 mb-sm-0 py-25">
+              <div class="d-none d-sm-block col-1">{{ fattura.id }}</div>
+              <div class="col-9 col-sm-5">Servizio</div>
+              <div class="d-none d-sm-block col-2">Quantità</div>
+              <div class="d-none d-sm-block col-2 text-95">
+                {{ fattura.importo | currency: "EUR":true }}
+              </div>
+              <div class="col-2 text-secondary-d2">
+                {{ fattura.importo | currency: "EUR":true }}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

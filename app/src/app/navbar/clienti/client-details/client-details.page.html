@@ -217,11 +217,11 @@
             class="form-control"
             id="comuneNome"
             placeholder="Città"
-            formControlName="comune:nome"
+            formControlName="comuneNome"
             ngModel
           />
           <label for="comuneNome"
-            >{{ cliente?.indirizzoSede?.comune?.nome }}</label
+            >{{ cliente?.indirizzoSede?.comuneNome }}</label
           >
         </div>
         <div class="form-floating mb-3">
@@ -229,20 +229,20 @@
             type="text"
             class="form-control"
             id="provincia"
-            placeholder="Provincia"
-            formControlName="comune.provincia"
+            placeholder="comuneProvincia"
+            formControlName="comuneProvincia"
             ngModel
           />
           <label for="provincia"
-            >{{ cliente?.indirizzoSede?.comune?.provincia }}</label
+            >{{ cliente?.indirizzoSede?.comuneProvincia }}</label
           >
         </div>
+        <div class="modal-footer">
+          <button class="b4" type="submit">
+            <i class="bi bi-check-lg"></i>
+          </button>
+        </div>
       </form>
-    </div>
-    <div class="modal-footer">
-      <button class="b4" type="submit">
-        <i class="bi bi-check-lg"></i>
-      </button>
     </div>
   </ng-template>
 </section>

@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import {
   AfterContentInit,
   AfterViewInit,
@@ -20,6 +21,7 @@ export class ClientDetailsPage implements OnInit {
   closeResult?: string;
   userForm!: FormGroup;
   noShow = true;
+  idNr?:number
 
   constructor(
     private router: ActivatedRoute,
@@ -34,11 +36,10 @@ export class ClientDetailsPage implements OnInit {
       this.clientService.getClientDetails(id).subscribe((data) => {
         this.cliente = data;
         console.log(this.cliente);
-
+        this.idNr=id
       })
-    });
+    })
     this.userForm = this.formBuilder.group({
-      id:this.cliente.id,
       ragioneSociale:'',
       partitaIva:'',
       tipoCliente:'',
@@ -49,15 +50,14 @@ export class ClientDetailsPage implements OnInit {
       cognomeContatto:'',
       telefonoContatto:'',
       emailContatto:'',
-      indirizzoSede:'',
-      via:'',
-      civico:'',
-      cap:'',
-      comune: {
-      nome:'',
-      provincia:'',
+      indirizzoSede:{
+        via:'',
+        civico:'',
+        cap:'',
+        comuneNome:'',
+        comuneProvincia:''
       }
-    })
+    });
   }
 
   closeDetails() {
@@ -90,20 +90,22 @@ export class ClientDetailsPage implements OnInit {
       .get('indirizzoSede.cap')
       ?.setValue(this.cliente?.indirizzoSede?.cap);
     this.userForm
-      .get('indirizzoSede.comune.nome')
-      ?.setValue(this.cliente?.indirizzoSede?.comune.nome);
+      .get('indirizzoSede.comuneNome')
+      ?.setValue(this.cliente?.indirizzoSede?.comuneNome);
     this.userForm
-      .get('indirizzoSede.comune.provincia')
-      ?.setValue(this.cliente?.indirizzoSede?.comune.provincia);
+      .get('indirizzoSede.comuneProvincia')
+      ?.setValue(this.cliente?.indirizzoSede?.comuneProvincia);
 
     console.log(this.userForm.value);
   }
 
   onSubmit() {
-    this.clientService
-      .patchClient(this.cliente?.id, this.userForm.value)
-      .subscribe((data) => {
-        console.log(data);
-      });
+    // this.clientService
+    //   .patchClient(this.idNr?, this.userForm.value)
+    //   .subscribe((data) => {
+    //     console.log(data);
+    //   });
+    console.log(this.idNr);
+
   }
 }
