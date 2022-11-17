@@ -11,6 +11,7 @@ import { ServiceService } from 'src/app/auth/service.service';
 })
 export class DettagliUtenteComponent implements OnInit {
   user!: any;
+  // user: Users = {} as Users;
   bool = false;
   userForm!: FormGroup;
 
@@ -55,5 +56,14 @@ export class DettagliUtenteComponent implements OnInit {
     console.log(this.userForm.value);
   }
 
-  deleteUser() {}
+  deleteUser(user: any) {
+    if (confirm('Vuoi eliminare questo utente?')) {
+      this.authService.deleteUser(user.id).subscribe(
+        (resp) => {
+          this.user;
+        },
+        (error) => console.log(error)
+      );
+    }
+  }
 }

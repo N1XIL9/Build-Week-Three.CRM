@@ -1,121 +1,97 @@
 <div class="container">
-  <div #table>
-    <table class="table">
-      <thead>
-        <tr class="col-12">
-          <th class="col-1">ID</th>
-          <th class="col-2">NOME</th>
-          <th class="col-2">COGNOME</th>
-          <th class="col-1">ETA'</th>
-          <th class="col-2">RUOLO</th>
-          <th class="col-2">EMAIL</th>
-          <th class="col-1">MODIFICA</th>
-          <th class="col-1">ELIMINA</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th id="tid" calss="row">{{ user.id }}</th>
-          <td>
-            {{ user.firstname }}
-          </td>
-          <td>{{ user.lastname }}</td>
-          <td>{{ user.age }}</td>
-          <td>{{ user.roles }}</td>
-          <td>{{ user.email }}</td>
-          <td>
-            <button id="b2" (click)="changeProp()">
-              <i class="bi bi-vector-pen"></i>
-            </button>
-          </td>
-          <td>
-            <button id="b3" (click)="deleteUser()">
-              <i class="bi bi-trash3-fill"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div #formMod *ngIf="bool">
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <table class="table tm">
-        <thead>
-          <tr>
-            <th class="th" scope="col"></th>
-            <th class="th" scope="col">NOME</th>
-            <th class="th" scope="col">COGNOME</th>
-            <th class="th" scope="col">ETA'</th>
-            <th class="th" scope="col">RUOLO</th>
-            <th class="th" scope="col">EMAIL</th>
-            <th class="th" scope="col">CONFERMA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="td" scope="row"></th>
-            <td class="td">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="firstname"
-                  formControlName="firstname"
-                />
-              </div>
-            </td>
-            <td class="td">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="lastname"
-                  formControlName="lastname"
-                />
-              </div>
-            </td>
-            <td class="td">
-              <div class="mb-3">
-                <input
-                  type="age"
-                  class="form-control"
-                  id="age"
-                  formControlName="age"
-                />
-              </div>
-            </td>
-            <td class="td">
-              <select
-                class="form-select"
-                aria-label="Default select example"
-                formControlName="roles"
-                id="floatingrole"
-              >
-                <optgroup>
-                  <option disabled selected></option>
-                  <option value="ROLE_ADMIN">Amministratore</option>
-                  <option value="ROLE_USER">Impiegato</option>
-                </optgroup>
-              </select>
-            </td>
-            <td class="td">
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  formControlName="email"
-                />
-              </div>
-            </td>
-            <td class="td b4t">
-              <button id="b4" type="submit">
-                <i class="bi bi-check-lg"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-  </div>
+    <div #table>
+        <table class="table">
+            <thead>
+                <tr class="col-12">
+                    <th class="col-1">ID</th>
+                    <th class="col-2">NOME</th>
+                    <th class="col-2">COGNOME</th>
+                    <th class="col-1">ETA'</th>
+                    <th class="col-2">RUOLO</th>
+                    <th class="col-2">EMAIL</th>
+                    <th class="col-1">MODIFICA</th>
+                    <th class="col-1">ELIMINA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="tid" calss="row">{{ user.id }}</th>
+                    <td>
+                        {{ user.firstname }}
+                    </td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.roles }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <button id="b2" (click)="changeProp()">
+                            <i class="bi bi-vector-pen"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button id="b3" (click)="deleteUser(user)">
+                            <i class="bi bi-trash3-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div #formMod *ngIf="bool">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <table class="table tm">
+                <thead>
+                    <tr>
+                        <th class="th" scope="col"></th>
+                        <th class="th" scope="col">NOME</th>
+                        <th class="th" scope="col">COGNOME</th>
+                        <th class="th" scope="col">ETA'</th>
+                        <th class="th" scope="col">RUOLO</th>
+                        <th class="th" scope="col">EMAIL</th>
+                        <th class="th" scope="col">CONFERMA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="td" scope="row"></th>
+                        <td class="td">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="firstname" formControlName="firstname" />
+                            </div>
+                        </td>
+                        <td class="td">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="lastname" formControlName="lastname" />
+                            </div>
+                        </td>
+                        <td class="td">
+                            <div class="mb-3">
+                                <input type="age" class="form-control" id="age" formControlName="age" />
+                            </div>
+                        </td>
+                        <td class="td">
+                            <select class="form-select" aria-label="Default select example" formControlName="roles"
+                                id="floatingrole">
+                                <optgroup>
+                                    <option disabled selected></option>
+                                    <option value="ROLE_ADMIN">Amministratore</option>
+                                    <option value="ROLE_USER">Impiegato</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td class="td">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" formControlName="email" />
+                            </div>
+                        </td>
+                        <td class="td b4t">
+                            <button id="b4" type="submit">
+                                <i class="bi bi-check-lg"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
 </div>
