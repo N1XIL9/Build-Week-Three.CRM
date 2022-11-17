@@ -12,14 +12,14 @@ export class FattureService {
 
 
   addInvoice(obj: Fatture){
-    return this.http.post(environment.urlAPI + "fatture", obj)
+    //return this.http.post(environment.urlAPI + "", obj)
   }
 
   getInvoice(){
     return this.http.get<Fatture[]>(environment.urlAPI + "invoices")
   }
 
-  getInvoiceDetails(id: any){
-    return this.http.get<Fatture>(environment.urlAPI + "invoices/", id)
+  getInvoiceDetails(id: number){
+    return this.http.get<Fatture>(environment.urlAPI + "invoices/" + id)
   }
 }

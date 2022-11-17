@@ -89,7 +89,7 @@
       "numero": 1,
       "anno": 2020,
       "importo": 2289.24,
-      "stato": "NON PAGATA",
+      "stato": "NON_PAGATA",
       "cliente": {
         "id": 1
       },

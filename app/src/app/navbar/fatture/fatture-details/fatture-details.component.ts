@@ -11,7 +11,7 @@ import { FattureService } from '../fatture.service';
 export class FattureDetailsComponent implements OnInit {
   fattura!: any;
   bool= false
-  userForm!: FormGroup
+  fatturaForm!: FormGroup
 
   constructor(private fattureService: FattureService, private router: ActivatedRoute, private formBuilder: FormBuilder) { }
 
@@ -22,12 +22,30 @@ export class FattureDetailsComponent implements OnInit {
         this.fattura = data;
       });
     });
+    this.fatturaForm = this.formBuilder.group({
+      cliente: '',
+      numero: '',
+      importo: '',
+      stato: '',
+    });
   }
 
-  onSubmit(){}
 
-  changeProp(){}
 
-  deleteUser(){}
+ onSubmit() {
 
+ }
+
+changeProp() {
+  this.bool = !this.bool;
+  this.fatturaForm.get('cliente')?.setValue(this.fattura.cliente);
+  this.fatturaForm.get('numero')?.setValue(this.fattura.numero);
+  this.fatturaForm.get('importo')?.setValue(this.fattura.importo);
+  this.fatturaForm.get('stato')?.setValue(this.fattura.stato);
+  console.log(this.fatturaForm.value);
 }
+
+deleteUser() {}
+}
+
+

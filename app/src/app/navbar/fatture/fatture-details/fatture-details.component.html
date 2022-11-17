@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row"></th>
+          <th scope="row">{{fattura.id}}</th>
           <td>
             {{ fattura.cliente }}
           </td>
@@ -38,16 +38,15 @@
     </table>
   </div>
   <div #formMod *ngIf="bool">
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="fatturaForm" (ngSubmit)="onSubmit()">
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">NOME</th>
-            <th scope="col">COGNOME</th>
-            <th scope="col">ETA'</th>
-            <th scope="col">RUOLO</th>
-            <th scope="col">EMAIL</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Numero Fattura</th>
+            <th scope="col">Importo</th>
+            <th scope="col">Stato</th>
             <th scope="col">CONFERMA</th>
           </tr>
         </thead>
@@ -59,8 +58,8 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="firstname"
-                  formControlName="firstname"
+                  id="cliente"
+                  formControlName="cliente"
                 />
               </div>
             </td>
@@ -69,18 +68,18 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="lastname"
-                  formControlName="lastname"
+                  id="numero"
+                  formControlName="numero"
                 />
               </div>
             </td>
             <td>
               <div class="mb-3">
                 <input
-                  type="age"
+                  type="text"
                   class="form-control"
-                  id="age"
-                  formControlName="age"
+                  id="importo"
+                  formControlName="importo"
                 />
               </div>
             </td>
@@ -88,25 +87,14 @@
               <select
                 class="form-select"
                 aria-label="Default select example"
-                formControlName="roles"
+                formControlName="stato"
                 id="floatingrole"
               >
                 <optgroup>
-                  <option disabled selected></option>
-                  <option value="ROLE_ADMIN">Amministratore</option>
-                  <option value="ROLE_USER">Impiegato</option>
+                  <option selected value="NON_PAGATA">Non Pagata</option>
+                  <option value="PAGATA">Pagata</option>
                 </optgroup>
               </select>
-            </td>
-            <td>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  formControlName="email"
-                />
-              </div>
             </td>
             <td>
               <button type="submit"><i class="bi bi-vector-pen"></i></button>
