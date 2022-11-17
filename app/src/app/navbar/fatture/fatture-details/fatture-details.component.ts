@@ -14,7 +14,7 @@ export class FattureDetailsComponent implements OnInit {
   fattura!: any;
   bool= false
   fatturaForm!: FormGroup
-  idNr:any
+  idNr?: any
   cliente?: Client
 
   constructor(private fattureService: FattureService, private router: ActivatedRoute, private formBuilder: FormBuilder, private clientService: ClientService) { }
@@ -25,10 +25,10 @@ export class FattureDetailsComponent implements OnInit {
       this.fattureService.getInvoiceDetails(id).subscribe((data) => {
         this.fattura = data;
         this.idNr = this.fattura.cliente.id
-        this.clientService.getClientDetails(this.idNr).subscribe((data)=>{
+        this.clientService.getClientDetails(this.idNr).subscribe(data => {
           this.cliente = data
-        }
-        )
+          console.log(this.cliente)
+        })
       });
     });
     this.fatturaForm = this.formBuilder.group({

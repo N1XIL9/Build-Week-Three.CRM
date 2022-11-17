@@ -1,12 +1,13 @@
 export class Fatture {
     id?: number
+    data?: string
     numero?: number
     anno?: number
     importo?: number
-    stato: string = "NON_PAGATA"
+    stato: string = "NON PAGATA"
     cliente?: {
       id?: number
     }
-    dataInserimento: Date = new Date()
+    dataInserimento?: string
     dataUltimaModifica?: string
 }
