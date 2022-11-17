@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utente.component';
 import { MatCardModule } from '@angular/material/card';
 import { ClientDetailsPage } from './navbar/clienti/client-details/client-details.page';
+import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fatture-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ClientDetailsPage } from './navbar/clienti/client-details/client-detail
     ClientiComponent,
     FattureComponent,
     DettagliUtenteComponent,
-    ClientDetailsPage
+    ClientDetailsPage,
+    FattureDetailsComponent
   ],
   imports: [
     BrowserModule,

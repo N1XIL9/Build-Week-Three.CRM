@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
+import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fatture-details.component';
 
 const routes: Routes = [
 
@@ -40,6 +41,12 @@ const routes: Routes = [
         path: 'fatture',
         component: FattureComponent,
         canActivate: [AuthGuard],
+        children: [
+          {
+          path: ":id",
+          component: FattureDetailsComponent
+          }
+        ]
       },
       {
         path: ':utenti',

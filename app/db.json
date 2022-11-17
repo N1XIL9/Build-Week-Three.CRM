@@ -54,7 +54,7 @@
       "password": "$2a$10$lwEDTJDOP0JEqwVPNQs22OYD00lqfvPVopfCJAkzuHAPGKPtFYDH2",
       "firstname": "Luigi",
       "lastname": "Crisci",
-      "age": 27,
+      "age": "25",
       "id": 7
     }
   ],
