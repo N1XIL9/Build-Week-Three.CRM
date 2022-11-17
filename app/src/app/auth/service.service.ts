@@ -39,4 +39,8 @@ export class ServiceService {
   getUserDetails(id: number) {
     return this.http.get<Users>(environment.urlAPI + 'users/' + id);
   }
+
+  deleteUser(id: number) {
+    return this.http.delete<Users>(environment.urlAPI + 'users/' + id);
+  }
 }
