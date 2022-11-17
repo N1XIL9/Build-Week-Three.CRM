@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Client } from '../clienti/client';
 import { ClientService } from '../clienti/client.service';
 import { Fatture } from './fatture';
@@ -18,6 +18,7 @@ export class FattureComponent implements OnInit {
   noShow = true
   error = undefined
   showAlert = false
+  invoiceForm: FormGroup = new FormGroup({})
 
 
   constructor(private fattureService: FattureService, private clientService: ClientService) { }
@@ -27,16 +28,16 @@ export class FattureComponent implements OnInit {
     this.fatture = data
   })}
 
-  onSubmit(form: NgForm){
-    form.value.dataInserimento = this.dateIns
-    form.value.stato = this.statoFattura
-    this.fattureService.addInvoice(form.value).subscribe((data) =>{console.log(data);
-  },
-  err => {
-    console.log(err);
-    this.error = err.error;
-    this.showAlert = !this.showAlert
-    })
+  onSubmit(){
+  //   form.value.dataInserimento = this.dateIns
+  //   form.value.stato = this.statoFattura
+  //   this.fattureService.addInvoice(form.value).subscribe((data) =>{console.log(data);
+  // },
+  // err => {
+  //   console.log(err);
+  //   this.error = err.error;
+  //   this.showAlert = !this.showAlert
+  //   })
   }
 
 
