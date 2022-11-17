@@ -148,6 +148,20 @@
       "dataInserimento": "2022-11-17T12:07:31.713Z",
       "stato": "NON PAGATA",
       "id": 4
+    },
+    {
+      "cliente.id": "Mario",
+      "importo": "400",
+      "dataInserimento": "2022-11-17T14:15:47.148Z",
+      "stato": "NON PAGATA",
+      "id": 5
+    },
+    {
+      "cliente": "",
+      "importo": "",
+      "dataInserimento": "2022-11-17T14:35:29.041Z",
+      "stato": "NON PAGATA",
+      "id": 6
     }
   ]
 }
