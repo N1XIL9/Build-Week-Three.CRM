@@ -81,7 +81,27 @@ input {
   border: none;
 }
 
+input:hover {
+  background: #131419;
+  color: #fbb400;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
 select {
   background-color: #131419;
   color: #006c9c;
+}
+
+#firstname,
+#lastname,
+#age,
+#floatingrole,
+#email {
+  background: #131419;
+  color: #fbb400;
 }

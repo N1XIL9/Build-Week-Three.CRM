@@ -48,7 +48,8 @@
       "firstname": "Nicola",
       "lastname": "Lerra",
       "age": 31,
-      "id": 6
+      "id": 6,
+      "roles": "ROLE_ADMIN"
     }
   ],
   "client": [
