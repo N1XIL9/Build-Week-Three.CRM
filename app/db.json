@@ -39,7 +39,8 @@
       "lastname": "DI FILIPPO",
       "age": 39,
       "role": "ROLE_ADMIN",
-      "id": 5
+      "id": 5,
+      "roles": "ROLE_ADMIN"
     },
     {
       "email": "nicolalerra@hotmail.it",
@@ -47,7 +48,8 @@
       "firstname": "Nicola",
       "lastname": "Lerra",
       "age": 31,
-      "id": 6
+      "id": 6,
+      "roles": "ROLE_ADMIN"
     }
   ],
   "client": [

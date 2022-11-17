@@ -1,23 +1,31 @@
 <div class="container">
-    <table class="table table-success table-striped">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">NOME</th>
-                <th scope="col">COGNOME</th>
-                <th scope="col">DETTAGLI UTENTE</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users">
-                <th>{{user.id}}</th>
-                <td>{{user.firstname}}</td>
-                <td>{{user.lastname}}</td>
-                <button mat-button type="submit" [routerLink]="[user.id]" routerLinkActive="router-link-active"><i
-                        class="bi bi-info-circle"></i></button>
-            </tr>
-        </tbody>
-
-    </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOME</th>
+        <th scope="col">COGNOME</th>
+        <th class="text-center" scope="col">DETTAGLI UTENTE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="td-id">{{ user.id }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td class="text-center">
+          <button
+            id="b2"
+            mat-button
+            type="submit"
+            [routerLink]="[user.id]"
+            routerLinkActive="router-link-active"
+          >
+            <i class="bi bi-info-circle"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <router-outlet></router-outlet>

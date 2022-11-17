@@ -1,0 +1,31 @@
+.container {
+  margin-top: 30px;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
+
+td {
+  border: none;
+
+  color: grey;
+}
+
+tr {
+  color: grey;
+  border: #131419;
+}
+
+.td-id {
+  color: #505050;
+}
+
+#b2 {
+  filter: drop-shadow(
+    -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8)
+  );
+  color: #fbb400;
+  background: #131419;
+  border: none;
+}

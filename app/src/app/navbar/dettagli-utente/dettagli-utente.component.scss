@@ -1,3 +1,107 @@
-.example-card {
-  max-width: 400px;
+tr {
+  color: grey;
+}
+
+.th {
+  text-align: center;
+  border: none;
+}
+
+.td {
+  border: none;
+}
+
+#tid {
+  color: #505050;
+}
+
+.container {
+  margin-top: 60px;
+  background: #131419;
+
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+table {
+  border-bottom: grey;
+}
+
+#b2 {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: #fbb400;
+  background: #131419;
+  border: none;
+  font-size: 1.3rem;
+}
+#b3 {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: red;
+  background: #131419;
+  border: none;
+  font-size: 1.3rem;
+}
+
+#b4 {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: green;
+  background: #131419;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.b4t {
+  text-align: center;
+}
+
+.tm {
+  margin-top: 70px;
+}
+
+input {
+  background: #131419;
+  color: grey;
+
+  outline: none;
+  border-radius: 40px;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+input:hover {
+  background: #131419;
+  color: #fbb400;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+select {
+  background-color: #131419;
+  color: #006c9c;
+}
+
+#firstname,
+#lastname,
+#age,
+#floatingrole,
+#email {
+  background: #131419;
+  color: #fbb400;
 }
