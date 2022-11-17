@@ -14,6 +14,7 @@ export class DettagliUtenteComponent implements OnInit {
   // user: Users = {} as Users;
   bool = false;
   userForm!: FormGroup;
+  close = false;
 
   constructor(
     private authService: ServiceService,
@@ -65,5 +66,9 @@ export class DettagliUtenteComponent implements OnInit {
         (error) => console.log(error)
       );
     }
+  }
+
+  closeDetails() {
+    this.close = !this.close;
   }
 }
