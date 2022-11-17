@@ -14,8 +14,7 @@ export class DettagliUtenteComponent implements OnInit {
   // user: Users = {} as Users;
   bool = false;
   userForm!: FormGroup;
-  close = false;
-
+  closeDet = true;
   constructor(
     private authService: ServiceService,
     private activateRouter: ActivatedRoute,
@@ -68,7 +67,8 @@ export class DettagliUtenteComponent implements OnInit {
     }
   }
 
-  closeDetails() {
-    this.close = !this.close;
-  }
+  // closeDetails() {
+  //   this.closeDet = !this.closeDet;
+  //   this.closeDet = true;
+  // }
 }
