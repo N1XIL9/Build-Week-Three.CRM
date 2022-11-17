@@ -183,7 +183,7 @@
             class="form-control"
             id="via"
             placeholder="via"
-            formControlName="via"
+            formControlName="indirizzoSede.via"
             ngModel
           />
           <label for="via">{{ cliente?.indirizzoSede?.via }}</label>
@@ -194,7 +194,7 @@
             class="form-control"
             id="civico"
             placeholder="N° Civico"
-            formControlName="civico"
+            formControlName="indirizzoSede.civico"
             ngModel
           />
           <label for="civico">{{ cliente?.indirizzoSede?.civico }}</label>
@@ -205,7 +205,7 @@
             class="form-control"
             id="cap"
             placeholder="cap"
-            formControlName="cap"
+            formControlName="indirizzoSede.cap"
             ngModel
           />
           <label for="cap">{{ cliente?.indirizzoSede?.cap }}</label>
@@ -217,7 +217,7 @@
             class="form-control"
             id="comuneNome"
             placeholder="Città"
-            formControlName="comuneNome"
+            formControlName="indirizzoSede.comuneNome"
             ngModel
           />
           <label for="comuneNome"
@@ -228,12 +228,12 @@
           <input
             type="text"
             class="form-control"
-            id="provincia"
+            id="comuneProvincia"
             placeholder="comuneProvincia"
-            formControlName="comuneProvincia"
+            formControlName="indirizzoSede.comuneProvincia"
             ngModel
           />
-          <label for="provincia"
+          <label for="comuneProvincia"
             >{{ cliente?.indirizzoSede?.comuneProvincia }}</label
           >
         </div>

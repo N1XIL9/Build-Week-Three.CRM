@@ -56,49 +56,35 @@
         "via": "Contrada Gastone 4, Piano 4",
         "civico": "698",
         "cap": "38615",
-        "comuneNome": "LASTRA A SIGNA",
-        "comuneProvincia": "FI"
-      },
+        "comune":{
+          "nome": "Roma",
+         "provincia": "RM"
+         }
+       },
       "dataInserimento": "2019-06-01T08:11:01.911+00:00"
-    },
-    {
-      "ragioneSociale": "",
-      "tipoCliente": "",
-      "partitaIva": "",
-      "email": "",
-      "pec": "",
-      "telefono": "",
-      "nomeContatto": "",
-      "cognomeContatto": "",
-      "telefonoContatto": "",
-      "emailContatto": "",
-      "indirizzoSede": "",
-      "dataInserimento": "2022-11-17T08:40:27.404Z",
-      "id": 2,
-      "via": "",
-      "civico": "",
-      "cap": "",
-      "comuneNome": "SALERNO",
-      "comuneProvincia": "SA"
     },
     {
       "ragioneSociale": "Asso Group",
       "tipoCliente": "Srl",
-      "partitaIva": "053447890700",
-      "email": "Jarvis_IT_27@maildrop.cc",
+      "partitaIva": "053447890762",
+      "email": "assogroupsrl@asso.it",
       "pec": "assogroupsrl@asso.it",
       "telefono": "3408353380",
       "nomeContatto": "DANIELA",
       "cognomeContatto": "DI FILIPPO",
       "telefonoContatto": "3408353380",
       "emailContatto": "danydifilippo@gmail.com",
-      "indirizzoSede.via": "ROMA",
-      "indirizzoSede.civico": "56",
-      "indirizzoSede.cap": "84047",
-      "indirizzoSede.comune.nome": "salerno",
-      "indirizzoSede.comune.provincia": "SA",
-      "dataInserimento": "2022-11-17T21:20:07.182Z",
-      "id": 3
+      "indirizzoSede": {
+        "via": "VIA ROMA",
+        "civico": "56",
+        "cap": "80021",
+        "comune":{
+         "nome": "Roma",
+        "provincia": "RM"
+        }
+      },
+      "dataInserimento": "2022-11-17T08:40:27.404Z",
+      "id": 2
     }
   ],
   "invoices": [
