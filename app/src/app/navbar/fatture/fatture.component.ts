@@ -10,13 +10,15 @@ import { FattureService } from './fatture.service';
 })
 export class FattureComponent implements OnInit {
 
-
+id?: number
   fatture: Fatture[] = []
 
   constructor(private fattureService: FattureService) { }
 
   ngOnInit(): void {
-    this.fattureService.getInvoice().subscribe(data => [this.fatture = data])
+    this.fattureService.getInvoice().subscribe(data => {this.fatture = data})
+    //this.id = this.fatture.cliente.id
+    console.log(this.fatture)
   }
 
   onSubmit(form: NgForm){
