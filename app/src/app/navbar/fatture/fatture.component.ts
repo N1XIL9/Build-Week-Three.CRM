@@ -10,8 +10,7 @@ import { FattureService } from './fatture.service';
 })
 export class FattureComponent implements OnInit {
 
-  @ViewChild('id',{read:ElementRef}) id?: ElementRef;
-  idNr?:number
+
   fatture: Fatture[] = []
 
   constructor(private fattureService: FattureService) { }
@@ -19,9 +18,6 @@ export class FattureComponent implements OnInit {
   ngOnInit(): void {
     this.fattureService.getInvoice().subscribe((data) => {
       this.fatture = data;
-      console.log(this.fatture)
-      this.idNr = this.id?.nativeElement.textContent
-      console.log(this.idNr);
     })
 
   }

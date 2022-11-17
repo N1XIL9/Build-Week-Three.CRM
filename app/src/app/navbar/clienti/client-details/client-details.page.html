@@ -1,4 +1,4 @@
-<section>
+<div *ngIf="showCard">
   <h1>Scheda Cliente</h1>
   <div class="container-fluid">
     <mat-card class="example-card">
@@ -9,22 +9,238 @@
       <mat-card-content>
         <p>Id: {{ cliente?.id }}</p>
         <p>P.IVA: {{ cliente?.partitaIva }}</p>
+        <p>Tel.: {{ cliente?.telefono }}</p>
+        <p>E-mail: {{ cliente?.email }}</p>
+        <p>pec: {{ cliente?.pec }}</p>
+        <p>
+          Sede Legale: {{ cliente?.indirizzoSede?.via }} n°
+          {{cliente?.indirizzoSede?.civico}} - {{ cliente?.indirizzoSede?.cap }}
+          {{ cliente?.indirizzoSede?.comune?.nome }} ({{
+          cliente?.indirizzoSede?.comune?.provincia}})
+        </p>
         <p>
           Contatto: {{ cliente?.nomeContatto }} {{ cliente?.cognomeContatto }}
         </p>
-        <p>Tel. aziendale: {{ cliente?.telefono }}</p>
-        <p>Tel. aziendale: {{ cliente?.telefonoContatto }}</p>
-        <p>E-mail aziendale: {{ cliente?.email }}</p>
-        <p>E-mail contatto: {{ cliente?.emailContatto }}</p>
-        <p>pec: {{ cliente?.pec }}</p>
-        <p>Sede Legale: {{ cliente?.indirizzoSede }}</p>
+        <p>√ Tel.: {{ cliente?.telefonoContatto }}</p>
+        <p>√ E-mail: {{ cliente?.emailContatto }}</p>
+        <mat-card-actions>
+          <button
+            class="btn btn-outline-primary mb-2 me-2"
+            (click)="openVerticallyCentered(content)"
+          >
+            Modifica anagrafica Cliente
+          </button>
+          <button mat-button (click)="closeDetails()">Esci</button>
+        </mat-card-actions>
         <hr />
-        <p>Scheda cliente inserita: {{ cliente?.dataInserimento }}</p>
+        <p>
+          Scheda cliente inserita: il {{ cliente?.dataInserimento | date :
+          'dd/MM/yyyy' }} alle ore {{ cliente?.dataInserimento | date : 'h:mm'
+          }}
+        </p>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Salva</button>
-        <button mat-button>Esci</button>
-      </mat-card-actions>
     </mat-card>
   </div>
-</section>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <h2 class="h3 mb-3 fw-normal text-white">Crea anagrafica cliente</h2>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="ragioneSociale"
+          placeholder="Asso Group"
+          formControlName="ragioneSociale"
+          ngModel
+        />
+        <label for="ragioneSociale">{{ cliente?.ragioneSociale }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="tipoCliente"
+          placeholder="Srl"
+          formControlName="tipoCliente"
+          ngModel
+        />
+        <label for="tipoCliente">{{ cliente?.tipoCliente }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="partitaIva"
+          placeholder="0123456789"
+          formControlName="partitaIva"
+          ngModel
+        />
+        <label for="partitaIva">{{ cliente?.partitaIva }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="name@example.com"
+          formControlName="email"
+          ngModel
+        />
+        <label for="email">{{ cliente?.email }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="pec"
+          placeholder="pec"
+          formControlName="pec"
+          ngModel
+        />
+        <label for="pec">{{ cliente?.pec }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          placeholder="Telefono"
+          formControlName="telefono"
+          ngModel
+        />
+        <label for="telefono">{{ cliente?.telefono }}</label>
+      </div>
+
+      <h3>Contatto:</h3>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="nomeContatto"
+          placeholder="Nome"
+          formControlName="nomeContatto"
+          ngModel
+        />
+        <label for="nomeContatto">{{ cliente?.nomeContatto }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="cognomeContatto"
+          placeholder="Cognome"
+          formControlName="cognomeContatto"
+          ngModel
+        />
+        <label for="cognomeContatto">{{ cliente?.cognomeContatto }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="telefonoContatto"
+          placeholder="Telefono"
+          formControlName="telefonoContatto"
+          ngModel
+        />
+        <label for="telefonoContatto">{{ cliente?.telefonoContatto }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="emailContatto"
+          placeholder="name@example.com"
+          formControlName="emailContatto"
+          ngModel
+        />
+        <label for="emailContatto">{{ cliente?.emailContatto }}</label>
+      </div>
+
+      <h3>Indirizzo sede:</h3>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="via"
+          placeholder="via"
+          formControlName="indirizzoSede.via"
+          ngModel
+        />
+        <label for="via"><span>{{ cliente?.indirizzoSede }}</span></label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="civico"
+          placeholder="N° Civico"
+          formControlName="indirizzoSede.civico"
+          ngModel
+        />
+        <label for="civico">{{ cliente?.indirizzoSede?.civico }}</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="cap"
+          placeholder="cap"
+          formControlName="indirizzoSede.cap"
+          ngModel
+        />
+        <label for="cap">{{ cliente?.indirizzoSede?.cap }}</label>
+      </div>
+      <h3>Comune:</h3>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="comuneNome"
+          placeholder="Città"
+          formControlName="indirizzoSede.comune.nome"
+          ngModel
+        />
+        <label for="comuneNome"
+          >{{ cliente?.indirizzoSede?.comune?.nome }}</label
+        >
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="provincia"
+          placeholder="Provincia"
+          formControlName="indirizzoSede.comune.provincia"
+          ngModel
+        />
+        <label for="provincia"
+          >{{ cliente?.indirizzoSede?.comune?.provincia }}</label
+        >
+      </div>
+      <button type="submit">Salva</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>

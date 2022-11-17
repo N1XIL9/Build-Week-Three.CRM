@@ -104,7 +104,9 @@
       "anno": 2020,
       "importo": 2289.24,
       "stato": "NON_PAGATA",
-      "cliente_id": 1,
+      "cliente": {
+        "id":1
+      },
       "dataInserimento": "2019-06-01T08:11:01.911+00:00",
       "dataUltimaModifica": "2021-03-24T21:32:06.375+00:00"
     }

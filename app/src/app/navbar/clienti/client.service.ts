@@ -21,4 +21,8 @@ export class ClientService {
   getClientDetails(id:number){
     return this.http.get<Client>(environment.urlAPI+'client/'+id)
   }
+
+  patchClient(id:number, data: Partial<Client>){
+    return this.http.patch<Client>(environment.urlAPI+'client'+id,data)
+  }
 }

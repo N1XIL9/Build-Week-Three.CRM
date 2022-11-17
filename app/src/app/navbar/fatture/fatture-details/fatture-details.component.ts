@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Client } from '../../clienti/client';
+import { ClientService } from '../../clienti/client.service';
 import { FattureService } from '../fatture.service';
 
 @Component({
@@ -12,14 +14,21 @@ export class FattureDetailsComponent implements OnInit {
   fattura!: any;
   bool= false
   fatturaForm!: FormGroup
+  idNr:any
+  cliente?: Client
 
-  constructor(private fattureService: FattureService, private router: ActivatedRoute, private formBuilder: FormBuilder) { }
+  constructor(private fattureService: FattureService, private router: ActivatedRoute, private formBuilder: FormBuilder, private clientService: ClientService) { }
 
   ngOnInit(): void {
     this.router.params.subscribe((params) => {
       const id = +params['id'];
       this.fattureService.getInvoiceDetails(id).subscribe((data) => {
         this.fattura = data;
+        this.idNr = this.fattura.cliente.id
+        this.clientService.getClientDetails(this.idNr).subscribe((data)=>{
+          this.cliente = data
+        }
+        )
       });
     });
     this.fatturaForm = this.formBuilder.group({

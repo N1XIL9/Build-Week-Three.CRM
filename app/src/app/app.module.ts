@@ -19,6 +19,7 @@ import { ClientDetailsPage } from './navbar/clienti/client-details/client-detail
 import { ClientiListaComponent } from './navbar/clienti/clienti-lista/clienti-lista.component';
 import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fatture-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

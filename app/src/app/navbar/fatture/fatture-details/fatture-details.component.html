@@ -15,10 +15,8 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">{{fattura.id}}</th>
-          <td>
-            {{ fattura.cliente }}
-          </td>
+          <th scope="row">{{ fattura.id }}</th>
+          <td>{{ cliente?.ragioneSociale }} {{ cliente?.tipoCliente }}</td>
           <td>{{ fattura.numero }}</td>
           <td>{{ fattura.importo }}</td>
           <td>{{ fattura.stato }}</td>

@@ -13,6 +13,7 @@ export class ClientiListaComponent implements OnInit {
   page = 1;
 	pageSize = 4;
   collectionSize?:number
+  noShow = true
 
   constructor(private clientService:ClientService) { }
 

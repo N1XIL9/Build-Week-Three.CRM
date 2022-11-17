@@ -42,7 +42,7 @@
       <tbody>
         <tr *ngFor="let fattura of fatture">
           <th>{{ fattura.id }}</th>
-          <td #id>{{ fattura }}</td>
+          <td>{{ fattura.cliente?.id }}</td>
           <td>{{ fattura.dataInserimento }}</td>
           <td>{{ fattura.importo }}</td>
           <td>{{ fattura.stato }}</td>
