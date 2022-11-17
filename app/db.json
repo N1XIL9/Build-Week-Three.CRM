@@ -7,7 +7,10 @@
       "email": "",
       "password": "bestPassw0rd",
       "age": "",
-      "roles": ["ROLE_ADMIN", "ROLE_USER"],
+      "roles": [
+        "ROLE_ADMIN",
+        "ROLE_USER"
+      ],
       "role": ""
     },
     {
@@ -100,7 +103,7 @@
       "numero": 1,
       "anno": 2020,
       "importo": 2289.24,
-      "stato": "NON PAGATA",
+      "stato": "NON_PAGATA",
       "cliente": {
         "id": 1
       },

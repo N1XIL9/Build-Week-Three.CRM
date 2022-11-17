@@ -1,1 +1,60 @@
-<p>fatture works!</p>
+<main class="form-signin m-auto">
+  <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="cliente"
+        placeholder="Cliente"
+        name="cliente"
+        required
+        ngModel
+      />
+      <label for="cliente">Cliente</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="importo"
+        placeholder="Srl"
+        name="importo"
+        required
+        ngModel
+      />
+      <label for="importo">Importo</label>
+    </div>
+    <button type="submit">Aggiungi Fattura</button>
+  </form>
+
+
+  <section class="container-fluid">
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Data Inserimento</th>
+          <th scope="col">Importo</th>
+          <th scope="col">Stato</th>
+          <th scope="col">Dettagli</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fattura of fatture">
+          <th>{{ fattura.id }}</th>
+          <td></td>
+          <td>{{ fattura.dataInserimento }}</td>
+          <td>{{ fattura.importo }}</td>
+          <td>{{fattura.stato}}</td>
+          <td>
+            <button mat-button type="submit" [routerLink]="[fattura.id]" routerLinkActive="router-link-active" ><i
+              class="bi bi-info-circle"></i></button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <router-outlet></router-outlet>
+</main>

@@ -17,6 +17,7 @@ import { DettagliUtenteComponent } from './navbar/dettagli-utente/dettagli-utent
 import { MatCardModule } from '@angular/material/card';
 import { ClientDetailsPage } from './navbar/clienti/client-details/client-details.page';
 import { ClientiListaComponent } from './navbar/clienti/clienti-lista/clienti-lista.component';
+import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fatture-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ClientiListaComponent } from './navbar/clienti/clienti-lista/clienti-li
     FattureComponent,
     DettagliUtenteComponent,
     ClientDetailsPage,
-    ClientiListaComponent
+    ClientiListaComponent,
+    FattureDetailsComponent
   ],
   imports: [
     BrowserModule,

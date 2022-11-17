@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Fatture } from './fatture';
+import { FattureService } from './fatture.service';
 
 @Component({
   selector: 'app-fatture',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FattureComponent implements OnInit {
 
-  constructor() { }
+
+  fatture: Fatture[] = []
+
+  constructor(private fattureService: FattureService) { }
 
   ngOnInit(): void {
+    this.fattureService.getInvoice().subscribe(data => [this.fatture = data])
   }
+
+  onSubmit(form: NgForm){
+    this.fattureService.addInvoice(form.value)
+    console.log(form.value)
+  }
+
 
 }

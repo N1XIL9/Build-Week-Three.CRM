@@ -1,0 +1,107 @@
+<div class="container">
+  <div #table>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Numero Fattura</th>
+          <th scope="col">Importo</th>
+          <th scope="col">Stato</th>
+          <th scope="col">Ultima Modifica</th>
+          <th scope="col">MODIFICA</th>
+          <th scope="col">ELIMINA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{fattura.id}}</th>
+          <td>
+            {{ fattura.cliente }}
+          </td>
+          <td>{{ fattura.numero }}</td>
+          <td>{{ fattura.importo }}</td>
+          <td>{{ fattura.stato }}</td>
+          <td>{{ fattura.dataUltimaModifica }}</td>
+          <td>
+            <button (click)="changeProp()">
+              <i class="bi bi-vector-pen"></i>
+            </button>
+          </td>
+          <td>
+            <button (click)="deleteUser()">
+              <i class="bi bi-trash3-fill"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div #formMod *ngIf="bool">
+    <form [formGroup]="fatturaForm" (ngSubmit)="onSubmit()">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Numero Fattura</th>
+            <th scope="col">Importo</th>
+            <th scope="col">Stato</th>
+            <th scope="col">CONFERMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cliente"
+                  formControlName="cliente"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="numero"
+                  formControlName="numero"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="importo"
+                  formControlName="importo"
+                />
+              </div>
+            </td>
+            <td>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="stato"
+                id="floatingrole"
+              >
+                <optgroup>
+                  <option selected value="NON_PAGATA">Non Pagata</option>
+                  <option value="PAGATA">Pagata</option>
+                </optgroup>
+              </select>
+            </td>
+            <td>
+              <button type="submit"><i class="bi bi-vector-pen"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
