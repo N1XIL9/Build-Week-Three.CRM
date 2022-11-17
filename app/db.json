@@ -10,26 +10,6 @@
       "id": 3
     },
     {
-      "email": "",
-      "password": "$2a$10$mSNHhE0.ACrKxPTKJ7hZs.quEDzPnt/MGQ4oZa6foy5zR.y7C6EPq",
-      "firstname": "Luca",
-      "lastname": "Rossi",
-      "age": "28",
-      "role": "",
-      "id": 4,
-      "roles": "ROLE_ADMIN"
-    },
-    {
-      "email": "danydifilippo@gmail.com",
-      "password": "$2a$10$8gQNMcXjrbFLFN4HKCUdCeU2H4RZbaDKcFtgdUL40qK4Pb3ngXqA6",
-      "firstname": "DANIELA",
-      "lastname": "DI FILIPPO",
-      "age": 39,
-      "role": "ROLE_ADMIN",
-      "id": 5,
-      "roles": "ROLE_ADMIN"
-    },
-    {
       "email": "nicolalerra@hotmail.it",
       "password": "$2a$10$np1EaFWv5xaOhsKRVK/2u.b6yWu.a46PUpiSTDuV0znTr99fXDfbG",
       "firstname": "Nicola",

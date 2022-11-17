@@ -1,5 +1,6 @@
-<main class="form-signin m-auto">
-  <!-- <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+<div class="container">
+  <main class="form-signin">
+    <!-- <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="form-floating mb-3">
       <input
         type="text"
@@ -26,97 +27,92 @@
     </div>
     <button type="submit">Aggiungi Fattura</button>
   </form> -->
-  <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
-    <h2 class="h3 mb-3 fw-normal text-white">Crea Fattura</h2>
-    <div>
-      <p>
-        <ngb-alert
-          [dismissible]="true"
-          *ngIf="showAlert"
-          (closed)="close()"
-        >
-          <strong>Attenzione!</strong> {{ error }}
-        </ngb-alert>
-      </p>
-    </div>
+    <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+      <h2 class="h3 mb-3 fw-normal text-white">Crea Fattura</h2>
+      <div>
+        <p>
+          <ngb-alert [dismissible]="true" *ngIf="showAlert" (closed)="close()">
+            <strong>Attenzione!</strong> {{ error }}
+          </ngb-alert>
+        </p>
+      </div>
 
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="cliente"
-        placeholder=""
-        formControlName="cliente"
-      />
-      <label for="cliente">Cliente</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="importo"
-        placeholder=""
-        formControlName="importo"
-      />
-      <label for="importo">Importo</label>
-    </div>
-    <div class="form-floating mb-3" [hidden]="noShow">
-      <input
-        type="text"
-        class="form-control"
-        id="dataInserimento"
-        placeholder="dataInserimento"
-        formControlName="dataInserimento"
-      />
-      <label for="dataInserimento"></label>
-    </div>
-    <div class="form-floating mb-3" [hidden]="noShow">
-      <input
-        type="text"
-        class="form-control"
-        id="stato"
-        placeholder="stato"
-        formControlNname="stato"
-      />
-      <label for="stato"></label>
-    </div>
-    <button type="submit">Aggiungi</button>
-  </form>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="cliente"
+          placeholder=""
+          formControlName="cliente"
+        />
+        <label for="cliente">Cliente</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="importo"
+          placeholder=""
+          formControlName="importo"
+        />
+        <label for="importo">Importo</label>
+      </div>
+      <div class="form-floating mb-3" [hidden]="noShow">
+        <input
+          type="text"
+          class="form-control"
+          id="dataInserimento"
+          placeholder="dataInserimento"
+          formControlName="dataInserimento"
+        />
+        <label for="dataInserimento"></label>
+      </div>
+      <div class="form-floating mb-3" [hidden]="noShow">
+        <input
+          type="text"
+          class="form-control"
+          id="stato"
+          placeholder="stato"
+          formControlNname="stato"
+        />
+        <label for="stato"></label>
+      </div>
+      <button type="submit">Aggiungi</button>
+    </form>
 
-  <section class="container-fluid">
-    <table class="table table-success table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Cliente</th>
-          <th scope="col">Data Inserimento</th>
-          <th scope="col">Importo</th>
-          <th scope="col">Stato</th>
-          <th scope="col">Dettagli</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let fattura of fatture">
-          <th>{{ fattura.id }}</th>
-          <td>{{fattura.cliente?.id}}</td>
-          <td>{{ fattura.dataInserimento | date: "dd/MM/yyyy" }}</td>
-          <td>{{ fattura.importo | currency:"EUR": true }}</td>
-          <td>{{fattura.stato}}</td>
-          <td>
-            <button
-              mat-button
-              type="submit"
-              [routerLink]="[fattura.id]"
-              routerLinkActive="router-link-active"
-            >
-              <i class="bi bi-info-circle"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <router-outlet></router-outlet>
-</main>
-
-
+    <section class="container-fluid">
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Data Inserimento</th>
+            <th scope="col">Importo</th>
+            <th scope="col">Stato</th>
+            <th scope="col">Dettagli</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fattura of fatture">
+            <th>{{ fattura.id }}</th>
+            <td>{{ fattura.cliente?.id }}</td>
+            <td>{{ fattura.dataInserimento | date: "dd/MM/yyyy" }}</td>
+            <td>{{ fattura.importo | currency: "EUR":true }}</td>
+            <td>{{ fattura.stato }}</td>
+            <td>
+              <button
+                mat-button
+                type="submit"
+                [routerLink]="[fattura.id]"
+                routerLinkActive="router-link-active"
+              >
+                <i class="bi bi-info-circle"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <router-outlet></router-outlet>
+  </main>
+</div>
