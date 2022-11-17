@@ -1,0 +1,54 @@
+.container {
+  margin-top: 60px;
+}
+
+#b1 {
+  filter: drop-shadow(
+    -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8)
+  );
+  color: #fbb400;
+  background: #131419;
+  border: none;
+  font-size: 1.3rem;
+}
+
+#b2 {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: #18befe;
+  background: #131419;
+  border: none;
+  font-size: 1.3rem;
+}
+#b3 {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: red;
+  background: #131419;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.td-id {
+  color: #505050;
+}
+
+th {
+  border: none;
+
+  color: grey;
+}
+
+tr {
+  color: grey;
+  border: #131419;
+}

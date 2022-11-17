@@ -1,29 +1,32 @@
-<section>
+<section class="container">
   <h1>Scheda Cliente</h1>
-  <div class="container-fluid">
+  <div class="container-card">
     <mat-card class="example-card">
       <mat-card-title
         >{{ cliente?.ragioneSociale }} {{ cliente?.tipoCliente
         }}</mat-card-title
       >
       <mat-card-content>
-        <p>Id: {{ cliente?.id }}</p>
-        <p>P.IVA: {{ cliente?.partitaIva }}</p>
+        <p><span>Id:</span> {{ cliente?.id }}</p>
+        <p><span>P.IVA:</span> {{ cliente?.partitaIva }}</p>
         <p>
-          Contatto: {{ cliente?.nomeContatto }} {{ cliente?.cognomeContatto }}
+          <span>Contatto:</span>
+          {{ cliente?.nomeContatto }} {{ cliente?.cognomeContatto }}
         </p>
-        <p>Tel. aziendale: {{ cliente?.telefono }}</p>
-        <p>Tel. aziendale: {{ cliente?.telefonoContatto }}</p>
-        <p>E-mail aziendale: {{ cliente?.email }}</p>
-        <p>E-mail contatto: {{ cliente?.emailContatto }}</p>
-        <p>pec: {{ cliente?.pec }}</p>
-        <p>Sede Legale: {{ cliente?.indirizzoSede }}</p>
+        <p><span>Tel. aziendale: </span>{{ cliente?.telefono }}</p>
+        <p><span>Tel. aziendale:</span> {{ cliente?.telefonoContatto }}</p>
+        <p><span>E-mail aziendale:</span> {{ cliente?.email }}</p>
+        <p><span>E-mail contatto:</span> {{ cliente?.emailContatto }}</p>
+        <p><span>Pec:</span> {{ cliente?.pec }}</p>
+        <p><span>Sede Legale:</span> {{ cliente?.indirizzoSede }}</p>
         <hr />
-        <p>Scheda cliente inserita: {{ cliente?.dataInserimento }}</p>
+        <p>
+          <span>Scheda cliente inserita: </span>{{ cliente?.dataInserimento }}
+        </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>Salva</button>
-        <button mat-button>Esci</button>
+        <button id="b2" mat-button>Salva</button>
+        <button id="b3" mat-button>Esci</button>
       </mat-card-actions>
     </mat-card>
   </div>

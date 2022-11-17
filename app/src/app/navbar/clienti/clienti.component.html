@@ -1,206 +1,209 @@
-<ngb-accordion #acc="ngbAccordion">
-  <ngb-panel id="toggle-1" title="Aggiungi Anagrafica Cliente">
-    <ng-template ngbPanelContent>
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <h2 class="h3 mb-3 fw-normal text-white">Crea anagrafica cliente</h2>
-        <div>
-          <p>
-            <ngb-alert
-              [dismissible]="true"
-              *ngIf="showAlert"
-              (closed)="close()"
-            >
-              <strong>Attenzione!</strong> {{ error }}
-            </ngb-alert>
-          </p>
-        </div>
+<div class="container">
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel id="toggle-1" title="Aggiungi Anagrafica Cliente">
+      <ng-template ngbPanelContent>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <h2 class="h3 mb-3 fw-normal">Crea anagrafica cliente</h2>
+          <div>
+            <p>
+              <ngb-alert
+                [dismissible]="true"
+                *ngIf="showAlert"
+                (closed)="close()"
+              >
+                <strong>Attenzione!</strong> {{ error }}
+              </ngb-alert>
+            </p>
+          </div>
 
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="ragioneSociale"
-            placeholder="Asso Group"
-            name="ragioneSociale"
-            ngModel
-          />
-          <label for="ragioneSociale">Ragione Sociale</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="tipoCliente"
-            placeholder="Srl"
-            name="tipoCliente"
-            ngModel
-          />
-          <label for="tipoCliente">Tipo Cliente</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="partitaIva"
-            placeholder="0123456789"
-            name="partitaIva"
-            ngModel
-          />
-          <label for="partitaIva">Partita IVA</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="name@example.com"
-            name="email"
-            ngModel
-          />
-          <label for="email">Email</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="pec"
-            placeholder="pec"
-            name="pec"
-            ngModel
-          />
-          <label for="pec">Pec</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="telefono"
-            placeholder="Telefono"
-            name="telefono"
-            ngModel
-          />
-          <label for="telefono">Telefono Azienda</label>
-        </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="ragioneSociale"
+              placeholder="Asso Group"
+              name="ragioneSociale"
+              ngModel
+            />
+            <label for="ragioneSociale">Ragione Sociale</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="tipoCliente"
+              placeholder="Srl"
+              name="tipoCliente"
+              ngModel
+            />
+            <label for="tipoCliente">Tipo Cliente</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="partitaIva"
+              placeholder="0123456789"
+              name="partitaIva"
+              ngModel
+            />
+            <label for="partitaIva">Partita IVA</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              name="email"
+              ngModel
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="pec"
+              placeholder="pec"
+              name="pec"
+              ngModel
+            />
+            <label for="pec">Pec</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="telefono"
+              placeholder="Telefono"
+              name="telefono"
+              ngModel
+            />
+            <label for="telefono">Telefono Azienda</label>
+          </div>
 
-        <h3>Contatto:</h3>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="nomeContatto"
-            placeholder="Nome"
-            name="nomeContatto"
-            ngModel
-          />
-          <label for="nomeContatto">Nome</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="cognomeContatto"
-            placeholder="Cognome"
-            name="cognomeContatto"
-            ngModel
-          />
-          <label for="cognomeContatto">Cognome</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="telefonoContatto"
-            placeholder="Telefono"
-            name="telefonoContatto"
-            ngModel
-          />
-          <label for="telefonoContatto">Telefono</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="emailContatto"
-            placeholder="name@example.com"
-            name="emailContatto"
-            ngModel
-          />
-          <label for="emailContatto">Email</label>
-        </div>
+          <h3>Contatto</h3>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="nomeContatto"
+              placeholder="Nome"
+              name="nomeContatto"
+              ngModel
+            />
+            <label for="nomeContatto">Nome</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="cognomeContatto"
+              placeholder="Cognome"
+              name="cognomeContatto"
+              ngModel
+            />
+            <label for="cognomeContatto">Cognome</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="telefonoContatto"
+              placeholder="Telefono"
+              name="telefonoContatto"
+              ngModel
+            />
+            <label for="telefonoContatto">Telefono</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="emailContatto"
+              placeholder="name@example.com"
+              name="emailContatto"
+              ngModel
+            />
+            <label for="emailContatto">Email</label>
+          </div>
 
-        <h3>Indirizzo sede:</h3>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="via"
-            placeholder="via"
-            name="indirizzoSede.via"
-            ngModel
-          />
-          <label for="via">via</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="civico"
-            placeholder="N° Civico"
-            name="indirizzoSede.civico"
-            ngModel
-          />
-          <label for="civico">N° Civico</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="cap"
-            placeholder="cap"
-            name="indirizzoSede.cap"
-            ngModel
-          />
-          <label for="cap">cap</label>
-        </div>
-        <h3>Comune:</h3>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="comuneNome"
-            placeholder="Città"
-            name="indirizzoSede.comune.nome"
-            ngModel
-          />
-          <label for="comuneNome">Città</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="provincia"
-            placeholder="Provincia"
-            name="indirizzoSede.comune.provincia"
-            ngModel
-          />
-          <label for="provincia">Provincia</label>
-        </div>
-        <div class="form-floating mb-3" [hidden]="noShow">
-          <input
-            type="text"
-            class="form-control"
-            id="dataInserimento"
-            placeholder="dataInserimento"
-            name="dataInserimento"
-            ngModel
-          />
-          <label for="dataInserimento"></label>
-        </div>
-        <button type="submit">Aggiungi</button>
-      </form>
-    </ng-template>
-  </ngb-panel></ngb-accordion
->
-
+          <h3>Indirizzo/Sede</h3>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="via"
+              placeholder="via"
+              name="indirizzoSede.via"
+              ngModel
+            />
+            <label for="via">via</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="civico"
+              placeholder="N° Civico"
+              name="indirizzoSede.civico"
+              ngModel
+            />
+            <label for="civico">N° Civico</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="cap"
+              placeholder="cap"
+              name="indirizzoSede.cap"
+              ngModel
+            />
+            <label for="cap">Cap</label>
+          </div>
+          <h3>Comune</h3>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="comuneNome"
+              placeholder="Città"
+              name="indirizzoSede.comune.nome"
+              ngModel
+            />
+            <label for="comuneNome">Città</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="provincia"
+              placeholder="Provincia"
+              name="indirizzoSede.comune.provincia"
+              ngModel
+            />
+            <label for="provincia">Provincia</label>
+          </div>
+          <div class="form-floating mb-3" [hidden]="noShow">
+            <input
+              type="text"
+              class="form-control"
+              id="dataInserimento"
+              placeholder="dataInserimento"
+              name="dataInserimento"
+              ngModel
+            />
+            <label for="dataInserimento"></label>
+          </div>
+          <div class="conBtn">
+            <button id="b2" type="submit">Aggiungi</button>
+          </div>
+        </form>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>
 <app-clienti-lista></app-clienti-lista>
 <router-outlet></router-outlet>

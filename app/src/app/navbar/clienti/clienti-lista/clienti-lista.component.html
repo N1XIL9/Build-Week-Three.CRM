@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <table class="table table-striped text-white">
+<div class="container">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -14,7 +14,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let cl of clienti">
-        <th>{{ cl.id }}</th>
+        <th class="td-id">{{ cl.id }}</th>
         <td>{{ cl.ragioneSociale }} {{ cl.tipoCliente }}</td>
         <td>{{ cl.partitaIva }}</td>
         <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
@@ -25,6 +25,7 @@
         </td>
         <td>
           <button
+            id="b1"
             mat-button
             type="submit"
             [routerLink]="[cl.id]"
@@ -34,12 +35,14 @@
             <i class="bi bi-info-circle"></i>
           </button>
         </td>
-        <!-- <td>
-      <button (click)="editCl()"><i class="bi bi-pencil-fill"></i></button>
-    </td>
-    <td>
-      <button (click)="deleteCl()"><i class="bi bi-trash-fill"></i></button>
-    </td> -->
+        <td>
+          <!-- <button (click)="editCl()"><i class="bi bi-pencil-fill"></i></button> -->
+          <button id="b2"><i class="bi bi-vector-pen"></i></button>
+        </td>
+        <td>
+          <!-- <button (click)="deleteCl()"><i class="bi bi-trash-fill"></i></button> -->
+          <button id="b3"><i class="bi bi-trash-fill"></i></button>
+        </td>
       </tr>
     </tbody>
   </table>

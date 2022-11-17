@@ -35,13 +35,21 @@ table {
 #b2 {
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
     5px 5px 15px rgba(0, 0, 0, 0.5);
-  color: #fbb400;
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  color: #18befe;
   background: #131419;
   border: none;
   font-size: 1.3rem;
 }
 #b3 {
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
     5px 5px 15px rgba(0, 0, 0, 0.5);
   color: red;
   background: #131419;
@@ -51,6 +59,10 @@ table {
 
 #b4 {
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
     5px 5px 15px rgba(0, 0, 0, 0.5);
   color: green;
   background: #131419;
