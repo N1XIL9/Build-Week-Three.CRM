@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ClientService } from '../clienti/client.service';
 import { Fatture } from './fatture';
 import { FattureService } from './fatture.service';
 
@@ -10,21 +11,35 @@ import { FattureService } from './fatture.service';
 })
 export class FattureComponent implements OnInit {
 
-id?: number
   fatture: Fatture[] = []
+  dateIns = new Date()
+  statoFattura = "NON PAGATA"
+  noShow = true
+  error = undefined
+  showAlert = false
 
-  constructor(private fattureService: FattureService) { }
+  constructor(private fattureService: FattureService, private clienteService: ClientService) { }
 
   ngOnInit(): void {
-    this.fattureService.getInvoice().subscribe(data => {this.fatture = data})
-    //this.id = this.fatture.cliente.id
-    console.log(this.fatture)
+  this.fattureService.getInvoice().subscribe((data) =>
+    this.fatture = data)
   }
 
   onSubmit(form: NgForm){
-    this.fattureService.addInvoice(form.value)
-    console.log(form.value)
+    form.value.dataInserimento = this.dateIns
+    form.value.stato = this.statoFattura
+    this.fattureService.addInvoice(form.value).subscribe((data) =>{console.log(data);
+  },
+  err => {
+    console.log(err);
+    this.error = err.error;
+    this.showAlert = !this.showAlert
+    })
   }
+
+
+
+  close(){}
 
 
 }

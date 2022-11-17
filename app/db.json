@@ -94,6 +94,25 @@
       "indirizzoSede.comune.provincia": "RM",
       "dataInserimento": "2022-11-17T08:40:27.404Z",
       "id": 2
+    },
+    {
+      "ragioneSociale": "Bruno-Romano SPA - TEST",
+      "tipoCliente": "fdddd",
+      "partitaIva": "ddddd",
+      "email": "luigicr95@gmail.com",
+      "pec": "dddddd",
+      "telefono": "11111111",
+      "nomeContatto": "dario",
+      "cognomeContatto": "rossi",
+      "telefonoContatto": "122344",
+      "emailContatto": "luigicr95@gmail.com",
+      "indirizzoSede.via": "76 Lea Bridge road",
+      "indirizzoSede.civico": "76 Lea Bridge road",
+      "indirizzoSede.cap": "E5 9QD",
+      "indirizzoSede.comune.nome": "London",
+      "indirizzoSede.comune.provincia": "Greater London",
+      "dataInserimento": "2022-11-17T11:46:55.613Z",
+      "id": 3
     }
   ],
   "invoices": [
@@ -109,6 +128,26 @@
       },
       "dataInserimento": "2019-06-01T08:11:01.911+00:00",
       "dataUltimaModifica": "2021-03-24T21:32:06.375+00:00"
+    },
+    {
+      "cliente": "Bruno-Romano SPA - TEST",
+      "importo": "2500",
+      "dataInserimento": "2022-11-17T11:50:43.586Z",
+      "id": 2
+    },
+    {
+      "cliente": "Mario",
+      "importo": "3000",
+      "dataInserimento": "2022-11-17T12:06:45.621Z",
+      "stato": "",
+      "id": 3
+    },
+    {
+      "cliente": "Mario",
+      "importo": "3000",
+      "dataInserimento": "2022-11-17T12:07:31.713Z",
+      "stato": "NON PAGATA",
+      "id": 4
     }
   ]
 }
