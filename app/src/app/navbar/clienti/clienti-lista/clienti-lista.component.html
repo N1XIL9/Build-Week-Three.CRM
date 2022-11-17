@@ -4,9 +4,9 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Ditta</th>
-        <th scope="col">P.IVA</th>
+        <th class="lbTel" scope="col">P.IVA</th>
         <th scope="col">Contatto</th>
-        <th scope="col">Telefono</th>
+        <th class="lbTel" scope="col">Telefono</th>
         <th scope="col">Dettagli</th>
         <th scope="col">Modifica</th>
         <th scope="col">Elimina</th>
@@ -16,9 +16,9 @@
       <tr *ngFor="let cl of clienti">
         <th class="td-id">{{ cl.id }}</th>
         <td>{{ cl.ragioneSociale }} {{ cl.tipoCliente }}</td>
-        <td>{{ cl.partitaIva }}</td>
+        <td class="lbTel">{{ cl.partitaIva }}</td>
         <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
-        <td>
+        <td class="lbTel">
           {{ cl.indirizzoSede?.comune?.nome }} ({{
             cl.indirizzoSede?.comune?.provincia
           }})

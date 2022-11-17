@@ -16,6 +16,7 @@ tr {
 }
 
 .container {
+  height: 100%;
   margin-top: 60px;
   background: #131419;
 
@@ -116,4 +117,32 @@ select {
 #email {
   background: #131419;
   color: #fbb400;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  #lbTel,
+  .lbTel {
+    display: none;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  #lbTel,
+  .lbTel {
+    display: none;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
 }
