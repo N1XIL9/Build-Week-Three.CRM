@@ -18,7 +18,7 @@ export class FattureComponent implements OnInit {
   noShow = true
   error = undefined
   showAlert = false
-  invoiceForm: FormGroup = new FormGroup({})
+  invoiceForm!: FormGroup
 
 
   constructor(private fattureService: FattureService, private clientService: ClientService) { }
@@ -28,16 +28,17 @@ export class FattureComponent implements OnInit {
     this.fatture = data
   })}
 
-  onSubmit(){
-  //   form.value.dataInserimento = this.dateIns
-  //   form.value.stato = this.statoFattura
-  //   this.fattureService.addInvoice(form.value).subscribe((data) =>{console.log(data);
-  // },
-  // err => {
-  //   console.log(err);
-  //   this.error = err.error;
-  //   this.showAlert = !this.showAlert
-  //   })
+  onSubmit(form: FormControl){
+
+    form.value.dataInserimento = this.dateIns
+    form.value.stato = this.statoFattura
+    this.fattureService.addInvoice(form.value).subscribe((data) =>{console.log(data);
+  },
+  err => {
+    console.log(err);
+    this.error = err.error;
+    this.showAlert = !this.showAlert
+    })
   }
 
 
