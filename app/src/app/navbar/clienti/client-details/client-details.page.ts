@@ -4,7 +4,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Client } from '../client';
@@ -19,6 +19,8 @@ export class ClientDetailsPage implements OnInit {
   showCard? = true;
   closeResult?: string;
   userForm!: FormGroup;
+  indirizzoSede!: FormGroup;
+  comune!: FormGroup;
   noShow = true;
 
   constructor(
@@ -34,9 +36,36 @@ export class ClientDetailsPage implements OnInit {
       this.clientService.getClientDetails(id).subscribe((data) => {
         this.cliente = data;
         console.log(this.cliente);
-        this.userForm = this.formBuilder.group(this.cliente);
       });
     });
+    this.userForm = this.formBuilder.group({
+      ragioneSociale: '',
+      partitaIva: '',
+      tipoCliente: '',
+      email: '',
+      pec: '',
+      telefono: '',
+      nomeContatto: 'Maria',
+      cognomeContatto: '',
+      telefonoContatto: '',
+      emailContatto: '',
+      via: new FormControl('Contrada Gastone 4, Piano 4'),
+      civico: new FormControl('698'),
+      cap: new FormControl('38615'),
+      nome: new FormControl('LASTRA A SIGNA'),
+      provincia: new FormControl('FI'),
+    });
+
+    // this.indirizzoSede = this.formBuilder.group({
+    // via: new FormControl('Contrada Gastone 4, Piano 4');
+    // civico:new FormControl( '698');
+    // cap:new FormControl ('38615');
+    // });
+
+    // this.comune = this.formBuilder.group({
+    // nome: new FormControl('LASTRA A SIGNA');
+    // provincia: new FormControl('FI');
+    // });
   }
 
   closeDetails() {

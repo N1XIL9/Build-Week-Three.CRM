@@ -3,10 +3,8 @@
     <h1>Scheda Cliente</h1>
     <div class="container-card">
       <mat-card class="example-card">
-        <mat-card-title
-          >{{ cliente?.ragioneSociale }} {{ cliente?.tipoCliente
-          }}</mat-card-title
-        >
+        <mat-card-title>{{ cliente?.ragioneSociale }} {{ cliente?.tipoCliente
+          }}</mat-card-title>
         <mat-card-content>
           <p><span>Id:</span> {{ cliente?.id }}</p>
           <p><span>P.IVA:</span> {{ cliente?.partitaIva }}</p>
@@ -48,201 +46,93 @@
   </div>
 
   <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title text-center">Scheda cliente</h4>
-      <button
-        class="b3"
-        type="button"
-        aria-label="Close"
-        (click)="modal.dismiss('Cross click')"
-      >
-        <i class="bi bi-x-lg"></i>
-      </button>
-    </div>
-    <div class="modal-body">
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+      <div class="modal-header">
+        <h4 class="modal-title text-center">Scheda cliente</h4>
+        <button class="b3" type="button" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="modal-body">
         <h2 class="h3 mb-3 fw-normal text-white">Crea anagrafica cliente</h2>
 
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="ragioneSociale"
-            placeholder="Asso Group"
-            formControlName="ragioneSociale"
-            ngModel
-          />
+          <input type="text" class="form-control" id="ragioneSociale" placeholder="Asso Group"
+            formControlName="ragioneSociale" />
           <label for="ragioneSociale">{{ cliente?.ragioneSociale }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="tipoCliente"
-            placeholder="Srl"
-            formControlName="tipoCliente"
-            ngModel
-          />
+          <input type="text" class="form-control" id="tipoCliente" placeholder="Srl" formControlName="tipoCliente" />
           <label for="tipoCliente">{{ cliente?.tipoCliente }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="partitaIva"
-            placeholder="0123456789"
-            formControlName="partitaIva"
-            ngModel
-          />
+          <input type="text" class="form-control" id="partitaIva" placeholder="0123456789"
+            formControlName="partitaIva" />
           <label for="partitaIva">{{ cliente?.partitaIva }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="name@example.com"
-            formControlName="email"
-            ngModel
-          />
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email" />
           <label for="email">{{ cliente?.email }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="pec"
-            placeholder="pec"
-            formControlName="pec"
-            ngModel
-          />
+          <input type="email" class="form-control" id="pec" placeholder="pec" formControlName="pec" />
           <label for="pec">{{ cliente?.pec }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="telefono"
-            placeholder="Telefono"
-            formControlName="telefono"
-            ngModel
-          />
+          <input type="text" class="form-control" id="telefono" placeholder="Telefono" formControlName="telefono" />
           <label for="telefono">{{ cliente?.telefono }}</label>
         </div>
 
         <h3>Contatto</h3>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="nomeContatto"
-            placeholder="Nome"
-            formControlName="nomeContatto"
-            ngModel
-          />
+          <input type="text" class="form-control" id="nomeContatto" placeholder="Nome" formControlName="nomeContatto" />
           <label for="nomeContatto">{{ cliente?.nomeContatto }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="cognomeContatto"
-            placeholder="Cognome"
-            formControlName="cognomeContatto"
-            ngModel
-          />
+          <input type="text" class="form-control" id="cognomeContatto" placeholder="Cognome"
+            formControlName="cognomeContatto" />
           <label for="cognomeContatto">{{ cliente?.cognomeContatto }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="telefonoContatto"
-            placeholder="Telefono"
-            formControlName="telefonoContatto"
-            ngModel
-          />
+          <input type="text" class="form-control" id="telefonoContatto" placeholder="Telefono"
+            formControlName="telefonoContatto" />
           <label for="telefonoContatto">{{ cliente?.telefonoContatto }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="emailContatto"
-            placeholder="name@example.com"
-            formControlName="emailContatto"
-            ngModel
-          />
+          <input type="email" class="form-control" id="emailContatto" placeholder="name@example.com"
+            formControlName="emailContatto" />
           <label for="emailContatto">{{ cliente?.emailContatto }}</label>
         </div>
 
         <h3>Indirizzo sede</h3>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="via"
-            placeholder="via"
-            formControlName="indirizzoSede.via"
-            ngModel
-          />
+          <input type="text" class="form-control" id="via" placeholder="via" formControlName="via" />
           <label for="via">{{ cliente?.indirizzoSede?.via }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="civico"
-            placeholder="N° Civico"
-            formControlName="indirizzoSede.civico"
-            ngModel
-          />
+          <input type="text" class="form-control" id="civico" placeholder="N° Civico" formControlName="civico" />
           <label for="civico">{{ cliente?.indirizzoSede?.civico }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="cap"
-            placeholder="cap"
-            formControlName="indirizzoSede.cap"
-            ngModel
-          />
+          <input type="text" class="form-control" id="cap" placeholder="cap" formControlName="cap" />
           <label for="cap">{{ cliente?.indirizzoSede?.cap }}</label>
         </div>
         <h3>Comune</h3>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="comuneNome"
-            placeholder="Città"
-            formControlName="indirizzoSede.comune.nome"
-            ngModel
-          />
-          <label for="comuneNome"
-            >{{ cliente?.indirizzoSede?.comune?.nome }}</label
-          >
+          <input type="text" class="form-control" id="comuneNome" placeholder="Città" formControlName="nome" />
+          <label for="comuneNome">{{ cliente?.indirizzoSede?.comune?.nome }}</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="provincia"
-            placeholder="Provincia"
-            formControlName="indirizzoSede.comune.provincia"
-            ngModel
-          />
-          <label for="provincia"
-            >{{ cliente?.indirizzoSede?.comune?.provincia }}</label
-          >
+          <input type="text" class="form-control" id="provincia" placeholder="Provincia" formControlName="provincia" />
+          <label for="provincia">{{ cliente?.indirizzoSede?.comune?.provincia }}</label>
         </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button class="b4" type="submit">
-        <i class="bi bi-check-lg"></i>
-      </button>
-    </div>
+      </div>
+      <div class="modal-footer">
+        <button class="b4" type="submit">
+          <i class="bi bi-check-lg"></i>
+        </button>
+      </div>
+    </form>
   </ng-template>
 </section>
