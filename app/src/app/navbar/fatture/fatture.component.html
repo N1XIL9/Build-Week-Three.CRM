@@ -1,5 +1,5 @@
 <main class="form-signin m-auto">
-  <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="form-floating mb-3">
       <input
         type="text"
@@ -27,7 +27,6 @@
     <button type="submit">Aggiungi Fattura</button>
   </form>
 
-
   <section class="container-fluid">
     <table class="table table-success table-striped">
       <thead>
@@ -43,14 +42,19 @@
       <tbody>
         <tr *ngFor="let fattura of fatture">
           <th>{{ fattura.id }}</th>
-          <td></td>
+          <td #id>{{ fattura }}</td>
           <td>{{ fattura.dataInserimento }}</td>
           <td>{{ fattura.importo }}</td>
-          <td>{{fattura.stato}}</td>
+          <td>{{ fattura.stato }}</td>
           <td>
-            <button mat-button type="submit" [routerLink]="[fattura.id]" routerLinkActive="router-link-active" ><i
-              class="bi bi-info-circle"></i></button>
-
+            <button
+              mat-button
+              type="submit"
+              [routerLink]="[fattura.id]"
+              routerLinkActive="router-link-active"
+            >
+              <i class="bi bi-info-circle"></i>
+            </button>
           </td>
         </tr>
       </tbody>
