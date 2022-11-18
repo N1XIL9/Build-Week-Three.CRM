@@ -80,8 +80,8 @@ table {
 }
 
 input {
-  background: #131419;
-  color: grey;
+  background: #131419 !important;
+  color: grey !important;
 
   outline: none;
   border-radius: 40px;
@@ -95,8 +95,8 @@ input {
 }
 
 input:hover {
-  background: #131419;
-  color: #fbb400;
+  background: #131419 !important;
+  color: #fbb400 !important;
   box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
     inset 2px 2px 6px rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),

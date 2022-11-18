@@ -99,8 +99,8 @@
 }
 
 input {
-  background: #131419;
-  color: #006c9c;
+  background: #131419 !important;
+  color: #006c9c !important;
   outline: none;
   border-radius: 40px;
   box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
@@ -113,8 +113,8 @@ input {
 }
 
 input:hover {
-  background: #131419;
-  color: #006c9c;
+  background: #131419 !important;
+  color: #006c9c !important;
 
   box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
     inset 2px 2px 6px rgba(0, 0, 0, 0.8);
