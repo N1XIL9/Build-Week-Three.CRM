@@ -80,6 +80,15 @@
       "age": 7,
       "roles": "ROLE_USER",
       "id": 13
+    },
+    {
+      "email": "example@example7.it",
+      "password": "$2a$10$qJbD9J.6b/iQPgMzILOlTubuujRy7xUT5E/ZE5J6UvRo6uaRKHrBG",
+      "firstname": "asasd",
+      "lastname": "fafadsf",
+      "age": 23,
+      "id": 14,
+      "roles": "ROLE_USER"
     }
   ],
   "client": [

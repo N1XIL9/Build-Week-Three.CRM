@@ -5,5 +5,5 @@ export class Users {
   email?: string;
   password?: string;
   age?: number;
-  roles?: 'ROLE_USER';
+  roles?: string;
 }
