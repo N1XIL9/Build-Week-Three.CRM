@@ -18,7 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ClientDetailsPage } from './navbar/clienti/client-details/client-details.page';
 import { ClientiListaComponent } from './navbar/clienti/clienti-lista/clienti-lista.component';
 import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fatture-details.component';
-
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fattur
     DettagliUtenteComponent,
     ClientDetailsPage,
     ClientiListaComponent,
-    FattureDetailsComponent
+    FattureDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +43,7 @@ import { FattureDetailsComponent } from './navbar/fatture/fatture-details/fattur
     MatDialogModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatMenuModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

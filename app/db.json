@@ -1,13 +1,14 @@
 {
   "users": [
     {
-      "email": "t@t",
+      "email": "disney@gmail.com",
       "password": "$2a$10$ILHp2DO7X9x00/xbOxHMVejJbkve2ICqOYdOdBRUb/iOK.4tnJYFi",
-      "firstname": "",
-      "lastname": "",
-      "age": "25",
+      "firstname": "Pippo",
+      "lastname": "Topolino",
+      "age": "30",
       "role": "",
-      "id": 3
+      "id": 3,
+      "roles": "ROLE_USER"
     },
     {
       "email": "nicolalerra@hotmail.it",
@@ -17,6 +18,77 @@
       "age": 31,
       "id": 6,
       "roles": "ROLE_ADMIN"
+    },
+    {
+      "email": "example@example.it",
+      "password": "$2a$10$SmdTyPBB1gHv4PTj874T2.g2ezGkrFkb7KmxDc2b4EIt2sjN3jrf6",
+      "firstname": "Lamberto",
+      "lastname": "Martini",
+      "age": 27,
+      "id": 7
+    },
+    {
+      "email": "example@example1.it",
+      "password": "$2a$10$TgFDaVcM4y8b.0QtRJRh/e90nBFq/ahcfahBMBM8hiGoWRlbHQ8pe",
+      "firstname": "Cicc",
+      "lastname": "lll",
+      "age": 40,
+      "id": 8,
+      "roles": "ROLE_USER"
+    },
+    {
+      "email": "example@example2.it",
+      "password": "$2a$10$o8hCZUGHhWoXfX1Ng6tPCuHEIuUBXmlCfcIaTmSUFfeG8zSM6wGv.",
+      "firstname": "Pippo",
+      "lastname": "Luca",
+      "age": 23,
+      "id": 9,
+      "roles": "ROLE_USER"
+    },
+    {
+      "email": "example@example3.it",
+      "password": "$2a$10$OK49bCBk45RoDbmHKWZ5nO1yD1n5beTZJ5w15GMF6MM9W3n04nyW6",
+      "firstname": "luca",
+      "lastname": "mimmo",
+      "age": 36,
+      "roles": "ROLE_USER",
+      "id": 10
+    },
+    {
+      "email": "example@example4.it",
+      "password": "$2a$10$Iw6iGF1tyRuksA5M2wMHGOCnfnobSBNQGaUv.TNV894nZGF4dmqlK",
+      "firstname": "w",
+      "lastname": "w",
+      "age": 25,
+      "roles": "",
+      "id": 11
+    },
+    {
+      "email": "example@example5.it",
+      "password": "$2a$10$u1ULtUawp6zqh2D75kC46uc7VIsSfAnVBU4z/6y3IfxEk4d1Ad906",
+      "firstname": "sads",
+      "lastname": "asd",
+      "age": 5,
+      "roles": "",
+      "id": 12
+    },
+    {
+      "email": "example@example6.it",
+      "password": "$2a$10$0enaS7YcZk7k8yIdmjtlyer4/Ucd4st36MryRZsZObTz4FwleCsca",
+      "firstname": "asdas",
+      "lastname": "sadas",
+      "age": 7,
+      "roles": "ROLE_USER",
+      "id": 13
+    },
+    {
+      "email": "example@example7.it",
+      "password": "$2a$10$qJbD9J.6b/iQPgMzILOlTubuujRy7xUT5E/ZE5J6UvRo6uaRKHrBG",
+      "firstname": "asasd",
+      "lastname": "fafadsf",
+      "age": 23,
+      "id": 14,
+      "roles": "ROLE_USER"
     }
   ],
   "client": [
@@ -65,7 +137,12 @@
       "indirizzoSede.comune.nome": "London",
       "indirizzoSede.comune.provincia": "Greater London",
       "dataInserimento": "2022-11-17T11:46:55.613Z",
-      "id": 3
+      "id": 3,
+      "via": "AS",
+      "civico": "as",
+      "cap": "AS",
+      "nome": "As",
+      "provincia": "as"
     }
   ],
   "invoices": [

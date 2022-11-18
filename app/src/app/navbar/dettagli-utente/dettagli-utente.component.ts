@@ -43,27 +43,33 @@ export class DettagliUtenteComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
       });
+    this.bool = false;
   }
 
   changeProp() {
-    this.bool = !this.bool;
-    this.userForm.get('firstname')?.setValue(this.user.firstname);
-    this.userForm.get('lastname')?.setValue(this.user.lastname);
-    this.userForm.get('age')?.setValue(this.user.age);
-    this.userForm.get('roles')?.setValue(this.user.roles);
-    this.userForm.get('email')?.setValue(this.user.email);
+    console.log(this.user);
+    if (this.user.roles !== 'ROLE_ADMIN') {
+      this.bool = !this.bool;
+      this.userForm.get('firstname')?.setValue(this.user.firstname);
+      this.userForm.get('lastname')?.setValue(this.user.lastname);
+      this.userForm.get('age')?.setValue(this.user.age);
+      this.userForm.get('roles')?.setValue(this.user.roles);
+      this.userForm.get('email')?.setValue(this.user.email);
 
-    console.log(this.userForm.value);
+      console.log(this.userForm.value);
+    }
   }
 
   deleteUser(user: any) {
-    if (confirm('Vuoi eliminare questo utente?')) {
-      this.authService.deleteUser(user.id).subscribe(
-        (resp) => {
-          this.user;
-        },
-        (error) => console.log(error)
-      );
+    if (this.user.roles !== 'ROLE_ADMIN') {
+      if (confirm('Vuoi eliminare questo utente?')) {
+        this.authService.deleteUser(user.id).subscribe(
+          (resp) => {
+            this.user;
+          },
+          (error) => console.log(error)
+        );
+      }
     }
   }
 }

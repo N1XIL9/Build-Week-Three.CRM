@@ -80,9 +80,15 @@ nav {
   font-size: 1.9rem;
 }
 
-
 //MEDIA PRINT FATTURA
 
 @media print {
-  .navbar, .img{display: none};
+  .navbar,
+  .img {
+    display: none;
+  }
+}
+mat-menu {
+  background: #131419 !important;
+  color: lightgray !important;
 }

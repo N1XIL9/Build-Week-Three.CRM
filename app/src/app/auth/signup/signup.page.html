@@ -1,9 +1,5 @@
 <div class="cont-flex">
-  <section
-    class="text-center container-fluid"
-    cz-shortcut-listen="true"
-    id="signup"
-  >
+  <section class="text-center container-fluid" cz-shortcut-listen="true" id="signup">
     <h1>
       <img class="loGo" src="../../../assets/logo.png" alt="logo" />
     </h1>
@@ -14,81 +10,37 @@
         </h2>
         <div>
           <p>
-            <ngb-alert
-              [dismissible]="true"
-              *ngIf="showAlert"
-              (closed)="close()"
-            >
+            <ngb-alert [dismissible]="true" *ngIf="showAlert" (closed)="close()">
               <strong>Attenzione!</strong> {{error}}
             </ngb-alert>
           </p>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="floatingName"
-            placeholder="Nome"
-            name="firstname"
-            ngModel
-            required
-          />
+          <input type="text" class="form-control" id="floatingName" placeholder="Nome" name="firstname" ngModel
+            required />
           <label for="floatingName">Nome</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            id="floatingLastName"
-            placeholder="Cognome"
-            name="lastname"
-            ngModel
-            required
-          />
+          <input type="text" class="form-control" id="floatingLastName" placeholder="Cognome" name="lastname" ngModel
+            required />
           <label for="floatingLastName">Cognome</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
-            name="email"
-            ngModel
-            required
-          />
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
+            ngModel required />
           <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="password"
-            class="form-control"
-            id="floatingPassword"
-            placeholder="Password"
-            name="password"
-            ngModel
-            required
-          />
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+            ngModel required />
           <label for="floatingPassword">Password</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="number"
-            class="form-control"
-            id="floatingage"
-            placeholder="Età"
-            name="age"
-            ngModel
-            required
-          />
+          <input type="number" class="form-control" id="floatingage" placeholder="Età" name="age" ngModel required />
           <label for="floatingage">Età</label>
         </div>
-        <button
-          id="b2"
-          class="w-100 btn btn-lg"
-          type="submit"
-          [disabled]="!f.valid"
-        >
+
+        <button id="b2" class="w-100 btn btn-lg" type="submit" [disabled]="!f.valid">
           Registrati
         </button>
       </form>

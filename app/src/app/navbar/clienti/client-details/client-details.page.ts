@@ -45,27 +45,16 @@ export class ClientDetailsPage implements OnInit {
       email: '',
       pec: '',
       telefono: '',
-      nomeContatto: 'Maria',
+      nomeContatto: '',
       cognomeContatto: '',
       telefonoContatto: '',
       emailContatto: '',
-      via: new FormControl('Contrada Gastone 4, Piano 4'),
-      civico: new FormControl('698'),
-      cap: new FormControl('38615'),
-      nome: new FormControl('LASTRA A SIGNA'),
-      provincia: new FormControl('FI'),
+      via: new FormControl(''),
+      civico: new FormControl(''),
+      cap: new FormControl(''),
+      nome: new FormControl(''),
+      provincia: new FormControl(''),
     });
-
-    // this.indirizzoSede = this.formBuilder.group({
-    // via: new FormControl('Contrada Gastone 4, Piano 4');
-    // civico:new FormControl( '698');
-    // cap:new FormControl ('38615');
-    // });
-
-    // this.comune = this.formBuilder.group({
-    // nome: new FormControl('LASTRA A SIGNA');
-    // provincia: new FormControl('FI');
-    // });
   }
 
   closeDetails() {
@@ -88,20 +77,14 @@ export class ClientDetailsPage implements OnInit {
       .get('telefonoContatto')
       ?.setValue(this.cliente?.telefonoContatto);
     this.userForm.get('emailContatto')?.setValue(this.cliente?.emailContatto);
+    this.userForm.get('via')?.setValue(this.cliente?.indirizzoSede?.via);
+    this.userForm.get('civico')?.setValue(this.cliente?.indirizzoSede?.civico);
+    this.userForm.get('cap')?.setValue(this.cliente?.indirizzoSede?.cap);
     this.userForm
-      .get('indirizzoSede.via')
-      ?.setValue(this.cliente?.indirizzoSede?.via);
-    this.userForm
-      .get('indirizzoSede.civico')
-      ?.setValue(this.cliente?.indirizzoSede?.civico);
-    this.userForm
-      .get('indirizzoSede.cap')
-      ?.setValue(this.cliente?.indirizzoSede?.cap);
-    this.userForm
-      .get('indirizzoSede.comune.nome')
+      .get('nome')
       ?.setValue(this.cliente?.indirizzoSede?.comune.nome);
     this.userForm
-      .get('indirizzoSede.comune.provincia')
+      .get('provincia')
       ?.setValue(this.cliente?.indirizzoSede?.comune.provincia);
 
     console.log(this.userForm.value);

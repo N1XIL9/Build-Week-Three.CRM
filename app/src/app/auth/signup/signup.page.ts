@@ -5,32 +5,30 @@ import { ServiceService } from '../service.service';
 
 @Component({
   templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss']
+  styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
+  error = undefined;
+  showAlert = false;
 
-  error=undefined
-  showAlert=false
+  constructor(private authService: ServiceService, private router: Router) {}
 
-  constructor(private authService:ServiceService, private router:Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  onSubmit(form:NgForm){
+  onSubmit(form: NgForm) {
     this.authService.signup(form.value).subscribe(
-      data=>{
-      console.log(data);
-      this.router.navigate(['/login'])
-    },
-    err => {
-      console.log(err);
-      this.error = err.error;
-      this.showAlert = !this.showAlert
-      })
+      (data) => {
+        console.log(data);
+        this.router.navigate(['/login']);
+      },
+      (err) => {
+        console.log(err);
+        this.error = err.error;
+        this.showAlert = !this.showAlert;
+      }
+    );
   }
-  close(){
-    this.showAlert = !this.showAlert
+  close() {
+    this.showAlert = !this.showAlert;
   }
-
 }
