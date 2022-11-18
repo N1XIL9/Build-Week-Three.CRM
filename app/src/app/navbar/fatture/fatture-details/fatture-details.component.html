@@ -1,144 +1,191 @@
-
 <div id="cont" class="page-content container">
-    <div class="page-header text-blue-d2">
-        <h1 class="page-title text-secondary-d1">
-            Fattura
-            <small class="page-info">
-                <i class="fa fa-angle-double-right text-80"></i>
-                {{fattura.id}}
-            </small>
-        </h1>
+  <div class="page-header text-blue-d2">
+    <h1 class="page-title text-secondary-d1">
+      Fattura
+      <small class="page-info">
+        <i class="fa fa-angle-double-right text-80"></i>
+        {{ fattura.id }}
+      </small>
+    </h1>
 
-        <div class="page-tools">
-            <div class="action-buttons">
-                <button (click)="printPage()" class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
-                    <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
-                    Stampa
-                </button>
-                <button (click)="printPage()" class="btn bg-white btn-light mx-1px text-95" href="#" data-title="PDF">
-                    <i class="mr-1 fa fa-file-pdf-o text-danger-m1 text-120 w-2"></i>
-                    Salva PDF
-                </button>
-            </div>
-        </div>
+    <div class="page-tools">
+      <div class="action-buttons">
+        <button
+          id="b2"
+          (click)="printPage()"
+          class="w-40 btn btn-lg"
+          href="#"
+          data-title="Print"
+        >
+          <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
+          Stampa
+        </button>
+        <button
+          id="b1"
+          (click)="printPage()"
+          class="w-40 btn btn-lg"
+          href="#"
+          data-title="PDF"
+        >
+          <i class="mr-1 fa fa-file-pdf-o text-danger-m1 text-120 w-2"></i>
+          Salva PDF
+        </button>
+      </div>
     </div>
+  </div>
 
-    <div class="container px-0">
-        <div class="row mt-4">
-            <div class="col-12 col-lg-12">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="text-center text-150">
-
-                          <img class="loGo" src="../../../../assets/logo.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- .row -->
-
-                <hr class="row brc-default-l1 mx-n1 mb-4" />
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div>
-                            <span class="text-sm text-grey-m2 align-middle text-600 text-90">Intestatario: </span>
-                            <span class="text-600 text-110 text-blue align-middle">{{cliente?.ragioneSociale}}</span>
-                        </div>
-                        <div class="text-grey-m2">
-                            <div class="my-1">
-                              <span class="text-600 text-90">Indirizzo: </span> {{cliente?.indirizzoSede?.via}}
-                            </div>
-                            <div class="my-1">
-                              <span class="text-600 text-90">Comune: </span>{{cliente?.indirizzoSede?.comune?.nome}}
-                            </div>
-                            <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600">{{cliente?.telefono}}</b></div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-
-                    <div class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end">
-                        <hr class="d-sm-none" />
-                        <div class="text-grey-m2">
-                            <div class="mt-1 mb-2 text-secondary-m1 text-600 text-125">
-                                Fattura
-                            </div>
-
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">ID:</span>{{fattura.id}}</div>
-
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Emanata il:</span> {{fattura.dataInserimento | date: "dd/MM/yyyy"}}</div>
-
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Stato:</span> <span class="badge badge-warning badge-pill px-25">{{fattura.stato}}</span></div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                </div>
-
-                <div class="mt-4">
-                    <div class="row text-600 text-white bgc-default-tp1 py-25">
-                        <div class="d-none d-sm-block col-1">#</div>
-                        <div class="col-9 col-sm-5">Descrizione</div>
-                        <div class="d-none d-sm-block col-4 col-sm-2">Quantità</div>
-                        <div class="d-none d-sm-block col-sm-2">Prezzo</div>
-                        <div class="col-2">Totale</div>
-                    </div>
-
-                    <div class="text-95 text-secondary-d3">
-                        <div class="row mb-2 mb-sm-0 py-25">
-                            <div class="d-none d-sm-block col-1">{{fattura.id}}</div>
-                            <div class="col-9 col-sm-5">{{fattura.servizio}}</div>
-                            <div class="d-none d-sm-block col-2">{{fattura.quantita}}</div>
-                            <div class="d-none d-sm-block col-2 text-95">{{fattura.importo | currency:"EUR": true}}</div>
-                            <div class="col-2 text-secondary-d2">{{fattura.importo | currency:"EUR": true}}</div>
-                        </div>
-                    </div>
-
-                    <div class="row border-b-2 brc-default-l2"></div>
-
-
-
-                    <div class="row mt-3">
-                        <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
-                            Emanata da CRM S.p.a.
-                        </div>
-
-                        <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
-                            <div class="row my-2">
-                                <div class="col-7 text-right">
-                                    SubTotale
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-120 text-secondary-d1">{{fattura.importo | currency: "EUR":true}}</span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2">
-                                <div class="col-7 text-right">
-                                    IVA (22%)
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-110 text-secondary-d1">{{fattura.importo *22 /100 | currency: "EUR":true}}</span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2 align-items-center bgc-primary-l3 p-2">
-                                <div class="col-7 text-right">
-                                    Totale
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">{{fattura.importo*1  +fattura.importo *22 /100*1 | currency: "EUR":true}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr />
-
-                    <div>
-                        <span class="text-secondary-d1 text-105">La ringraziamo per averci scelto</span>
-                        <button type="button" (click)="payInvoice()" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0">Paga Ora</button>
-                    </div>
-                </div>
+  <div class="container px-0">
+    <div class="row mt-4">
+      <div class="col-12 col-lg-12">
+        <div class="row">
+          <div class="col-12">
+            <div class="text-center text-150">
+              <img class="loGo" src="../../../../assets/logo.png" alt="" />
             </div>
+          </div>
         </div>
+        <!-- .row -->
+
+        <hr class="row brc-default-l1 mx-n1 mb-4" />
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div>
+              <span class="text-sm text-grey-m2 align-middle text-600 text-90"
+                >Intestatario:
+              </span>
+              <span class="text-600 text-110 text-blue align-middle">{{
+                cliente?.ragioneSociale
+              }}</span>
+            </div>
+            <div class="text-grey-m2">
+              <div class="my-1">
+                <span class="text-600 text-90">Indirizzo: </span>
+                {{ cliente?.indirizzoSede?.via }}
+              </div>
+              <div class="my-1">
+                <span class="text-600 text-90">Comune: </span
+                >{{ cliente?.indirizzoSede?.comune?.nome }}
+              </div>
+              <div class="my-1">
+                <i class="fa fa-phone fa-flip-horizontal text-secondary"></i>
+                <b class="text-600">{{ cliente?.telefono }}</b>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+
+          <div
+            class="text-95 col-sm-6 align-self-start d-sm-flex justify-content-end"
+          >
+            <hr class="d-sm-none" />
+            <div class="text-grey-m2">
+              <div class="mt-1 mb-2 text-secondary-m1 text-600 text-125">
+                Fattura
+              </div>
+
+              <div class="my-2">
+                <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
+                <span class="text-600 text-90">ID:</span>{{ fattura.id }}
+              </div>
+
+              <div class="my-2">
+                <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
+                <span class="text-600 text-90">Emanata il:</span>
+                {{ fattura.dataInserimento | date: "dd/MM/yyyy" }}
+              </div>
+
+              <div class="my-2">
+                <i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
+                <span class="text-600 text-90">Stato:</span>
+                <span class="badge badge-warning badge-pill px-25">{{
+                  fattura.stato
+                }}</span>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+
+        <div class="mt-4">
+          <div class="row text-600 text-white bgc-default-tp1 py-25">
+            <div class="d-none d-sm-block col-1">#</div>
+            <div class="col-9 col-sm-5">Descrizione</div>
+            <div class="d-none d-sm-block col-4 col-sm-2">Quantità</div>
+            <div class="d-none d-sm-block col-sm-2">Prezzo</div>
+            <div class="col-2">Totale</div>
+          </div>
+
+          <div class="text-95 text-secondary-d3">
+            <div class="row mb-2 mb-sm-0 py-25">
+              <div class="d-none d-sm-block col-1">{{ fattura.id }}</div>
+              <div class="col-9 col-sm-5">{{ fattura.servizio }}</div>
+              <div class="d-none d-sm-block col-2">{{ fattura.quantita }}</div>
+              <div class="d-none d-sm-block col-2 text-95">
+                {{ fattura.importo | currency: "EUR":true }}
+              </div>
+              <div class="col-2 text-secondary-d2">
+                {{ fattura.importo | currency: "EUR":true }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row border-b-2 brc-default-l2"></div>
+
+          <div class="row mt-3">
+            <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
+              Emanata da CRM S.p.a.
+            </div>
+
+            <div
+              class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last"
+            >
+              <div class="row my-2">
+                <div class="col-7 text-right">SubTotale</div>
+                <div class="col-5">
+                  <span class="text-120 text-secondary-d1">{{
+                    fattura.importo | currency: "EUR":true
+                  }}</span>
+                </div>
+              </div>
+
+              <div class="row my-2">
+                <div class="col-7 text-right">IVA (22%)</div>
+                <div class="col-5">
+                  <span class="text-110 text-secondary-d1">{{
+                    (fattura.importo * 22) / 100 | currency: "EUR":true
+                  }}</span>
+                </div>
+              </div>
+
+              <div class="row my-2 align-items-center bgc-primary-l3 p-2">
+                <div class="col-7 text-right">Totale</div>
+                <div class="col-5">
+                  <span class="text-150 text-success-d3 opacity-2">{{
+                    fattura.importo * 1 + ((fattura.importo * 22) / 100) * 1
+                      | currency: "EUR":true
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div>
+            <span class="text-secondary-d1 text-105"
+              >La ringraziamo per averci scelto</span
+            >
+            <button
+              type="button"
+              (click)="payInvoice()"
+              class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0"
+            >
+              Paga Ora
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

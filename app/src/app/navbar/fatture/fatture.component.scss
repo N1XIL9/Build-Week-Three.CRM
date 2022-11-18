@@ -12,30 +12,20 @@
   border: none;
   font-size: 1.3rem;
 }
-
 #b2 {
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
-  color: #18befe;
+  text-align: center;
+  box-shadow: 0px -1px 1px 2px rgb(255 255 255 / 5%),
+    3px 5px 3px 4px rgb(0 0 0 / 50%);
+  -webkit-box-shadow: 0px -1px 1px 2px rgb(255 255 255 / 5%),
+    3px 5px 3px 4px rgb(0 0 0 / 50%);
+  -moz-box-shadow: 0px -1px 1px 2px rgb(255 255 255 / 5%),
+    3px 5px 3px 4px rgb(0 0 0 / 50%);
+  color: green;
   background: #131419;
   border: none;
   font-size: 1.3rem;
-}
-#b3 {
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
-  color: red;
-  background: #131419;
-  border: none;
-  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .td-id {
@@ -51,6 +41,45 @@ th {
 tr {
   color: grey;
   border: #131419;
+}
+
+.cont {
+  margin-top: 60px;
+
+  .h3 {
+    text-align: center;
+    color: lightgray;
+  }
+}
+
+form {
+  margin: auto;
+  background: #131419;
+  color: lightgray;
+}
+
+input {
+  background-color: #131419 !important;
+  color: #006c9c !important;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  border: none;
+}
+
+input:hover {
+  background-color: #131419 !important;
+
+  color: #006c9c !important;
+}
+
+label {
+  color: lightgrey;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -76,10 +105,10 @@ tr {
 @media (min-width: 1400px) {
 }
 
-
-
 //MEDIA PRINT
 
 @media print {
-  #not-print{display: none};
+  #not-print {
+    display: none;
+  }
 }

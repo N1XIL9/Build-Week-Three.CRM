@@ -21,34 +21,6 @@
   ],
   "client": [
     {
-      "id": 1,
-      "ragioneSociale": "",
-      "partitaIva": "",
-      "tipoCliente": "",
-      "email": "",
-      "pec": "",
-      "telefono": "",
-      "nomeContatto": "Maria",
-      "cognomeContatto": "Rossi",
-      "telefonoContatto": "",
-      "emailContatto": "",
-      "indirizzoSede": {
-        "via": "Contrada Gastone 4, Piano 4",
-        "civico": "698",
-        "cap": "38615",
-        "comune": {
-          "nome": "LASTRA A SIGNA",
-          "provincia": "FI"
-        }
-      },
-      "dataInserimento": "2019-06-01T08:11:01.911+00:00",
-      "via": "Contrada Gastone 4, Piano 4",
-      "civico": "698",
-      "cap": "38615",
-      "nome": "SALERNO",
-      "provincia": "SA"
-    },
-    {
       "ragioneSociale": "Asso Group",
       "tipoCliente": "Srl",
       "partitaIva": "053447890762",
@@ -73,8 +45,8 @@
       "via": "Contrada Gastone 4, Piano 4",
       "civico": "698",
       "cap": "38615",
-      "nome": "Roma",
-      "provincia": "Rm"
+      "nome": "LASTRA A SIGNA",
+      "provincia": "FI"
     },
     {
       "ragioneSociale": "Bruno-Romano SPA - TEST",

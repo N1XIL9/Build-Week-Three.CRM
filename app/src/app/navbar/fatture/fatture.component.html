@@ -1,15 +1,11 @@
-
-<div id="not-print" class="container" >
-
-
+<div id="not-print" class="container">
   <!--Lista Clienti-->
-
 
   <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Ditta</th>
+        <th scope="col">Cliente</th>
         <th class="lbTel" scope="col">P.IVA</th>
         <th scope="col">Contatto</th>
         <th class="lbTel" scope="col">Telefono</th>
@@ -24,7 +20,7 @@
         <!-- <td [hidden]="noShow">{{ cl.indirizzoSede?.comune }}</td> -->
         <td class="lbTel">
           {{ cl.indirizzoSede?.comune?.nome }} ({{
-          cl.indirizzoSede?.comune?.provincia
+            cl.indirizzoSede?.comune?.provincia
           }})
         </td>
       </tr>
@@ -33,15 +29,11 @@
 
   <!-- INPUT FATTURE -->
 
-  <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
-    <h2 class="h3 mb-3 fw-normal text-white">Crea Fattura</h2>
+  <form class="cont" [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+    <h2 class="h3 mb-3 fw-normal">Crea Fattura</h2>
     <div>
       <p>
-        <ngb-alert
-          [dismissible]="true"
-          *ngIf="showAlert"
-
-        >
+        <ngb-alert [dismissible]="true" *ngIf="showAlert">
           <strong>Attenzione!</strong> {{ error }}
         </ngb-alert>
       </p>
@@ -49,44 +41,44 @@
 
     <div class="form-floating mb-3" formGroupName="cliente">
       <input
-      type="text"
-      class="form-control"
-      id="id"
-      placeholder=""
-      formControlName= "id"
+        type="text"
+        class="form-control"
+        id="id"
+        placeholder=""
+        formControlName="id"
       />
-      <label for="cliente">Cliente</label>
+      <label for="cliente">Inserisci numero ID cliente</label>
     </div>
 
     <div class="form-floating mb-3">
       <input
-      type="text"
-      class="form-control"
-      id="importo"
-      placeholder=""
-      formControlName="importo"
+        type="text"
+        class="form-control"
+        id="importo"
+        placeholder=""
+        formControlName="importo"
       />
-      <label for="importo">Importo</label>
+      <label for="importo">Inserisci l'importo</label>
     </div>
     <div class="form-floating mb-3">
       <input
-      type="text"
-      class="form-control"
-      id="servizio"
-      placeholder=""
-      formControlName="servizio"
+        type="text"
+        class="form-control"
+        id="servizio"
+        placeholder=""
+        formControlName="servizio"
       />
-      <label for="">Servizio</label>
+      <label for="">Inserisci il servizio</label>
     </div>
     <div class="form-floating mb-3">
       <input
-      type="text"
-      class="form-control"
-      id="quantita"
-      placeholder=""
-      formControlName="quantita"
+        type="text"
+        class="form-control"
+        id="quantita"
+        placeholder=""
+        formControlName="quantita"
       />
-      <label for="quantita">Quantità</label>
+      <label for="quantita">Inserisci la quantità</label>
     </div>
     <div class="form-floating mb-3" [hidden]="noShow">
       <input
@@ -108,16 +100,20 @@
       />
       <label for="stato">Stato Fattura</label>
     </div>
-    <button type="submit">Aggiungi</button>
+
+    <button id="b2" type="submit">Aggiungi</button>
   </form>
 
-  <section class="container-fluid">
-    <table class="table table-success table-striped">
+  <!-- FINE INPUT FATTURE  -->
+
+  <!-- INIZIO TABELLA  -->
+  <section class="container">
+    <table class="table">
       <thead>
         <tr>
-          <th scope="col">ID</th>
+          <th class="lbTel" scope="col">ID</th>
           <th scope="col">Cliente</th>
-          <th scope="col">Data Inserimento</th>
+          <th class="lbTel" scope="col">Data Inserimento</th>
           <th scope="col">Importo</th>
           <th scope="col">Stato</th>
           <th scope="col">Dettagli</th>
@@ -125,13 +121,16 @@
       </thead>
       <tbody>
         <tr *ngFor="let fattura of fatture">
-          <th>{{ fattura.id }}</th>
-          <td>{{fattura.cliente?.id}}</td>
-          <td>{{ fattura.dataInserimento | date: "dd/MM/yyyy" }}</td>
-          <td>{{ fattura.importo | currency:"EUR": true }}</td>
-          <td>{{fattura.stato}}</td>
+          <th class="td-id">{{ fattura.id }}</th>
+          <td>{{ fattura.cliente?.id }}</td>
+          <td class="lbTel">
+            {{ fattura.dataInserimento | date: "dd/MM/yyyy" }}
+          </td>
+          <td>{{ fattura.importo | currency: "EUR":true }}</td>
+          <td>{{ fattura.stato }}</td>
           <td>
             <button
+              id="b1"
               mat-button
               type="submit"
               [routerLink]="[fattura.id]"
@@ -144,7 +143,6 @@
       </tbody>
     </table>
   </section>
+  <!-- FINE TABELLA  -->
 </div>
 <router-outlet></router-outlet>
-
-
