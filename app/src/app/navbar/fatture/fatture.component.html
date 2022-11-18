@@ -40,7 +40,7 @@
         <ngb-alert
           [dismissible]="true"
           *ngIf="showAlert"
-          (closed)="close()"
+
         >
           <strong>Attenzione!</strong> {{ error }}
         </ngb-alert>
@@ -98,15 +98,15 @@
       />
       <label for="dataInserimento"></label>
     </div>
-    <div class="form-floating mb-3" [hidden]="noShow">
+    <div class="form-floating mb-3">
       <input
         type="text"
         class="form-control"
         id="stato"
-        placeholder="stato"
-        formControlNname="stato"
+        placeholder=""
+        formControlName="stato"
       />
-      <label for="stato"></label>
+      <label for="stato">Stato Fattura</label>
     </div>
     <button type="submit">Aggiungi</button>
   </form>

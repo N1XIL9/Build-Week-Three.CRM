@@ -31,12 +31,6 @@ export class FattureDetailsComponent implements OnInit {
         })
       });
     });
-    // this.fatturaForm = this.formBuilder.group({
-    //   cliente: '',
-    //   numero: '',
-    //   importo: '',
-    //   stato: '',
-    // });
   }
 
   printPage(){

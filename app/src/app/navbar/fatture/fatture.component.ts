@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, ChangeDetectionStrategy, Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Client } from '../clienti/client';
@@ -38,19 +38,16 @@ export class FattureComponent implements OnInit {
       }),
       "importo": new FormControl(),
       "dataInserimento": new FormControl(new Date()),
-      "stato": new FormControl("NON PAGATA"),
+      "stato": new FormControl(),
       "quantita": new FormControl(),
       "servizio": new FormControl()
     })
-
 console.log(this.invoiceForm.value)
-
-  }
-)
+})
 this.clientService.getClient().subscribe(data => this.clienti = data)
-
-
 }
+
+
 
 
 
@@ -58,24 +55,7 @@ this.clientService.getClient().subscribe(data => this.clienti = data)
 onSubmit(){
   this.fattureService.addInvoice(this.invoiceForm?.value).subscribe(data =>
     {console.log(data)
-  //   this.newInvoiceID = data
-  //   console.log(this.newInvoiceID)
-  // this.fattureService.getInvoiceDetails(this.newInvoiceID.id).subscribe(data =>
-  //   {console.log(data)
-  //     this.fattura = data;
-  //   this.idNr = this.fattura.cliente.id
-  //   this.clientService.getClientDetails(this.idNr).subscribe(data =>
-  //     {this.cliente = data
-  //   console.log(this.cliente)}
-  //   )
-  // }
-  // )
-}
-  )
+    })
+    this.fattureService.getInvoice().subscribe(data => this.fatture = data)
   }
-
-
-  close(){}
-
-
 }
