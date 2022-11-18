@@ -17,6 +17,14 @@
       "age": 31,
       "id": 6,
       "roles": "ROLE_ADMIN"
+    },
+    {
+      "email": "example@example.it",
+      "password": "$2a$10$WkfshDOJnyErC0nFtT0U1.u8X40luCHoqEOv.UwAhceLyjn8tdbjC",
+      "firstname": "Lambo",
+      "lastname": "MM",
+      "age": 26,
+      "id": 7
     }
   ],
   "client": [
@@ -143,6 +151,46 @@
       "dataInserimento": "2022-11-17T14:35:29.041Z",
       "stato": "NON PAGATA",
       "id": 6
+    },
+    {
+      "data": "",
+      "numero": null,
+      "anno": null,
+      "importo": "2323",
+      "stato": "",
+      "cliente": "mario",
+      "dataInserimento": "2022-11-18T09:48:51.570Z",
+      "id": 7
+    },
+    {
+      "data": "",
+      "numero": null,
+      "anno": null,
+      "importo": "2323",
+      "stato": "",
+      "cliente": "2",
+      "dataInserimento": "2022-11-18T09:48:51.570Z",
+      "id": 8
+    },
+    {
+      "data": "",
+      "numero": null,
+      "anno": null,
+      "importo": "555",
+      "stato": "",
+      "cliente": "1",
+      "dataInserimento": "2022-11-18T09:51:01.768Z",
+      "id": 9
+    },
+    {
+      "data": "",
+      "numero": null,
+      "anno": null,
+      "importo": "333",
+      "stato": "",
+      "cliente": "1",
+      "dataInserimento": "2022-11-18T10:02:11.366Z",
+      "id": 10
     }
   ]
 }
