@@ -121,38 +121,15 @@
       "dataUltimaModifica": "2021-03-24T21:32:06.375+00:00"
     },
     {
-      "cliente": "Bruno-Romano SPA - TEST",
+      "cliente": {
+        "id": "2"
+      },
       "importo": "2500",
-      "dataInserimento": "2022-11-17T11:50:43.586Z",
+      "dataInserimento": "2022-11-18T12:28:57.701Z",
+      "stato": "NON PAGATA",
+      "quantita": "3",
+      "servizio": "Granita al limone",
       "id": 2
-    },
-    {
-      "cliente": "Mario",
-      "importo": "3000",
-      "dataInserimento": "2022-11-17T12:06:45.621Z",
-      "stato": "",
-      "id": 3
-    },
-    {
-      "cliente": "Mario",
-      "importo": "3000",
-      "dataInserimento": "2022-11-17T12:07:31.713Z",
-      "stato": "NON PAGATA",
-      "id": 4
-    },
-    {
-      "cliente.id": "Mario",
-      "importo": "400",
-      "dataInserimento": "2022-11-17T14:15:47.148Z",
-      "stato": "NON PAGATA",
-      "id": 5
-    },
-    {
-      "cliente": "",
-      "importo": "",
-      "dataInserimento": "2022-11-17T14:35:29.041Z",
-      "stato": "NON PAGATA",
-      "id": 6
     }
   ]
 }

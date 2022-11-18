@@ -22,4 +22,9 @@ export class FattureService {
   getInvoiceDetails(id: number){
     return this.http.get<Fatture>(environment.urlAPI + "invoices/" + id)
   }
+
+  patchInvoice(id: number, data: Partial<Fatture>) {
+    return this.http.patch<any>(environment.urlAPI + 'invoices/' + id, data);
+  }
+
 }

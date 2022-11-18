@@ -1,31 +1,38 @@
-<main class="form-signin m-auto">
-  <!-- <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="cliente"
-        placeholder="Cliente"
-        name="cliente"
-        required
-        ngModel
-      />
-      <label for="cliente">Cliente</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="importo"
-        placeholder="Srl"
-        name="importo"
-        required
-        ngModel
-      />
-      <label for="importo">Importo</label>
-    </div>
-    <button type="submit">Aggiungi Fattura</button>
-  </form> -->
+
+<div id="not-print" class="container" >
+
+
+  <!--Lista Clienti-->
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Ditta</th>
+        <th class="lbTel" scope="col">P.IVA</th>
+        <th scope="col">Contatto</th>
+        <th class="lbTel" scope="col">Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cl of clienti">
+        <th class="td-id">{{ cl.id }}</th>
+        <td>{{ cl.ragioneSociale }} {{ cl.tipoCliente }}</td>
+        <td class="lbTel">{{ cl.partitaIva }}</td>
+        <td>{{ cl.nomeContatto }} {{ cl.cognomeContatto }}</td>
+        <!-- <td [hidden]="noShow">{{ cl.indirizzoSede?.comune }}</td> -->
+        <td class="lbTel">
+          {{ cl.indirizzoSede?.comune?.nome }} ({{
+          cl.indirizzoSede?.comune?.provincia
+          }})
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- INPUT FATTURE -->
+
   <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
     <h2 class="h3 mb-3 fw-normal text-white">Crea Fattura</h2>
     <div>
@@ -40,25 +47,46 @@
       </p>
     </div>
 
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3" formGroupName="cliente">
       <input
-        type="text"
-        class="form-control"
-        id="cliente"
-        placeholder=""
-        formControlName="cliente"
+      type="text"
+      class="form-control"
+      id="id"
+      placeholder=""
+      formControlName= "id"
       />
       <label for="cliente">Cliente</label>
     </div>
+
     <div class="form-floating mb-3">
       <input
-        type="text"
-        class="form-control"
-        id="importo"
-        placeholder=""
-        formControlName="importo"
+      type="text"
+      class="form-control"
+      id="importo"
+      placeholder=""
+      formControlName="importo"
       />
       <label for="importo">Importo</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+      type="text"
+      class="form-control"
+      id="servizio"
+      placeholder=""
+      formControlName="servizio"
+      />
+      <label for="">Servizio</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+      type="text"
+      class="form-control"
+      id="quantita"
+      placeholder=""
+      formControlName="quantita"
+      />
+      <label for="quantita">Quantità</label>
     </div>
     <div class="form-floating mb-3" [hidden]="noShow">
       <input
@@ -116,7 +144,8 @@
       </tbody>
     </table>
   </section>
-  <router-outlet></router-outlet>
-</main>
+</div>
+<router-outlet></router-outlet>
+
 
 
