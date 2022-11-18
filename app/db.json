@@ -25,16 +25,8 @@
       "firstname": "Lamberto",
       "lastname": "Martini",
       "age": 27,
-      "id": 7
-    },
-    {
-      "email": "example@example1.it",
-      "password": "$2a$10$TgFDaVcM4y8b.0QtRJRh/e90nBFq/ahcfahBMBM8hiGoWRlbHQ8pe",
-      "firstname": "Cicc",
-      "lastname": "lll",
-      "age": 40,
-      "id": 8,
-      "roles": "ROLE_USER"
+      "id": 7,
+      "roles": "ROLE_ADMIN"
     },
     {
       "email": "example@example2.it",
@@ -89,60 +81,43 @@
       "age": 23,
       "id": 14,
       "roles": "ROLE_USER"
+    },
+    {
+      "email": "moqapixo@mailinator.com",
+      "password": "$2a$10$YguO7RB8TKeSxd0vQBwqX.1YbjzzzDdJkFd2NuKsVFCc0MKIHDz5O",
+      "firstname": "Herrod",
+      "lastname": "Marks",
+      "age": 67,
+      "id": 15
+    },
+    {
+      "email": "m@m.com",
+      "password": "$2a$10$ySduFC5NrSg2gAPeaVnp0uTFacgmVYKVpl3WgTlRhGfXChxgHtu4K",
+      "firstname": "Jonas",
+      "lastname": "Mckenzie",
+      "age": 61,
+      "id": 16
     }
   ],
   "client": [
     {
-      "ragioneSociale": "Asso Group",
-      "tipoCliente": "Srl",
-      "partitaIva": "053447890762",
-      "email": "assogroupsrl@asso.it",
-      "pec": "assogroupsrl@asso.it",
-      "telefono": "3408353380",
-      "nomeContatto": "DANIELA",
-      "cognomeContatto": "DI FILIPPO",
-      "telefonoContatto": "3408353380",
-      "emailContatto": "danydifilippo@gmail.com",
-      "indirizzoSede": {
-        "via": "Contrada Gastone 4, Piano 4",
-        "civico": "698",
-        "cap": "38615",
-        "comune": {
-          "nome": "LASTRA A SIGNA",
-          "provincia": "FI"
-        }
-      },
-      "dataInserimento": "2022-11-17T08:40:27.404Z",
-      "id": 2,
-      "via": "Contrada Gastone 4, Piano 4",
-      "civico": "698",
-      "cap": "38615",
-      "nome": "LASTRA A SIGNA",
-      "provincia": "FI"
-    },
-    {
-      "ragioneSociale": "Bruno-Romano SPA - TEST",
-      "tipoCliente": "fdddd",
-      "partitaIva": "ddddd",
-      "email": "luigicr95@gmail.com",
-      "pec": "dddddd",
-      "telefono": "11111111",
-      "nomeContatto": "dario",
-      "cognomeContatto": "rossi",
-      "telefonoContatto": "122344",
-      "emailContatto": "luigicr95@gmail.com",
-      "indirizzoSede.via": "76 Lea Bridge road",
-      "indirizzoSede.civico": "76 Lea Bridge road",
-      "indirizzoSede.cap": "E5 9QD",
-      "indirizzoSede.comune.nome": "London",
-      "indirizzoSede.comune.provincia": "Greater London",
-      "dataInserimento": "2022-11-17T11:46:55.613Z",
-      "id": 3,
-      "via": "AS",
-      "civico": "as",
-      "cap": "AS",
-      "nome": "As",
-      "provincia": "as"
+      "ragioneSociale": "Quia et illum offic",
+      "tipoCliente": "Exercitationem qui s",
+      "partitaIva": "Aliquam id expedita ",
+      "email": "waduh@mailinator.com",
+      "pec": "zovuj@mailinator.com",
+      "telefono": "Natus quae necessita",
+      "nomeContatto": "Aliquam sit eum minu",
+      "cognomeContatto": "Facilis esse dolorem",
+      "telefonoContatto": "Voluptatum aliquid i",
+      "emailContatto": "baharihy@mailinator.com",
+      "indirizzoSede.via": "Enim sint magni volu",
+      "indirizzoSede.civico": "Nostrum et distincti",
+      "indirizzoSede.cap": "Laborum Corrupti s",
+      "indirizzoSede.comune.nome": "Ea sed officia venia",
+      "indirizzoSede.comune.provincia": "In quisquam ut adipi",
+      "dataInserimento": "2022-11-18T16:34:21.390Z",
+      "id": 5
     }
   ],
   "invoices": [
@@ -290,6 +265,17 @@
       "quantita": "1",
       "servizio": "Granita al limone",
       "id": 13
+    },
+    {
+      "cliente": {
+        "id": null
+      },
+      "importo": null,
+      "dataInserimento": "2022-11-18T16:35:49.753Z",
+      "stato": null,
+      "quantita": "3",
+      "servizio": "prog",
+      "id": 14
     }
   ]
 }
