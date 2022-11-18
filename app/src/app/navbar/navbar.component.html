@@ -2,28 +2,18 @@
   <div class="container-fluid mt-3">
     <div class="d-flex">
       <a class="navbar-brand">
-        <img
-          id="log"
-          src="../../assets/logo.png"
-          alt="Logo"
-          width="140"
-          class="d-inline-block align-text-top"
-        />
+        <img id="log" src="../../assets/logo.png" alt="Logo" width="140" class="d-inline-block align-text-top" />
       </a>
 
-      <button class="mx-3 rounded-circle" id="user">
-        {{ user.user.firstname | slice: 0:1 }}
-        {{ user.user.lastname | slice: 0:1 }}
-      </button>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="true"
-        aria-label="Toggle navigation"
-      >
+      <button id="user" class="mx-3 rounded-circle" mat-button [matMenuTriggerFor]="menu"> {{ user.user.firstname |
+        slice: 0:1 }}
+        {{ user.user.lastname | slice: 0:1 }}</button>
+      <mat-menu #menu="matMenu">
+        <button ngbDropdownItem class="nav-link" [routerLink]="['/']">Logout</button>
+      </mat-menu>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
       </button>
     </div>

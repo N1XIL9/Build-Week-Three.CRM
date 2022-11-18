@@ -43,6 +43,7 @@ export class DettagliUtenteComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
       });
+    this.bool = false;
   }
 
   changeProp() {

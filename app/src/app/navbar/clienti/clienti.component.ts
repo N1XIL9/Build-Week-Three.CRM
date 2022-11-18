@@ -8,38 +8,36 @@ import { ClientService } from './client.service';
 @Component({
   selector: 'app-clienti',
   templateUrl: './clienti.component.html',
-  styleUrls: ['./clienti.component.scss']
+  styleUrls: ['./clienti.component.scss'],
 })
 export class ClientiComponent implements OnInit {
+  clienti: Client[] = [];
+  dateIns = new Date();
+  noShow = true;
+  error = undefined;
+  showAlert = false;
+  bool = false;
 
-  clienti: Client[]=[]
-  dateIns= new Date()
-  noShow= true
-  error=undefined
-  showAlert=false
+  constructor(private clientService: ClientService, private router: Router) {}
 
-  constructor(private clientService:ClientService, private router:Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  onSubmit(form:NgForm){
-    form.value.dataInserimento = this.dateIns
+  onSubmit(form: NgForm) {
+    form.value.dataInserimento = this.dateIns;
     console.log(form.value);
-    this.clientService.addClient(form.value).subscribe((data)=>{
-      console.log(data);
-    },
-    err => {
-      console.log(err);
-      this.error = err.error;
-      this.showAlert = !this.showAlert
-      })
+    this.clientService.addClient(form.value).subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (err) => {
+        console.log(err);
+        this.error = err.error;
+        this.showAlert = !this.showAlert;
+      }
+    );
   }
 
-  close(){
-    this.showAlert = !this.showAlert
+  close() {
+    this.showAlert = !this.showAlert;
   }
-
-
 }
-
