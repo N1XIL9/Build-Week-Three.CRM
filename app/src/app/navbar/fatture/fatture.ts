@@ -10,4 +10,6 @@ export class Fatture {
     }
     dataInserimento?: string
     dataUltimaModifica?: string
+    quantita?: number
+    servizo?: string
 }

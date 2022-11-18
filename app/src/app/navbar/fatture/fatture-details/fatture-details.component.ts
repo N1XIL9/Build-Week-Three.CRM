@@ -31,30 +31,46 @@ export class FattureDetailsComponent implements OnInit {
         })
       });
     });
-    this.fatturaForm = this.formBuilder.group({
-      cliente: '',
-      numero: '',
-      importo: '',
-      stato: '',
+    // this.fatturaForm = this.formBuilder.group({
+    //   cliente: '',
+    //   numero: '',
+    //   importo: '',
+    //   stato: '',
+    // });
+  }
+
+  printPage(){
+    window.print()
+  }
+
+  payInvoice(){
+    this.fattureService
+    .patchInvoice(this.fattura.id, this.fattura.stato)
+    .subscribe((data) => {
+      console.log(data);
+      console.log(this.fattura.stato)
+      this.fattura.stato = "PAGATA"
+      console.log(data)
+
     });
   }
 
 
 
- onSubmit() {
+//  onSubmit() {
 
- }
+//  }
 
-changeProp() {
-  this.bool = !this.bool;
-  this.fatturaForm.get('cliente')?.setValue(this.fattura.cliente);
-  this.fatturaForm.get('numero')?.setValue(this.fattura.numero);
-  this.fatturaForm.get('importo')?.setValue(this.fattura.importo);
-  this.fatturaForm.get('stato')?.setValue(this.fattura.stato);
-  console.log(this.fatturaForm.value);
-}
+// changeProp() {
+//   this.bool = !this.bool;
+//   this.fatturaForm.get('cliente')?.setValue(this.fattura.cliente);
+//   this.fatturaForm.get('numero')?.setValue(this.fattura.numero);
+//   this.fatturaForm.get('importo')?.setValue(this.fattura.importo);
+//   this.fatturaForm.get('stato')?.setValue(this.fattura.stato);
+//   console.log(this.fatturaForm.value);
+// }
 
-deleteUser() {}
+// deleteUser() {}
 }
 
 

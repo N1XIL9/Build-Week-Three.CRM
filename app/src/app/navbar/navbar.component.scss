@@ -79,3 +79,10 @@ nav {
 .bi-list {
   font-size: 1.9rem;
 }
+
+
+//MEDIA PRINT FATTURA
+
+@media print {
+  .navbar, .img{display: none};
+}
