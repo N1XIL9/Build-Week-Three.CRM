@@ -29,7 +29,7 @@
       "pec": "",
       "telefono": "",
       "nomeContatto": "Maria",
-      "cognomeContatto": "",
+      "cognomeContatto": "Rossi",
       "telefonoContatto": "",
       "emailContatto": "",
       "indirizzoSede": {
@@ -41,7 +41,12 @@
           "provincia": "FI"
         }
       },
-      "dataInserimento": "2019-06-01T08:11:01.911+00:00"
+      "dataInserimento": "2019-06-01T08:11:01.911+00:00",
+      "via": "Contrada Gastone 4, Piano 4",
+      "civico": "698",
+      "cap": "38615",
+      "nome": "SALERNO",
+      "provincia": "SA"
     },
     {
       "ragioneSociale": "Asso Group",
@@ -55,16 +60,21 @@
       "telefonoContatto": "3408353380",
       "emailContatto": "danydifilippo@gmail.com",
       "indirizzoSede": {
-        "via": "VIA ROMA",
-        "civico": "56",
-        "cap": "80021",
+        "via": "Contrada Gastone 4, Piano 4",
+        "civico": "698",
+        "cap": "38615",
         "comune": {
-          "nome": "ROMA",
-          "provincia": "RM"
+          "nome": "LASTRA A SIGNA",
+          "provincia": "FI"
         }
       },
       "dataInserimento": "2022-11-17T08:40:27.404Z",
-      "id": 2
+      "id": 2,
+      "via": "Contrada Gastone 4, Piano 4",
+      "civico": "698",
+      "cap": "38615",
+      "nome": "Roma",
+      "provincia": "Rm"
     },
     {
       "ragioneSociale": "Bruno-Romano SPA - TEST",
